@@ -1,2 +1,6 @@
-<h1>Games#edit</h1>
-<p>Find me in app/views/games/edit.html.erb</p>
+<div class="container">
+  <h1>Edit Game</h1>
+  <br>
+  <%= render "form" %>
+  <%= link_to "Delete Game", game_path(@game), method: :delete, class: "btn btn-danger" %>
+</div>

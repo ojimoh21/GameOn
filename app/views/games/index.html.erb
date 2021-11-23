@@ -1,2 +1,10 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<div class="container">
+  <h1>Games Index</h1>
+  <br>
+  <% @games.each do |game| %>
+    <ul>
+      <li><h3><%= game.title %></h3></li>
+      <p><%= game.description %></p>
+    </ul>
+  <% end %>
+</div>

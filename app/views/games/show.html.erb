@@ -1,2 +1,10 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<div class="container">
+  <h1>Games Show</h1>
+  <br>
+  <h2><%= @game.title %></h2>
+  <ul>
+    <li><p><%= @game.description %></p></li>
+    <li><p><%= @game.duration %> min.</p></li>
+    <li><p><%= @game.suggested_numplayers %> people</p></li>
+  </ul>
+</div>
