@@ -1,5 +1,6 @@
 .avatar {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .avatar-large {
@@ -17,4 +18,14 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+.navbar-empty-avatar {
+    background-color: red;
+    padding: 7px;
+    padding-top: 10px;
+    height: 40px;
+    align-self: unset;
+    border-radius: 50%;
+    width: 40px;
+    text-align-last: end;
 }
