@@ -6,7 +6,8 @@ class CreatePartySessions < ActiveRecord::Migration[6.0]
       t.date :end_date
       t.time :start_time
       t.time :end_time
-      t.string :address
+      t.string :location
+      t.text :description
       t.float :latitude
       t.float :longitude
 
