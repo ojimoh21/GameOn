@@ -17,7 +17,7 @@
     background: #F4F4F4;
   }
 
-  label {
+  label, .form-control-file {
     margin-left: 40px;
   }
 
@@ -26,6 +26,6 @@
     outline: none;
   }
   .text-muted {
-    margin-left: 40px;
+    text-align: center;
   }
 }

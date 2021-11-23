@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <h2 class=" text-center">Log in</h2>
 
-  <%= image_tag asset_path("login_logo.png"), style: "height: 250px;width:auto;margin-left:50px;", class:" mb-4" %>
+  <%= image_tag asset_path("login_logo.png"), style: "height: 250px;width:auto;", class:"login-image" %>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
