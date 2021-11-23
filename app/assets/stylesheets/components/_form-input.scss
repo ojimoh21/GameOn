@@ -1,0 +1,31 @@
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .form-control {
+    display: block;
+    width: 80%;
+    margin: auto;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: none;
+    border-bottom: 2px solid black;
+    background: #F4F4F4;
+  }
+
+  label {
+    margin-left: 40px;
+  }
+
+  .form-control:focus {
+    background: none;
+    outline: none;
+  }
+  .text-muted {
+    margin-left: 40px;
+  }
+}
