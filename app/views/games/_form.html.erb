@@ -1,0 +1,7 @@
+  <%= simple_form_for(@game) do |f|%>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :duration, as: :integer %>
+    <%= f.input :suggested_numplayers, as: :integer %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <%end%>
