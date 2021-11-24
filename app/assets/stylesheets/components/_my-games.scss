@@ -1,15 +1,19 @@
-.games-list {
-  overflow: auto;
-  white-space: nowrap;
-}
+@media (min-width: 100px) and (max-width: 575px) {
+  .games-list {
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-.game {
-  display: inline-block;
-}
+  .game {
+    display: inline-block;
+  }
 
-.games-img {
-  border-top: 5px solid #8C3730;
-  border-bottom: 5px solid #8C3730;
-  border-radius: 10px;
-  margin: 4px;
+  .games-img {
+    border-top: 5px solid #8C3730;
+    border-bottom: 5px solid #8C3730;
+    border-radius: 10px;
+    margin: 4px;
+    height: 175px;
+    width: 97px;
+  }
 }
