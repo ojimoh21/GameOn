@@ -11,6 +11,21 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.dashboard-card-past{
+  margin: auto;
+  background: rgba(238, 238, 238, 0.24);
+  width: 90%;
+  border-left: 6px solid #F25F5C;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+   div {
+    padding: 4px;
+   }
+}
 
 i {
   padding-right: 8px;

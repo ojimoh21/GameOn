@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Games Index</h1>
   <br>
   <% @games.each do |game| %>
-    <img src="" alt="">
-    <h3><%= game.title %></h3>
-    <p><%= game.description %></p>
-  <% end %>
+    <div>
+      <h3><%= game.title %></h3>
+      <p><%= game.description %></p>
+    <% end %>
+    </div>
 </div>
