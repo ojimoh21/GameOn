@@ -1,12 +1,16 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Games Show</h1>
   <br>
-  <h2><%= @game.title %></h2>
   <div class="game-card">
-
-    <p><%= @game.description %></p>
-    <p><%= @game.duration %> min.</p>
-    <p><%= @game.suggested_numplayers %> people</p>
+    <img src="https://source.unsplash.com/random" alt="">
+    <div class="game-info">
+      <h2><%= @game.title %></h2>
+      <p><%= @game.description %></p>
+    </div>
+    <div class="game-extras">
+      <p><i class="far fa-clock"></i><%= @game.duration %> min</p>
+      <p><i class="fas fa-users"></i><%= @game.suggested_numplayers %> players</p>
+    </div>
   </div>
   </ul>
 </div>

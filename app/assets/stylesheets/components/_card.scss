@@ -15,3 +15,32 @@
 i {
   padding-right: 8px;
 }
+
+.game-card {
+  width: 90%;
+  margin: auto;
+  // color: #FBF2D2;
+}
+
+.game-card > img {
+  width: 311px;
+  height: 218px;
+  margin: auto;
+  border-right: 12px solid #8C3730;
+  border-left: 12px solid #8C3730;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.game-info {
+  padding: 12px;
+  p {
+    overflow: scroll;
+    height: 140px;
+  }
+}
+
+.game-extras {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
