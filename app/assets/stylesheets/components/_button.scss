@@ -1,0 +1,24 @@
+@media (min-width: 100px) and (max-width: 575px) {
+    .user-btn {
+    background: #ffffff25;
+    border: 6px solid white;
+    border-radius: 60px;
+    padding: 20px 130px;
+    margin: auto;
+    color: white;
+  }
+  .app-btn {
+    opacity: 0.24;
+    background: #308C7B;
+    border-radius: 60px;
+    text-align: center;
+    padding: 20px 130px;
+    margin: auto;
+    color: white;
+  }
+
+  .form-actions{
+    text-align: center;
+  }
+
+}
