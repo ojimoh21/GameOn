@@ -1,0 +1,64 @@
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .party-card{
+    margin: auto;
+    background: #F2BE7E;
+    width: 90%;
+    border-left: 6px solid #347367;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .dashboard-card-past{
+    margin: auto;
+    background: rgba(238, 238, 238, 0.24);
+    width: 90%;
+    border-left: 6px solid #F25F5C;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    div {
+      padding: 4px;
+    }
+  }
+
+  i {
+    padding-right: 8px;
+  }
+
+  .game-card {
+    width: 90%;
+    margin: auto;
+    // color: #FBF2D2;
+  }
+
+  .game-card > img {
+    width: 311px;
+    height: 218px;
+    margin: auto;
+    border-right: 12px solid #8C3730;
+    border-left: 12px solid #8C3730;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .game-info {
+    padding: 12px;
+    p {
+      overflow: scroll;
+      height: 140px;
+    }
+  }
+
+  .game-extras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
