@@ -4,7 +4,12 @@ class PartySessionsController < ApplicationController
   end
 
   def create
-    raise
+    @party_session = PartySession.new(party_session_params)
+    if @party_session.save
+      redirect_to party_session_path(@party_session)
+    else
+      render :new
+    end
   end
 
   def party_session_params
