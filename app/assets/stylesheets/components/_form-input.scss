@@ -24,6 +24,8 @@
   .form-control:focus {
     background: none;
     outline: none;
+    box-shadow: none;
+    border-color: black;
   }
   .text-muted {
     text-align: center;

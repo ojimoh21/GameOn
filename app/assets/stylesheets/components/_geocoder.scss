@@ -1,6 +1,46 @@
 .mapboxgl-ctrl-geocoder {
   max-width: none;
   width: 100%;
-  border: 1px solid lightgrey;
+  margin: auto;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
   box-shadow: none;
+}
+
+#new_party_session .mapboxgl-ctrl-geocoder--input {
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: none;
+  border-radius: 0;
+  background: #F4F4F4;
+}
+
+#new_party_session .mapboxgl-ctrl-geocoder--input:focus {
+  outline: none;
+}
+
+#new_party_session .mapboxgl-ctrl-geocoder--pin-right > *, #new_party_session .mapboxgl-ctrl-geocoder--icon-close {
+  background: none;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  top: 9px;
+  left: 4px;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .mapboxgl-ctrl-geocoder {
+  width: 80%;
+  }
 }
