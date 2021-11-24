@@ -11,7 +11,7 @@
       <% end %>
     <% end %>
   <% else %>
-     <%= link_to "#", class: "navbar-brand" do %>
+     <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <% end %>
   <% end %>
@@ -27,7 +27,7 @@
         <li class="nav-item dropdown">
           <div class="dropdown-menudropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-            <%= link_to "Create A Party", "#", class: "dropdown-item" %>
+            <%= link_to "Create A Party", "/party_sessions/new", class: "dropdown-item" %>
             <%= link_to "My Games", "#", class: "dropdown-item" %>
             <%= link_to "My Account", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
