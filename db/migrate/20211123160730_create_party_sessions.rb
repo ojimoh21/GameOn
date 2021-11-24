@@ -2,12 +2,11 @@ class CreatePartySessions < ActiveRecord::Migration[6.0]
   def change
     create_table :party_sessions do |t|
       t.string :title
-      t.date :start_date
-      t.date :end_date
-      t.time :start_time
-      t.time :end_time
-      t.string :location
+      t.datetime :start_date
+      t.datetime :end_date
+      t.string :address
       t.text :description
+      t.references :user, null: false, foreign_key: true
       t.float :latitude
       t.float :longitude
 
