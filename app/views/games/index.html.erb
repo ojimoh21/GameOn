@@ -1,10 +1,10 @@
 <div class="container mt-3">
   <h1>Games Index</h1>
-  <br>
+  <%= link_to "Add New Game", new_game_path, class: "btn btn-success"%>
   <% @games.each do |game| %>
     <div>
       <h3><%= game.title %></h3>
-      <p><%= game.description %></p>
+      <%= cl_image_tag @game.photo.key, height: 150, width: 300, crop: fill %>
     <% end %>
     </div>
 </div>
