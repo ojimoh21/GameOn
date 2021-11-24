@@ -1,0 +1,17 @@
+.party-card{
+  margin: auto;
+  background: #F2BE7E;
+  width: 90%;
+  border-left: 6px solid #347367;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+i {
+  padding-right: 8px;
+}
