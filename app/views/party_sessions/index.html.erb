@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Party index</h1>
+  <br>
+  <div>Upcoming</div>
+  <% @upcoming_party_sessions.each do |party| %>
+    <ul>
+      <li><h3><%= party.title %></h3></li>
+      <p><%= party.description %></p>
+    </ul>
+  <% end %>
+  <div>Ongoing</div>
+  <% @ongoing_party_sessions.each do |party| %>
+    <ul>
+      <li><h3><%= party.title %></h3></li>
+      <p><%= party.description %></p>
+    </ul>
+  <% end %>
+  <div>Previous</div>
+  <% @previous_party_sessions.each do |party| %>
+    <ul>
+      <li><h3><%= party.title %></h3></li>
+      <p><%= party.description %></p>
+    </ul>
+  <% end %>
+</div>

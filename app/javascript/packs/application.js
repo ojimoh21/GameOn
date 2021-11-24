@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import { toggleDateInputs } from '../components/party_date_picker';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -31,4 +32,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  toggleDateInputs();
 });
+
+import "controllers"
