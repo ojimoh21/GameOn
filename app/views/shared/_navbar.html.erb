@@ -26,7 +26,7 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <div class="dropdown-menudropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Dashboard", "#", class: "dropdown-item navi" %>
+            <%= link_to "Dashboard", "/party_sessions", class: "dropdown-item navi" %>
             <%= link_to "My Games", "/games", class: "dropdown-item navi" %>
             <%= link_to "My Account", "/users/edit", class: "dropdown-item navi" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navi" %>

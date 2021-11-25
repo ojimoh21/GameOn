@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :games
   resources :party_sessions
-  # get "my_dashboard", to: "pages"
 end
