@@ -6,6 +6,8 @@
     padding: 20px 130px;
     margin: auto;
     color: $light-blue;
+    font-size: 32px;
+    font-weight: bold;
   }
   .app-btn {
     background: $dark-blue;
@@ -14,7 +16,9 @@
     padding: 20px 100px;
     margin: auto;
     margin-left: 15px;
-    color: white;
+    color: $yellow;
+    font-size: 32px;
+    font-weight: bold;
   }
 
   .form-actions{
