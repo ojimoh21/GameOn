@@ -13,9 +13,20 @@ female_user_filenames = ["v1637676552/photo-1532708059644-5590ed51ce4c_zwcdtk.jp
 
 demo_character_filename = "v1637677822/xy8hmqmnpjm1bgnynmn7_d8wbio.jpg"
 
+addresses = [
+  "Hoxton, Hackney, London, Greater London, England, United Kingdom",
+  "138 Kingsland Road, Newham, London, E13 9NU, United Kingdom",
+  "Circus Street, Oxford, OX4 1JR, United Kingdom",
+  "Liverpool, Merseyside, England, United Kingdom",
+  "Tottenham Street, Camden, London, W1T 2AW, United Kingdom",
+  "Wembley, Greater London, England, United Kingdom"
+]
+
 user_counter = 0
 
 puts "Seeding started"
+PartySession.destroy_all
+Game.destroy_all
 User.destroy_all
 
 puts "Creating 13 users"
@@ -49,7 +60,7 @@ user_counter = 0
   puts "User with id - #{user.id} created"
 end
 
-# Without profile image
+# Without profile image and support character
 user = User.new
 user.first_name = "Alyona"
 user.last_name = "Bordukova"
@@ -57,6 +68,41 @@ user.email = "alyona_bordukova@gmail.com"
 user.password = "123456"
 user.save!
 puts "User with id - #{user.id} created"
+
+
+# previous, ongoing, upcoming for support character
+
+puts "Creating Party Sessions for Demo character and supporting character"
+
+puts "Creating Ongoing Party for Alyona "
+party = PartySession.new
+party.title = "Demo After-Party"
+party.description = "We made it to the end guys!! Anyone up for a friendly get-together?"
+party.start_date = DateTime.now
+party.end_date = DateTime.now + 2
+party.address = addresses[4]
+party.user = user
+party.save!
+
+puts "Creating Previous Party for Alyona "
+party = PartySession.new
+party.title = "Gladiator battle"
+party.description = "Dare to step in the Colosseum"
+party.start_date = DateTime.now - 6
+party.end_date = DateTime.now - 5
+party.address = addresses[3]
+party.user = user
+party.save!
+
+puts "Creating Upcoming Party for Alyona "
+party = PartySession.new
+party.title = "Redemption Arena"
+party.description = "Time to make history, who is the greatest of the all?"
+party.start_date = DateTime.now + 5
+party.end_date = DateTime.now + 6
+party.address = addresses[5]
+party.user = user
+party.save!
 
 # demo character
 user = User.new
@@ -68,6 +114,37 @@ user_file = URI.open((user_url + demo_character_filename).to_s)
 user.photo.attach(io: user_file, filename: demo_character_filename.to_s, content_type: 'image/jpg')
 user.save!
 puts "User with id - #{user.id} created"
+
+# previous, ongoing, upcoming for demo character
+puts "Creating Previous Party for Jae-dong "
+party = PartySession.new
+party.title = "Battle Galactica"
+party.description = "Sci-fi party loading..."
+party.start_date = DateTime.now - 3
+party.end_date = DateTime.now - 2
+party.address = addresses[0]
+party.user = user
+party.save!
+
+puts "Creating Ongoing Party for Jae-dong "
+party = PartySession.new
+party.title = "Family Glee"
+party.description = "Hey family, let's have a get together today"
+party.start_date = DateTime.now
+party.end_date = DateTime.now + 1
+party.address = addresses[1]
+party.user = user
+party.save!
+
+puts "Creating Upcoming Party for Jae-dong "
+party = PartySession.new
+party.title = "UNO momento"
+party.description = "Ready to see the student become the master? I'm ready for my title!!"
+party.start_date = DateTime.now + 3
+party.end_date = DateTime.now + 5
+party.address = addresses[2]
+party.user = user
+party.save!
 
 puts "Users created"
 puts "Seeding done"
