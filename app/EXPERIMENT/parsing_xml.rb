@@ -1,7 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
 
-# ingredient = 'chocolate'
 url = "https://www.boardgamegeek.com/xmlapi2/hot?boardgame"
 
 html_file = URI.open(url).read
