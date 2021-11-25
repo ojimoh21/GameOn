@@ -2,9 +2,9 @@
 @media (min-width: 100px) and (max-width: 575px) {
   .party-card{
     margin: auto;
-    background: #F2BE7E;
+    background: $pink;
     width: 90%;
-    border-left: 6px solid #347367;
+    border-left: 6px solid $dark-blue;
     padding: 12px;
     display: flex;
     flex-direction: row;
@@ -15,9 +15,9 @@
 
   .dashboard-card-past{
     margin: auto;
-    background: rgba(238, 238, 238, 0.24);
+    background: $yellow;
     width: 90%;
-    border-left: 6px solid #F25F5C;
+    border-left: 6px solid $light-red;
     padding: 12px;
     display: flex;
     flex-direction: row;
@@ -36,15 +36,15 @@
   .game-card {
     width: 90%;
     margin: auto;
-    // color: #FBF2D2;
+    color: $yellow;
   }
 
   .game-card-img {
     width: 311px;
     height: 218px;
     margin: auto;
-    border-right: 12px solid #8C3730;
-    border-left: 12px solid #8C3730;
+    border-right: 12px solid $dark-brown;
+    border-left: 12px solid $dark-brown;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
