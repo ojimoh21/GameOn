@@ -1,25 +1,15 @@
   <%# <%= javascript_pack_tag 'fetch', 'data-turbolinks-track': 'reload', defer: true %> %>
 
-  <div class="input-group input-group-sm mb-3" data-controller="games-api">
+  <%# <div class="input-group input-group-sm mb-3" data-controller="games-api">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
     </div>
     <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" data-games-api-target="query" data-action="keyup->games-api#search">
     <div class="btn btn-primary" data-action="click->games-api#search"></div>
   </div>
-
-<div data-controller="games-api">
-        <%= form_with url: games_path, method: :get, html: { class: 'mb-4', data: { games_api_target: 'form' } } do |f| %>
-          <%= f.text_field :query,
-                           class: "form-control",
-                           placeholder: 'Type a game title',
-                           value: params[:query],
-                           data: {
-                             games_api_target: 'query',
-                             action: 'keyup->games-api#update'
-                           } %>
-        <% end %>
-        <%= render 'list', games: @games %>
-      </div>
-
-<ul id="games"></ul>
+  <ul id="games"></ul> %>
+<div class="search-bar">
+  <select class="js-select-2" name="state">
+    <option>Search Games</option>
+  </select>
+</div>
