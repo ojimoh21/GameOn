@@ -71,6 +71,7 @@ export default class extends Controller {
     //  this.updateQueryParams()
   }
 
+<<<<<<< HEAD
   submit() {
     const game = document.querySelector("#games-list");
     fetch("https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OShMmavExz")
@@ -86,4 +87,19 @@ export default class extends Controller {
       });
     });
   }
+=======
+//   fetch(`https://api.boardgameatlas.com/api/search?name=${}&client_id=OShMmavExz`)
+//     .then(response => response.json())
+//     .then((data) => {
+//       console.log(data)
+//       data.games.forEach((game) => {
+//         const gameTag= `< li class="list-inline-item" >
+//           <img src="${game['thumb_url']}" alt="">
+//             <p>${game['name']}</p>
+//             ${game['description']}
+//           </li>`;
+//         games.insertAdjacentHTML("beforeend", gameTag);
+//     });
+//   });
+>>>>>>> master
 }

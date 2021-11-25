@@ -34,6 +34,8 @@
   margin-top: 0;
 }
 
+
+
 .mapboxgl-ctrl-geocoder--icon-search {
   top: 9px;
   left: 4px;
@@ -43,4 +45,12 @@
   .mapboxgl-ctrl-geocoder {
   width: 80%;
   }
+}
+
+#new_party_session .mapboxgl-ctrl-geocoder--input {
+    background: transparent;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: transparent;
 }

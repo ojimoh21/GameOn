@@ -5,6 +5,7 @@
 }
 .avatar-large {
   width: 56px;
+  height: 56px;
   border-radius: 50%;
 }
 .avatar-bordered {
@@ -28,4 +29,10 @@
     border-radius: 50%;
     width: 40px;
     text-align-last: end;
+}
+
+.avatar-larger {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
