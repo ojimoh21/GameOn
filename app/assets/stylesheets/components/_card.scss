@@ -1,5 +1,3 @@
-
-@media (min-width: 100px) and (max-width: 575px) {
   .party-card{
     margin: auto;
     background: $pink;
@@ -36,7 +34,7 @@
   .game-card {
     width: 90%;
     margin: auto;
-    color: $yellow;
+    color: black;
   }
 
   .game-card-img {
@@ -52,7 +50,7 @@
     padding: 12px;
     p {
       overflow: scroll;
-      height: 140px;
+      height: 200px;
     }
   }
 
@@ -61,4 +59,3 @@
     flex-direction: row;
     justify-content: space-between;
   }
-}

@@ -16,7 +16,9 @@
     <% end %>
   <% end %>
   <div>
-  <a href="/party_sessions/new" class="btn create">Create A Party</a>
+  <% if user_signed_in? %>
+    <a href="/party_sessions/new" class="btn create">Create A Party</a>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,10 +28,10 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <div class="dropdown-menudropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-            <%= link_to "My Games", "/games", class: "dropdown-item" %>
-            <%= link_to "My Account", "/users/edit", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Dashboard", "/party_sessions", class: "dropdown-item navi" %>
+            <%= link_to "My Games", "/games", class: "dropdown-item navi" %>
+            <%= link_to "My Account", "/users/edit", class: "dropdown-item navi" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navi" %>
           </div>
         </li>
       <% else %>

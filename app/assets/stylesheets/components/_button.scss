@@ -1,20 +1,24 @@
-// @media (min-width: 100px) and (max-width: 575px) {
-    .user-btn {
+
+   .user-btn {
     background: #ffffff25;
-    border: 6px solid white;
+    border: 6px solid $dark-blue;
     border-radius: 60px;
     padding: 20px 130px;
     margin: auto;
-    color: white;
+    color: $light-blue;
+    font-size: 32px;
+    font-weight: bold;
   }
   .app-btn {
-    background: $light-blue;
+    background: $dark-blue;
     border-radius: 60px;
     text-align: center;
     padding: 20px 100px;
     margin: auto;
     margin-left: 15px;
-    color: white;
+    color: $yellow;
+    font-size: 32px;
+    font-weight: bold;
   }
 
   .form-actions{
@@ -25,4 +29,3 @@
     border: 3px solid $dark-blue;
     color: $yellow;
   }
-// }
