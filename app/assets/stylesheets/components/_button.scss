@@ -1,14 +1,14 @@
 
    .user-btn {
     background: #ffffff25;
-    border: 6px solid white;
+    border: 6px solid $dark-blue;
     border-radius: 60px;
     padding: 20px 130px;
     margin: auto;
-    color: white;
+    color: $light-blue;
   }
   .app-btn {
-    background: $light-blue;
+    background: $dark-blue;
     border-radius: 60px;
     text-align: center;
     padding: 20px 100px;
