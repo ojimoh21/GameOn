@@ -41,3 +41,12 @@ a {
 a:hover {
   color: black;
 }
+
+.invalid-feedback {
+    color: $dark-blue;
+    margin-left: 2.4rem;
+}
+
+.form-control.is-invalid {
+    border-color: $dark-blue;
+}
