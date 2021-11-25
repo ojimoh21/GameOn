@@ -3,7 +3,7 @@
   <% if user_signed_in? %>
     <% if current_user.photo.attached? %>
       <%= link_to "/", class:"link-to" do %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar navbar-brand"%>
+        <%= cl_image_tag current_user.photo.key, class: "avatar"%>
       <% end %>
     <% else %>
       <%= link_to "/", class:"link-to" do%>
@@ -28,8 +28,8 @@
           <div class="dropdown-menudropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", "#", class: "dropdown-item" %>
             <%= link_to "Create A Party", "/party_sessions/new", class: "dropdown-item" %>
-            <%= link_to "My Games", "#", class: "dropdown-item" %>
-            <%= link_to "My Account", "#", class: "dropdown-item" %>
+            <%= link_to "My Games", "/games", class: "dropdown-item" %>
+            <%= link_to "My Account", "/users/edit", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
