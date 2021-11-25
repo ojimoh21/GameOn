@@ -13,6 +13,10 @@ female_user_filenames = ["v1637676552/photo-1532708059644-5590ed51ce4c_zwcdtk.jp
 
 demo_character_filename = "v1637677822/xy8hmqmnpjm1bgnynmn7_d8wbio.jpg"
 
+games_url = 'https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OShMmavExz'
+games_serialized = URI.open(games_url).read
+games = JSON.parse(games_serialized)["games"]
+
 addresses = [
   "Hoxton, Hackney, London, Greater London, England, United Kingdom",
   "138 Kingsland Road, Newham, London, E13 9NU, United Kingdom",
@@ -67,8 +71,20 @@ user.last_name = "Bordukova"
 user.email = "alyona_bordukova@gmail.com"
 user.password = "123456"
 user.save!
-puts "User with id - #{user.id} created"
 
+# 5 games added to support character
+games[5..9].each do |game|
+  user_game = Game.new
+  user_game.title = game["name"]
+  user_game.description = game["description_preview"]
+  user_game.duration = (game["min_playtime"] + game["max_playtime"]).fdiv(2).round
+  user_game.suggested_numplayers = (game["min_players"] + game["max_players"]).fdiv(2).round
+  user_game_file = URI.open(game["image_url"])
+  user_game.photo.attach(io: user_game_file, filename: game["image_url"], content_type: 'image/jpg')
+  user_game.user = user
+  user_game.save!
+end
+puts "User with id - #{user.id} created and games added"
 
 # previous, ongoing, upcoming for support character
 
@@ -113,7 +129,20 @@ user.password = "123456"
 user_file = URI.open((user_url + demo_character_filename).to_s)
 user.photo.attach(io: user_file, filename: demo_character_filename.to_s, content_type: 'image/jpg')
 user.save!
-puts "User with id - #{user.id} created"
+
+# 5 games added to demo user
+games[0..4].each do |game|
+  user_game = Game.new
+  user_game.title = game["name"]
+  user_game.description = game["description_preview"]
+  user_game.duration = (game["min_playtime"] + game["max_playtime"]).fdiv(2).round
+  user_game.suggested_numplayers = (game["min_players"] + game["max_players"]).fdiv(2).round
+  user_game_file = URI.open(game["image_url"])
+  user_game.photo.attach(io: user_game_file, filename: game["image_url"], content_type: 'image/jpg')
+  user_game.user = user
+  user_game.save!
+end
+puts "User with id - #{user.id} created and games added"
 
 # previous, ongoing, upcoming for demo character
 puts "Creating Previous Party for Jae-dong "
