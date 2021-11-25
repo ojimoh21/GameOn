@@ -4,18 +4,21 @@
     <i class="fas fa-puzzle-piece fa-2x ml-2"></i> <span>Add new Game</span>
   <% end %>
 
-  <div class="text-center">
-    <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" >
+  <div class="search-box mt-3">
+    <%= render 'search' %>
   </div>
-  <div class="games-list">
-    <% @games.each do |game| %>
-      <div class="mt-4 game">
-        <% if game.photo.attached? %>
-          <a href="games/<%=game.id%>"><%= cl_image_tag game.photo.key,class:"games-img"%></a>
-        <% else %>
-          <a href="games/<%=game.id%>"><%= image_tag asset_path("chess-piece.jpeg"), class:"games-img"  %></a>
-        <% end %>
-      </div>
-    <% end %>
+    <%# <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" > %>
+  <div class="carousel" data-controller="games-api">
+    <div class="games-list" data-games-api-target="query">
+      <% @games.each do |game| %>
+        <div class="mt-4 game">
+          <% if game.photo.attached? %>
+            <a href="games/<%=game.id%>"><%= cl_image_tag game.photo.key,class:"games-img"%></a>
+          <% else %>
+            <a href="games/<%=game.id%>"><%= image_tag asset_path("chess-piece.jpeg"), class:"games-img"  %></a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

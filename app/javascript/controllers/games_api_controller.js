@@ -5,6 +5,7 @@ import 'select2/dist/css/select2.css'
 
 $(document).ready(function () {
   $('.js-select-2').select2({
+    placeholder: "Search Games",
     ajax: {
       url: `https://api.boardgameatlas.com/api/search`,
       data: function (params) {
@@ -71,23 +72,21 @@ export default class extends Controller {
     //  this.updateQueryParams()
   }
 
-<<<<<<< HEAD
   submit() {
     const game = document.querySelector("#games-list");
+    console.log("this is the hot games list")
     fetch("https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OShMmavExz")
     .then(response => response.json())
     .then((data) => {
       console.log(data)
       data.games.forEach((game) => {
-        const gameTag = `<div class="game">
-            <img src="${game['thumb_url']}" alt="" class="games-img">
-            <p>${game['name']}</p>
-          </li></div>`;
+        const gameTag = `<div class="mt-4 game">
+          <%= image_tag asset_path("${game['thumb_url']}"), class:"games-img" %>
+          </div>`;
         game.insertAdjacentHTML("beforeend", gameTag);
       });
     });
   }
-=======
 //   fetch(`https://api.boardgameatlas.com/api/search?name=${}&client_id=OShMmavExz`)
 //     .then(response => response.json())
 //     .then((data) => {
@@ -101,5 +100,4 @@ export default class extends Controller {
 //         games.insertAdjacentHTML("beforeend", gameTag);
 //     });
 //   });
->>>>>>> master
 }
