@@ -1,4 +1,4 @@
-@media (min-width: 100px) and (max-width: 575px) {
+// @media (min-width: 100px) and (max-width: 575px) {
     .user-btn {
     background: #ffffff25;
     border: 6px solid white;
@@ -8,12 +8,12 @@
     color: white;
   }
   .app-btn {
-    opacity: 0.24;
-    background: #308C7B;
+    background: $light-blue;
     border-radius: 60px;
     text-align: center;
-    padding: 20px 130px;
+    padding: 20px 100px;
     margin: auto;
+    margin-left: 15px;
     color: white;
   }
 
@@ -21,4 +21,8 @@
     text-align: center;
   }
 
-}
+  .create {
+    border: 3px solid $dark-blue;
+    color: $yellow;
+  }
+// }

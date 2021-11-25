@@ -14,7 +14,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     border: none;
     border-bottom: 2px solid black;
-    background: #F4F4F4;
+    background: transparent;
   }
 
   label, .form-control-file {
@@ -29,5 +29,6 @@
   }
   .text-muted {
     text-align: center;
+    color: black !important;
   }
 }

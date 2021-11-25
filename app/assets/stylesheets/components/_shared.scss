@@ -4,3 +4,24 @@
   margin-right: auto;
   width: 50%;
 }
+
+.link-to {
+  color: black;
+}
+
+body {
+  background-image: url("main-dashboard.svg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.danger {
+  color: red;
+}
+
+.sessions {
+  color: $light-blue;
+}
+.sessions-past {
+  color: $yellow;
+}
