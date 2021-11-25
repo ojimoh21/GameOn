@@ -1,29 +1,4 @@
 <%= javascript_pack_tag 'fetch', 'data-turbolinks-track': 'reload', defer: true %>
-<div class="container">
-  <h1>Games Index</h1>
-  <br>
-  <% @games.each do |game| %>
-    <ul>
-      <li><h3><%= game.title %></h3></li>
-      <p><%= game.description %></p>
-    </ul>
-  <% end %>
-
-    <%# <p class="d-none" data-games-api-target="content">
-    </p> %>
-
-  <div class="input-group input-group-sm mb-3" data-controller="games-api">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-    </div>
-    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" data-games-api-target="query">
-    <div class="btn btn-primary" data-action="click->games-api#search"></div>
-  </div>
-
-    <ul id="games"></ul>
-  <%# <div>
-    <a href=""><i class="caret-down" data-action="click->games-api#revealContent">click</i></a>
-  </div> %>
 
 <div class="container mt-3">
   <h1>My Games</h1>
@@ -40,3 +15,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render 'search' %>

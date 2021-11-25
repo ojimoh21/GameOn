@@ -8,6 +8,7 @@ fetch("https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OS
       const gameTag= `<li class="list-inline-item">
           <img src="${game['thumb_url']}" alt="">
           <p>${game['name']}</p>
+           ${game['description']}
         </li>`;
      games.insertAdjacentHTML("beforeend", gameTag);
    });
