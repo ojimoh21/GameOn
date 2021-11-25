@@ -16,12 +16,16 @@ class PartySessionsController < ApplicationController
   end
 
   def index
-    query_previous = "user_id = :user_id AND end_date < :date_now"
-    query_upcoming = "user_id = :user_id AND start_date > :date_now"
-    query_ongoing = "user_id = :user_id AND start_date < :date_now AND end_date > :date_now"
-    @upcoming_party_sessions = PartySession.where(query_upcoming, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
-    @previous_party_sessions = PartySession.where(query_previous, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
-    @ongoing_party_sessions = PartySession.where(query_ongoing, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
+    # use this when guest table is done and add logic for when user is a guest
+    # query_previous = "user_id = :user_id AND end_date < :date_now"
+    # @upcoming_party_sessions = PartySession.where(query_upcoming, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
+
+    query_previous = "end_date < :date_now"
+    query_upcoming = "start_date > :date_now"
+    query_ongoing = "start_date < :date_now AND end_date > :date_now"
+    @upcoming_party_sessions = PartySession.where(query_upcoming, date_now: "#{DateTime.now()}")
+    @previous_party_sessions = PartySession.where(query_previous, date_now: "#{DateTime.now()}")
+    @ongoing_party_sessions = PartySession.where(query_ongoing, date_now: "#{DateTime.now()}")
   end
 
   def show; end
