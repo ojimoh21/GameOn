@@ -1,0 +1,6 @@
+<h1>Party show</h1>
+<ul>
+  <%= link_to "Delete", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete" %>
+  <li><h3><%= @party_session.title %></h3></li>
+  <li><%= @party_session.description %></li>
+</ul>

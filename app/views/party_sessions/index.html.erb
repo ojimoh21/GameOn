@@ -1,25 +1,28 @@
 <div class="container">
   <h1>Party index</h1>
   <br>
-  <div>Upcoming</div>
+  <h2>Upcoming</h2>
   <% @upcoming_party_sessions.each do |party| %>
     <ul>
-      <li><h3><%= party.title %></h3></li>
-      <p><%= party.description %></p>
+      <%= link_to party.title, party_session_path(party) %>
+      <li><h3><%= party.start_date %> - <%= party.end_date %></h3></li>
+      <li><%= party.description %></li>
     </ul>
   <% end %>
-  <div>Ongoing</div>
+  <h2>Ongoing</h2>
   <% @ongoing_party_sessions.each do |party| %>
     <ul>
-      <li><h3><%= party.title %></h3></li>
-      <p><%= party.description %></p>
+      <%= link_to party.title, party_session_path(party) %>
+      <li><h3><%= party.start_date %> - <%= party.end_date %></h3></li>
+      <li><%= party.description %></li>
     </ul>
   <% end %>
-  <div>Previous</div>
+  <h2>Previous</h2>
   <% @previous_party_sessions.each do |party| %>
     <ul>
-      <li><h3><%= party.title %></h3></li>
-      <p><%= party.description %></p>
+      <%= link_to party.title, party_session_path(party) %>
+      <li><h3><%= party.start_date %> - <%= party.end_date %></h3></li>
+      <li><%= party.description %></li>
     </ul>
   <% end %>
 </div>
