@@ -11,4 +11,10 @@
 
 body {
   background-image: url("main-dashboard.svg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.danger {
+  color: red;
 }
