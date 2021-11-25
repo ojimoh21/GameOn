@@ -3,6 +3,10 @@
   <%= link_to new_game_path do %>
     <i class="fas fa-puzzle-piece fa-2x ml-2"></i> <span>Add new Game</span>
   <% end %>
+
+  <div class="text-center">
+    <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" >
+  </div>
   <div class="games-list">
     <% @games.each do |game| %>
       <div class="mt-4 game">
