@@ -33,6 +33,7 @@ class GuestsController < ApplicationController
 
   def destroy
     @guest.destroy
+    redirect_to party_session_guests_path(@guest.party_session_id)
   end
 
   private
