@@ -9,11 +9,10 @@
       <p><%= @party_session.description %></p>
       <h3>Address</h3>
       <p><%= @party_session.address%></p>
-      <div style="width: 80%; height: 200px;"
+      <div id="map" style="width: 90%; height: 175px; margin:auto;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       <h3>Date and Time</h3>
       <p>This party will commence on <%= @party_session.start_date.strftime("%a %e %b %Y at %H:%M")%></p>
     </div>
