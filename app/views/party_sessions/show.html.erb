@@ -3,7 +3,7 @@
   <div class="d-flex justify-content-between">
     <% if current_user == @party_session.user %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
-      <%= link_to "Invite Friends!", party_session_guests_path(@party_session) %>
+      <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
     <% end %>
   </div>
   </div>
