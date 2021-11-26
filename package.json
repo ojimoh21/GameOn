@@ -11,7 +11,7 @@
     "flatpickr": "^4.6.9",
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.6.1",
-    "node-fetch": "^3.1.0",
+    "node-fetch": "2.6.1",
     "popper.js": "^1.16.1",
     "select2": "^4.1.0-rc.0",
     "stimulus": "^3.0.1",

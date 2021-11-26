@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :find_game, only: %i[show edit update destroy]
 
   def index
-    @games = Game.all
+    @games = Game.where(user_id: current_user.id)
   end
 
   def show
