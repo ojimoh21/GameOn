@@ -1,12 +1,23 @@
 <div class="container mt-3">
-  <h1>My Guests</h1>
-  <%= link_to "Add new guest", new_party_session_guest_path, class: "btn text-success"%>
-  <ul>
+  <h2 class="mt-4" style="text-align: center">My Guests</h2>
+  <%= link_to "Invite your Guests", new_party_session_guest_path, class: "btn text-success"%>
     <% @guests.each do |guest| %>
-      <li><%= guest.user.first_name %></li>
-      <li><%= guest.user.last_name %></li>
-      <li><%= guest.user.email %></li>
-      <%= link_to "Delete", guest_path(guest), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete" %>
+    <div class="party-card mb-3">
+      <% if guest.user.photo.attached? %>
+        <%= cl_image_tag guest.user.photo.key, class: "avatar-large" %>
+      <% else %>
+        <%= image_tag asset_path("chess-piece.jpeg"), class: "avatar-large" %>
+      <% end %>
+      <div class="d-block">
+        <%= guest.user.first_name %>
+        <%= guest.user.last_name %>
+      <div style="font-size: 10px">
+        <%= guest.user.email %>
+      </div>
+      </div>
+      <div>
+      <%= link_to "Kick", guest_path(guest), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-danger" %>
+      </div>
+  </div>
     <% end %>
-  </ul>
 </div>

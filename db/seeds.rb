@@ -122,8 +122,8 @@ party.save!
 
 # demo character
 user = User.new
-user.first_name = "Larsson"
-user.last_name = "Martin"
+user.first_name = "Martin"
+user.last_name = "Larsson"
 user.email = "rekkles@gmail.com"
 user.password = "123456"
 user_file = URI.open((user_url + demo_character_filename).to_s)
