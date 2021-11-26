@@ -2,6 +2,7 @@
   <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
     <% if current_user == @party_session.user %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
+      <%= link_to "Invite Friends!", party_session_guests_path(@party_session) %>
     <% end %>
   </div>
     <div class="m-4 party-sessions-card">
@@ -22,3 +23,4 @@
       <%= link_to "Can't go ? Delete", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete danger" %>
     <% end %>
 </div>
+

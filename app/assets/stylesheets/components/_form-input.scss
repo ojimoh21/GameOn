@@ -1,31 +1,31 @@
-  .form-control {
-    display: block;
-    width: 80%;
-    margin: auto;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-clip: padding-box;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    border: none;
-    border-bottom: 2px solid black;
-    background: transparent;
-  }
+.form-control {
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+}
 
-  label, .form-control-file {
-    margin-left: 40px;
-  }
+label, .form-control-file {
+  margin-left: 40px;
+}
 
-  .form-control:focus {
-    background: none;
-    outline: none;
-    box-shadow: none;
-    border-color: black;
-  }
-  .text-muted {
-    text-align: center;
-    color: black !important;
-  }
+.form-control:focus {
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border-color: black;
+}
+.text-muted {
+  text-align: center;
+  color: black !important;
+}
