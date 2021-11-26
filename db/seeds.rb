@@ -122,9 +122,9 @@ party.save!
 
 # demo character
 user = User.new
-user.first_name = "Lee"
-user.last_name = "Jae-dong"
-user.email = "jaedong2016@gmail.com"
+user.first_name = "Larsson"
+user.last_name = "Martin"
+user.email = "rekkles@gmail.com"
 user.password = "123456"
 user_file = URI.open((user_url + demo_character_filename).to_s)
 user.photo.attach(io: user_file, filename: demo_character_filename.to_s, content_type: 'image/jpg')

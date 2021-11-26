@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <h1>My Guests</h1>
+  <%# <%= link_to "Add new guest", new_party_session_guest, class: "btn text-success"%>
+  <ul>
+    <% @guests.each do |guest| %>
+      <li><%= guest.user.first_name %></li>
+      <li><%= guest.user.last_name %></li>
+      <li><%= guest.user.email %></li>
+    <% end %>
+  </ul>
+</div>
