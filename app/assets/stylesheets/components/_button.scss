@@ -15,6 +15,27 @@
   margin-bottom: 2rem;
 }
 
+.app-party-btn-small{
+  background: $dark-blue;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: auto;
+  color: $yellow;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-btn {
+  background: #ffffff25;
+  border: 6px solid $dark-blue;
+  border-radius: 60px;
+  padding: 20px 130px;
+  margin: auto;
+  color: $yellow;
+  font-size: 32px;
+  font-weight: bold;
+}
+
 .edit-btn {
   background: #ffffff25;
   border: 6px solid $yellow;
@@ -25,6 +46,7 @@
   font-size: 32px;
   font-weight: bold;
 }
+
 .app-btn {
   background: $dark-blue;
   border-radius: 60px;
