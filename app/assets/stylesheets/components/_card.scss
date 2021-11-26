@@ -1,61 +1,61 @@
-  .party-card{
-    margin: auto;
-    background: $pink;
-    width: 90%;
-    border-left: 6px solid $dark-blue;
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
+.party-card{
+  margin: auto;
+  background: $pink;
+  width: 90%;
+  border-left: 6px solid $dark-blue;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-  .dashboard-card-past{
-    margin: auto;
-    background: $yellow;
-    width: 90%;
-    border-left: 6px solid $light-red;
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    div {
-      padding: 4px;
-    }
+.dashboard-card-past{
+  margin: auto;
+  background: $yellow;
+  width: 90%;
+  border-left: 6px solid $light-red;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  div {
+    padding: 4px;
   }
+}
 
-  i {
-    padding-right: 8px;
-  }
+i {
+  padding-right: 8px;
+}
 
-  .game-card {
-    width: 90%;
-    margin: auto;
-    color: black;
-  }
+.game-card {
+  width: 90%;
+  margin: auto;
+  color: black;
+}
 
-  .game-card-img {
-    width: 311px;
-    height: 218px;
-    margin: auto;
-    border-right: 12px solid $dark-brown;
-    border-left: 12px solid $dark-brown;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
+.game-card-img {
+  width: 311px;
+  height: 218px;
+  margin: auto;
+  border-right: 12px solid $dark-brown;
+  border-left: 12px solid $dark-brown;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-  .game-info {
-    padding: 12px;
-    p {
-      overflow: scroll;
-      height: 200px;
-    }
+.game-info {
+  padding: 12px;
+  p {
+    overflow: scroll;
+    height: 200px;
   }
+}
 
-  .game-extras {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.game-extras {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

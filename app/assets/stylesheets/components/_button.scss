@@ -1,56 +1,55 @@
+.user-btn {
+  background: #ffffff25;
+  border: 6px solid $dark-blue;
+  border-radius: 60px;
+  padding: 20px 130px;
+  margin: auto;
+  color: $light-blue;
+  font-size: 32px;
+  font-weight: bold;
+}
 
-   .user-btn {
-    background: #ffffff25;
-    border: 6px solid $dark-blue;
-    border-radius: 60px;
-    padding: 20px 130px;
-    margin: auto;
-    color: $light-blue;
-    font-size: 32px;
-    font-weight: bold;
-  }
+.app-party-btn{
+  background: $dark-blue;
+  border-radius: 60px;
+  padding: 20px 60px;
+  margin: auto;
+  color: $yellow;
+  font-size: 26px;
+  font-weight: bold;
+}
 
-  .app-party-btn{
-    background: $dark-blue;
-    border-radius: 60px;
-    padding: 20px 60px;
-    margin: auto;
-    color: $yellow;
-    font-size: 26px;
-    font-weight: bold;
-  }
+.login-btn {
+  background: #ffffff25;
+  border: 6px solid $dark-blue;
+  border-radius: 60px;
+  padding: 20px 130px;
+  margin: auto;
+  color: $yellow;
+  font-size: 32px;
+  font-weight: bold;
+}
 
-  .login-btn {
-    background: #ffffff25;
-    border: 6px solid $dark-blue;
-    border-radius: 60px;
-    padding: 20px 130px;
-    margin: auto;
-    color: $yellow;
-    font-size: 32px;
-    font-weight: bold;
-  }
-
-   .edit-btn {
-    background: #ffffff25;
-    border: 6px solid $yellow;
-    border-radius: 60px;
-    padding: 20px 130px;
-    margin: auto;
-    color: $yellow;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  .app-btn {
-    background: $dark-blue;
-    border-radius: 60px;
-    text-align: center;
-    padding: 20px 130px;
-    margin: auto auto auto 25px;
-    color: $yellow;
-    font-size: 32px;
-    font-weight: bold;
-  }
+  .edit-btn {
+  background: #ffffff25;
+  border: 6px solid $yellow;
+  border-radius: 60px;
+  padding: 20px 130px;
+  margin: auto;
+  color: $yellow;
+  font-size: 32px;
+  font-weight: bold;
+}
+.app-btn {
+  background: $dark-blue;
+  border-radius: 60px;
+  text-align: center;
+  padding: 20px 130px;
+  margin: auto auto auto 25px;
+  color: $yellow;
+  font-size: 32px;
+  font-weight: bold;
+}
 
 .form-actions{
   text-align: center;
