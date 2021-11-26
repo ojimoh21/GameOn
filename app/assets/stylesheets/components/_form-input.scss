@@ -19,6 +19,16 @@ label, .form-control-file {
   margin-left: 40px;
 }
 
+.label-ml-remove {
+  margin-left: 0;
+}
+
+.user_remember_me {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
 .form-control:focus {
   background: none;
   outline: none;

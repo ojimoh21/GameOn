@@ -1,9 +1,9 @@
 <div class="container mt-5 text-center">
   <%= image_tag asset_path("login_logo.png"), style: "height: 250px;width:auto;", class:"login-image" %>
-  <h2 class="text-center m-5">Welcome</h2>
+  <h4 class="m-2 mt-5">Game host meets legerndary mode</h4>
   <% if user_signed_in? %>
-    <a href="/party_sessions" class="btn user-btn mt-5">Start</a>
+    <a href="/party_sessions" class="btn user-btn mt-5">START</a>
   <% else %>
-    <a href="/users/sign_in" class="btn user-btn mt-5">Start</a>
+    <a href="/users/sign_in" class="btn user-btn mt-5">START</a>
   <% end %>
 </div>

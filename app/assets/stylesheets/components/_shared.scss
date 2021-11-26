@@ -9,8 +9,12 @@
   color: black;
 }
 
+input:not(:empty) {
+  color: red;
+}
+
 body {
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 

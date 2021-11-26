@@ -1,22 +1,18 @@
-.user-btn {
-  background: #ffffff25;
-  border: 6px solid $dark-blue;
+.user-btn, .login-btn, .app-party-btn {
+  background: #308c7ba8;
+  border: 6px solid #ffffff;
   border-radius: 60px;
-  padding: 20px 130px;
+  padding: 9px 98px;
   margin: auto;
-  color: $light-blue;
-  font-size: 32px;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
+  // font-family: $pixel-font;
 }
 
 .app-party-btn{
-  background: $dark-blue;
-  border-radius: 60px;
-  padding: 20px 60px;
-  margin: auto;
-  color: $yellow;
-  font-size: 26px;
-  font-weight: bold;
+  display: block;
+  margin-bottom: 2rem;
 }
 
 .app-party-btn-small{
@@ -29,16 +25,16 @@
   font-weight: bold;
 }
 
-.login-btn {
-  background: #ffffff25;
-  border: 6px solid $dark-blue;
-  border-radius: 60px;
-  padding: 20px 130px;
-  margin: auto;
-  color: $yellow;
-  font-size: 32px;
-  font-weight: bold;
-}
+// .login-btn {
+//   background: #ffffff25;
+//   border: 6px solid $dark-blue;
+//   border-radius: 60px;
+//   padding: 20px 130px;
+//   margin: auto;
+//   color: $yellow;
+//   font-size: 32px;
+//   font-weight: bold;
+// }
 
 .edit-btn {
   background: #ffffff25;
@@ -60,6 +56,10 @@
   color: $yellow;
   font-size: 32px;
   font-weight: bold;
+}
+
+.user-btn {
+  background-color: #819b96a8;
 }
 
 .form-actions{

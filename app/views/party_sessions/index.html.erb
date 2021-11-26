@@ -2,7 +2,8 @@
   <h1 class="sessions mt-3 text-center">Dashboard</h1>
   <br>
 
-  <% if @upcoming_party_sessions.empty? %>
+  <% unless @upcoming_party_sessions.empty? %>
+
     <h2 class="sessions mb-3">Ongoing Game Night</h2>
     <% @ongoing_party_sessions.each do |party| %>
       <div class="party-card mb-3">
@@ -10,7 +11,11 @@
           <%= link_to party.title, party_session_path(party), class: "p-header" %>
           <p><%= party.start_date.strftime("%a %e %b %Y at %H:%M") %> - <br><%= party.end_date.strftime("%a %e %b %Y at %H:%M") %></p>
         </div>
-        <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
+        <% if party.user.photo.attached? %>
+          <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
+        <% else %>
+          <i class="fas fa-chess-knight navbar-empty-avatar-large"></i>
+        <% end %>
       </div>
       <% end %>
   <% end %>

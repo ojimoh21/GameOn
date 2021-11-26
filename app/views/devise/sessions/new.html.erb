@@ -1,7 +1,5 @@
 <div class="container mt-5">
-  <h2 class=" text-center">Log in</h2>
-
-  <%= image_tag asset_path("login_logo.png"), style: "height: 250px;width:auto;", class:"login-image" %>
+  <%= image_tag asset_path("login_logo.png"), style: "height: 150px;width:auto;", class:"login-image mb-4" %>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
@@ -11,13 +9,15 @@
       <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, as: :boolean, label_html: {class: "label-ml-remove"}  if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "login-btn mb-3" %>
+      <%= f.button :submit, "LOGIN", class: "login-btn mb-3" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  <div class="login-page-links">
+    <%= render "devise/shared/links"%>
+  </div>
+  <br>
 </div>
