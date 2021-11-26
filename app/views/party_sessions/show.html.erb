@@ -1,6 +1,25 @@
-<h1>Party show</h1>
-<ul>
-  <%= link_to "Delete", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete" %>
-  <li><h3><%= @party_session.title %></h3></li>
-  <li><%= @party_session.description %></li>
-</ul>
+<div class="container">
+  <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
+  <% if current_user == @party_session.user %>
+    <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
+  <% end %>
+  <%= link_to "Back", :back %>
+    <div class="m-4 party-sessions-card">
+      <h3>Description</h3>
+      <p><%= @party_session.description %></p>
+      <h3>Address</h3>
+      <p><%= @party_session.address%></p>
+      <div style="width: 80%; height: 200px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <h3>Date and Time</h3>
+      <p>This party will commence on <%= @party_session.start_date.strftime("%a %e %b %Y at %H:%M")%></p>
+    </div>
+    <% if current_user == @party_session.user %>
+      <%= link_to "Cancel Event", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete danger" %>
+    <% else %>
+      <%= link_to "Can't go ? Delete", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete danger" %>
+    <% end %>
+</div>
