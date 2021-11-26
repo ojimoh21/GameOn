@@ -1,8 +1,21 @@
 <%= simple_form_for [@party_session, @guest] do |form| %>
   <%= form.collection_check_boxes :user_id, @users, :id, :email do |b| %>
-  <p><%= b.object.first_name + " " + b.object.last_name %><%= b.check_box %></p>
-  <p><%= b.object.email %></p>
+  <div class="party-card mb-3">
+  <% if b.object.photo.attached? %>
+    <%= cl_image_tag b.object.photo.key, class: "avatar-large" %>
+  <% else %>
+    <%= image_tag asset_path("chess-piece.jpeg"), class: "avatar-large" %>
+  <% end %>
+  <div>
+  <%= b.object.first_name + " " + b.object.last_name %>
+  <div style="font-size: 12px"><%= b.object.email %></div>
+  </div>
+  <%= b.check_box %>
+  </div>
   <%# b.label(class: "my-#{ b.object.class.name.parameterize }", 'data-value': b.value) { b.check_box + b.text } %>
   <% end %>
-  <%= form.submit "Send Invites", class: "btn btn-primary" %>
+  <div class="d-flex justify-content-center mb-3">
+  <%= form.submit "Send Invites", class: "btn btn-success mr-3" %>
+  <%= link_to "Back", party_session_guests_path(@party_session), class: "btn btn-secondary" %>
+  </div>
 <% end %>
