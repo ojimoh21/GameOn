@@ -1,7 +1,9 @@
+<%= javascript_pack_tag 'fetch', 'data-turbolinks-track': 'reload', defer: true %>
+
 <div class="container mt-3">
   <h1 class="text-center">My Games</h1>
   <%= link_to new_game_path do %>
-    <i class="fas fa-puzzle-piece fa-2x ml-2"></i> <span>Add new Game</span>
+    <i class="fas fa-puzzle-piece ml-2"></i> <span>Add new Game</span>
   <% end %>
 
   <div class="search-box mt-3">

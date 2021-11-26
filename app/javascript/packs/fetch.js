@@ -1,17 +1,27 @@
-// const games = document.querySelector("#games");
-// fetch("https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OShMmavExz")
-// fetch(`https://api.boardgameatlas.com/api/search?name=${}&client_id=OShMmavExz`)
-  // .then(response => response.json())
-  // .then((data) => {
-  //   console.log(data)
-  //   data.games.forEach((game) => {
-  //     const gameTag= `<li class="list-inline-item">
-  //         <img src="${game['thumb_url']}" alt="">
-  //         <p>${game['name']}</p>
-  //          ${game['description']}
-  //       </li>`;
-  //    games.insertAdjacentHTML("beforeend", gameTag);
-  //  });
-  // });
+import 'select2'
+import 'select2/dist/css/select2.css'
 
-  // console.log("I'm here!");
+$(document).ready(function () {
+  $('.js-select-2').select2({
+    placeholder: "Search Games",
+    ajax: {
+      url: `https://api.boardgameatlas.com/api/search`,
+      data: function (params) {
+        var query = {
+          name: params.term,
+          client_id: 'OShMmavExz'
+        }
+
+        // Query parameters will be ?search=[term]&type=public
+        return query;
+      },
+      dataType: 'json',
+      processResults: function (data) {
+        const info = data.games.map(game => ({ "id": game.id, "text": game.name }))
+        return {
+          results: info
+        };
+      }
+    }
+  });
+});
