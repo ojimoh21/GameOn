@@ -34,7 +34,9 @@ class PartySessionsController < ApplicationController
     @ongoing_party_sessions = PartySession.where(query_ongoing, date_now: "#{DateTime.now()}")
   end
 
-  def show; end
+  def show
+    @markers = { lat: @party_session.latitude, lng: @party_session.longitude }
+  end
 
   def edit; end
 

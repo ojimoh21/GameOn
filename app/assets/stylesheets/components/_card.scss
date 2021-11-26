@@ -54,8 +54,16 @@ i {
   }
 }
 
-.game-extras {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .game-extras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .party-sessions-card {
+    width: 90%;
+    background: $dark-blue;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
