@@ -5,6 +5,7 @@
 }
 .avatar-large {
   width: 56px;
+  height: 56px;
   border-radius: 50%;
 }
 .avatar-bordered {
@@ -19,7 +20,7 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
-.navbar-empty-avatar {
+.navbar-empty-avatar, .navbar-empty-avatar-large {
     background-color: red;
     padding: 7px;
     padding-top: 10px;
@@ -28,4 +29,18 @@
     border-radius: 50%;
     width: 40px;
     text-align-last: end;
+}
+
+.navbar-empty-avatar-large {
+  height: 56px;
+  width: 56px;
+  padding: 12px;
+  font-size: 35px;
+  padding-top: 8px;
+}
+
+.avatar-larger {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }

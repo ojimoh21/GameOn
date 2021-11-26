@@ -1,24 +1,31 @@
-// @media (min-width: 100px) and (max-width: 575px) {
-    .user-btn {
+
+   .user-btn {
     background: #ffffff25;
-    border: 6px solid white;
+    border: 6px solid $dark-blue;
     border-radius: 60px;
     padding: 20px 130px;
     margin: auto;
-    color: white;
+    color: $light-blue;
+    font-size: 32px;
+    font-weight: bold;
   }
   .app-btn {
-    opacity: 0.24;
-    background: #308C7B;
+    background: $dark-blue;
     border-radius: 60px;
     text-align: center;
-    padding: 20px 130px;
+    padding: 20px 100px;
     margin: auto;
-    color: white;
+    margin-left: 15px;
+    color: $yellow;
+    font-size: 32px;
+    font-weight: bold;
   }
 
   .form-actions{
     text-align: center;
   }
 
-// }
+  .create {
+    border: 3px solid $dark-blue;
+    color: $yellow;
+  }
