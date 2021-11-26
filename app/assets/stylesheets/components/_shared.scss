@@ -44,6 +44,7 @@ a {
 
 a:hover {
   color: black;
+  text-decoration: none;
 }
 
 .invalid-feedback {
@@ -53,4 +54,8 @@ a:hover {
 
 .form-control.is-invalid {
     border-color: $dark-blue;
+}
+
+.party-title {
+  color: $dark-blue;
 }
