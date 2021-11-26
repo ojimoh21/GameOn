@@ -1,28 +1,28 @@
 
-  .games-list {
-    overflow: auto;
-    white-space: nowrap;
-  }
+.games-list {
+  overflow: auto;
+  white-space: nowrap;
+}
 
-  .game {
-    display: inline-block;
-  }
+.game {
+  display: inline-block;
+}
 
-  .games-img {
-    border-top: 5px solid #8C3730;
-    border-bottom: 5px solid #8C3730;
-    border-radius: 10px;
-    margin: 4px;
-    height: 175px;
-    width: 97px;
-  }
+.games-img {
+  border-top: 5px solid #F2605C;
+  border-bottom: 5px solid #F2605C;
+  border-radius: 10px;
+  margin: 4px;
+  height: 175px;
+  width: 97px;
+}
 
 
-  .searchable-game-img {
-    border-top: 5px solid #8C3730;
-    border-bottom: 5px solid #8C3730;
-    border-radius: 10px;
-    margin-left: 24px;
-    height: 250px;
-    width: 175px;
-  }
+.searchable-game-img {
+  border-top: 5px solid #F2605C;
+  border-bottom: 5px solid #F2605C;
+  border-radius: 10px;
+  margin-left: 24px;
+  height: 250px;
+  width: 175px;
+}

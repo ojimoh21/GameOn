@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :games
   resources :party_sessions do
-      resources :guests
+    resources :guests
   end
+  resources :guests, only: :destroy
 end
