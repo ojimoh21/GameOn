@@ -12,7 +12,7 @@
       <p><%= @party_session.description %></p>
       <h3>Address</h3>
       <p><%= @party_session.address%></p>
-      <div id="map" style="width: 90%; height: 175px; margin:auto;"
+      <div class="mb-3" style="width: 90%; height: 175px; margin:auto;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
