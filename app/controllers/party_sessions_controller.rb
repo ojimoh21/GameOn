@@ -9,6 +9,12 @@ class PartySessionsController < ApplicationController
     @party_session = PartySession.new(party_session_params)
     @party_session.user = current_user
     if @party_session.save
+      guest = Guest.new
+      guest.user = current_user
+      guest.confirm_availability = true
+      guest.confirm_arrival = true
+      guest.party_session = @party_session
+      guest.save
       redirect_to party_session_path(@party_session)
     else
       render :new
