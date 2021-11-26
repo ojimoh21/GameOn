@@ -8,7 +8,7 @@
       <div class="party-card mb-3">
         <div>
           <%= link_to party.title, party_session_path(party), class: "p-header" %>
-          <p><%= party.start_date.strftime("%a %b %e %T %Y") %> - <br><%= party.end_date.strftime("%a %b %e %T %Y") %></p>
+          <p><%= party.start_date.strftime("%a %e %b %Y at %H:%M") %> - <br><%= party.end_date.strftime("%a %e %b %Y at %H:%M") %></p>
         </div>
         <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
       </div>
@@ -21,7 +21,7 @@
     <div class="party-card mb-3">
       <div>
         <p class="p-header"><%= party.title %></p>
-        <p><%= party.start_date.strftime("%a %b %e %T %Y") %> - <br><%= party.end_date.strftime("%a %b %e %T %Y") %></p>
+        <p><%= party.start_date.strftime("%a %e %b %Y at %H:%M") %> - <br><%= party.end_date.strftime("%a %e %b %Y") %></p>
       </div>
       <% if party.user.photo.attached? %>
           <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
@@ -37,7 +37,7 @@
     <div class="dashboard-card-past mb-3">
       <div>
         <%= link_to party.title, party_session_path(party), class: "p-header"%>
-        <p><%= party.start_date.strftime("%a %b %e %T %Y") %> - <br><%= party.end_date.strftime("%a %b %e %T %Y") %></p>
+        <p><%= party.start_date.strftime("%a %e %b %Y at %H:%M") %> - <br><%= party.end_date.strftime("%a %e %b %Y") %></p>
       </div>
       <% if party.user.photo.attached? %>
           <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>

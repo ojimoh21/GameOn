@@ -40,6 +40,7 @@ a {
 
 a:hover {
   color: black;
+  text-decoration: none;
 }
 
 .invalid-feedback {
@@ -49,4 +50,16 @@ a:hover {
 
 .form-control.is-invalid {
     border-color: $dark-blue;
+}
+
+// h2, h3 {
+//   color: $light-blue;
+// }
+
+h1 {
+  color: $light-red !important;
+}
+
+.party-title {
+  color: $dark-blue;
 }
