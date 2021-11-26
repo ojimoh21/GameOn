@@ -35,7 +35,8 @@ class PartySessionsController < ApplicationController
   end
 
   def show
-    @markers = { lat: @party_session.latitude, lng: @party_session.longitude }
+     @markers = { lat: @party_session.latitude,lng: @party_session.longitude
+      }
   end
 
   def edit; end
