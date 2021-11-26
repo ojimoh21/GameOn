@@ -7,6 +7,7 @@ const toggleDateInputs = function () {
   if (startDateInput) {
     if (startDateInput.value){
       flatpickr(endDateInput, {
+        disableMobile: "true",
         minDate: startDateInput.value,
         dateFormat: "Y-m-d H:i",
         enableTime: true,
@@ -16,6 +17,7 @@ const toggleDateInputs = function () {
       endDateInput.disabled = true
     }
     flatpickr(startDateInput, {
+      disableMobile: "true",
       minDate: "today",
       dateFormat:"Y-m-d H:i",
       enableTime: true,
@@ -27,6 +29,7 @@ const toggleDateInputs = function () {
         endDateInput.disabled = false
       }
       flatpickr(endDateInput, {
+        disableMobile: "true",
         minDate: e.target.value,
         dateFormat:"Y-m-d H:i",
         enableTime: true,
@@ -36,6 +39,7 @@ const toggleDateInputs = function () {
 
   endDateInput.addEventListener("change", (e) => {
     flatpickr(startDateInput, {
+      disableMobile: "true",
       minDate: "today",
       maxDate: e.target.value,
       dateFormat: "Y-m-d H:i",
