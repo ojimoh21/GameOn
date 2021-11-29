@@ -5,6 +5,7 @@
     <% if current_user == @party_session.user %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
       <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+      <%= link_to "Your Games tonight", party_session_party_games_path(@party_session)%>
     <% end %>
   <% end %>
   </div>
