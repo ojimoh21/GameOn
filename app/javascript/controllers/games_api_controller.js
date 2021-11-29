@@ -5,7 +5,7 @@ export default class extends Controller {
 
   static targets = ["query"]
 
-  initialize() {
+  connect() {
     console.log("Controller is here");
     const game = document.querySelector(".hot-games-carousel");
     console.log("this is the hot games list")
