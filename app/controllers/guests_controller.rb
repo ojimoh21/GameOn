@@ -50,8 +50,14 @@ class GuestsController < ApplicationController
     end
   end
 
-  def confirm_arrival
-    raise
+  def toggle_arrival
+    @guest = Guest.find_by(party_session_id: params[:party_session_id], user_id: current_user.id)
+    @guest.confirm_arrival = !@guest.confirm_arrival
+    if @guest.save
+      redirect_to party_session_path(@guest.party_session)
+    else
+      render "party_sessions/show"
+    end
   end
 
   private

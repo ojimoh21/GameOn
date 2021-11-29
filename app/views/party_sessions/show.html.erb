@@ -1,12 +1,12 @@
 <div class="container">
   <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
   <div class="d-flex justify-content-between">
-    <% if current_user == @party_session.user %>
-      <% if @party_session.end_date > DateTime.now %>
-        <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
-      <% end %>
-        <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+  <% if current_user == @party_session.user %>
+    <% if @party_session.end_date > DateTime.now %>
+      <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
     <% end %>
+      <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+  <% end %>
   </div>
   </div>
     <div class="m-4 party-sessions-card">
@@ -14,7 +14,7 @@
       <p><%= @party_session.description %></p>
       <h3>Address</h3>
       <p><%= @party_session.address%></p>
-      <div id="map" style="width: 90%; height: 175px; margin:auto;"
+      <div id="map" style="width: 100%; height: 175px; margin:auto;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -26,7 +26,14 @@
         <% else %>
           <% if @guest.confirm_availability %>
             <span class="bg-success p-2 rounded">You accepted the invite!!</span>
-            <%= link_to "Cancel", unconfirm_availability_path(@party_session), method: :patch, data: {confirm: "Are you sure you no longer want to go?"}, class: "btn btn-flat btn-delete danger" %>
+            <%= link_to "I changed my mind", unconfirm_availability_path(@party_session), method: :patch, data: {confirm: "Are you sure you no longer want to go?"}, class: "btn btn-flat btn-delete danger" %>
+            <div>
+              <%if @guest.confirm_arrival %>
+                <%= link_to "I'm not here!", unconfirm_arrival_path(@party_session), method: :patch, class: "btn btn-flat btn-delete danger" %>
+              <% else %>
+                <%= link_to "I'm here!", confirm_arrival_path(@party_session), method: :patch, class: "text-success" %>
+              <% end %>
+            </div>
           <% else @guest.confirm_availability %>
             <div class="d-flex justify-content-between">
               <%= link_to confirm_availability_path(@party_session), method: :patch, class: "text-success party-action-button" do%>

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   patch "confirm_availability/:party_session_id", to: "guests#toggle_availability", as: :confirm_availability
   patch "unconfirm_availability/:party_session_id", to: "guests#toggle_availability", as: :unconfirm_availability
-  patch "confirm_arrival/:party_session_id", to: "guests#confirm_arrival", as: :confirm_arrival
+  patch "confirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :confirm_arrival
+  patch "unconfirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :unconfirm_arrival
   resources :games
   resources :party_sessions do
     resources :guests

@@ -44,8 +44,9 @@ class PartySessionsController < ApplicationController
   end
 
   def show
-    @markers = { lat: @party_session.latitude, lng: @party_session.longitude }
     @guest = current_user.guests.find_by(party_session_id: @party_session.id)
+    party = @party_session.geocode
+    @markers = [{ lat: party[0], lng: party[1] }]
   end
 
   def edit; end
