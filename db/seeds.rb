@@ -99,6 +99,10 @@ party.end_date = DateTime.now + 2
 party.address = addresses[4]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 puts "Creating Previous Party for Alyona "
 party = PartySession.new
@@ -109,6 +113,10 @@ party.end_date = DateTime.now - 5
 party.address = addresses[3]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 puts "Creating Upcoming Party for Alyona "
 party = PartySession.new
@@ -119,6 +127,10 @@ party.end_date = DateTime.now + 6
 party.address = addresses[5]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 # demo character
 user = User.new
@@ -154,6 +166,10 @@ party.end_date = DateTime.now - 2
 party.address = addresses[0]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 puts "Creating Ongoing Party for Jae-dong "
 party = PartySession.new
@@ -164,6 +180,10 @@ party.end_date = DateTime.now + 1
 party.address = addresses[1]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 puts "Creating Upcoming Party for Jae-dong "
 party = PartySession.new
@@ -174,6 +194,10 @@ party.end_date = DateTime.now + 5
 party.address = addresses[2]
 party.user = user
 party.save!
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.save!
 
 puts "Users created"
 puts "Seeding done"

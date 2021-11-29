@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :find_party, only: %i[new create]
 
   def index
-    @guests = Guest.where(party_session_id: params[:party_session_id])
+    @guests = Guest.where(party_session_id: params[:party_session_id]).where.not(user_id: current_user.id)
   end
 
   def new
@@ -33,7 +33,25 @@ class GuestsController < ApplicationController
 
   def destroy
     @guest.destroy
-    redirect_to party_session_guests_path(@guest.party_session_id)
+    if @guest.party_session.user_id == current_user.id
+      redirect_to party_session_guests_path(@guest.party_session)
+    else
+      redirect_to party_sessions_path
+    end
+  end
+
+  def toggle_availability
+    @guest = Guest.find_by(party_session_id: params[:party_session_id], user_id: current_user.id)
+    @guest.confirm_availability = !@guest.confirm_availability
+    if @guest.save
+      redirect_to party_session_path(@guest.party_session)
+    else
+      render "party_sessions/show"
+    end
+  end
+
+  def confirm_arrival
+    raise
   end
 
   private
