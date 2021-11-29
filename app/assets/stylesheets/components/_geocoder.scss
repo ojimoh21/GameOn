@@ -54,3 +54,8 @@
 .form-control:disabled, .form-control[readonly] {
     background-color: transparent;
 }
+
+
+#map .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  display: none;
+}
