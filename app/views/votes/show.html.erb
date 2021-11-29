@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 style="text-align: center; margin-top: 0.5em">Vote for the games you want to play!</h2>
+  <br>
+  <% if @party_game.vote %>
+  <% raise %>
+  <%= render "votes_form" %>
+</div>

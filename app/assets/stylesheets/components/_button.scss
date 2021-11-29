@@ -7,7 +7,6 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  // font-family: $pixel-font;
 }
 
 .app-party-btn{
@@ -24,17 +23,6 @@
   font-size: 16px;
   font-weight: bold;
 }
-
-// .login-btn {
-//   background: #ffffff25;
-//   border: 6px solid $dark-blue;
-//   border-radius: 60px;
-//   padding: 20px 130px;
-//   margin: auto;
-//   color: $yellow;
-//   font-size: 32px;
-//   font-weight: bold;
-// }
 
 .edit-btn {
   background: #ffffff25;
@@ -69,4 +57,11 @@
 .create {
   border: 3px solid $dark-blue;
   color: $yellow;
+}
+
+.party-action-button {
+  font-size: 40px;
+  // border-radius: 50%;
+  // border: 2px solid white;
+  // padding: .25rem;
 }
