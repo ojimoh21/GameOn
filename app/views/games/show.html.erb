@@ -4,7 +4,7 @@
   <% if @game.photo.attached? %>
     <%= cl_image_tag @game.photo.key, class: "game-card-img" %>
   <% else %>
-    <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+    <%= image_tag "chess-piece.jpeg", class: "game-card-img" %>
   <% end %>
     <div class="game-info">
       <h2><%= @game.title %></h2>

@@ -4,7 +4,7 @@
   <% if b.object.photo.attached? %>
     <%= cl_image_tag b.object.photo.key, class: "avatar-large" %>
   <% else %>
-    <%= image_tag asset_path("chess-piece.jpeg"), class: "avatar-large" %>
+    <i class="fas fa-chess-knight navbar-empty-avatar-large"></i>
   <% end %>
   <div>
   <%= b.object.first_name + " " + b.object.last_name %>

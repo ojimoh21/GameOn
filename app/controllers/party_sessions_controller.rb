@@ -22,19 +22,29 @@ class PartySessionsController < ApplicationController
   end
 
   def index
-    # use this when guest table is done and add logic for when user is a guest
-    # query_previous = "user_id = :user_id AND end_date < :date_now"
-    # @upcoming_party_sessions = PartySession.where(query_upcoming, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
-
-    query_previous = "end_date < :date_now"
-    query_upcoming = "start_date > :date_now"
-    query_ongoing = "start_date < :date_now AND end_date > :date_now"
-    @upcoming_party_sessions = PartySession.where(query_upcoming, date_now: "#{DateTime.now()}")
-    @previous_party_sessions = PartySession.where(query_previous, date_now: "#{DateTime.now()}")
-    @ongoing_party_sessions = PartySession.where(query_ongoing, date_now: "#{DateTime.now()}")
+    # query_previous = "guests.user_id = guests.user_id AND end_date < :date_now"
+    # query_upcoming = "guests.user_id = guests.user_id AND start_date > :date_now"
+    # query_ongoing = "guests.user_id = guests.user_id AND start_date < :date_now AND end_date > :date_now"
+    # @upcoming_party_sessions = PartySession.joins(:guests).where(query_upcoming, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
+    # @previous_party_sessions = PartySession.joins(:guests).where(query_previous, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
+    # @ongoing_party_sessions = PartySession.joins(:guests).where(query_ongoing, user_id: "#{current_user.id}", date_now: "#{DateTime.now()}")
+    @ongoing_party_sessions = []
+    @upcoming_party_sessions = []
+    @previous_party_sessions = []
+    date_now = DateTime.now
+    current_user.guests.each do |guest|
+      if guest.party_session.end_date < date_now
+        @previous_party_sessions << guest.party_session
+      elsif guest.party_session.start_date > date_now
+        @upcoming_party_sessions << guest.party_session
+      else
+        @ongoing_party_sessions << guest.party_session
+      end
+    end
   end
 
   def show
+    @guest = current_user.guests.find_by(party_session_id: @party_session.id)
     party = @party_session.geocode
     @markers = [{ lat: party[0], lng: party[1] }]
   end
