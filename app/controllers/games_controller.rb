@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class GamesController < ApplicationController
   before_action :find_game, only: %i[show edit update destroy]
 
@@ -16,6 +18,8 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    game_image = URI.open(params[:game][:image_url])
+    @game.photo.attach(io: game_image, filename: :image_url, content_type: 'image/jpg')
     @game.user = current_user
     if @game.save
       redirect_to game_path(@game)
