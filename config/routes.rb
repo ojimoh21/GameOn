@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :games
   resources :party_sessions do
     resources :guests
+    resources :party_games do
+      resources :votes, only: :create
+    end
+    resources :votes
   end
   resources :guests, only: :destroy
+  resources :party_games, only: :destroy
 end

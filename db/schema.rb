@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_122419) do
+ActiveRecord::Schema.define(version: 2021_11_29_114531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 2021_11_25_122419) do
     t.index ["user_id"], name: "index_guests_on_user_id"
   end
 
+  create_table "party_games", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "party_session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_party_games_on_game_id"
+    t.index ["party_session_id"], name: "index_party_games_on_party_session_id"
+  end
+
   create_table "party_sessions", force: :cascade do |t|
     t.string "title"
     t.datetime "start_date"
@@ -86,9 +95,23 @@ ActiveRecord::Schema.define(version: 2021_11_25_122419) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer "vote"
+    t.bigint "guest_id", null: false
+    t.bigint "party_game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guest_id"], name: "index_votes_on_guest_id"
+    t.index ["party_game_id"], name: "index_votes_on_party_game_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "games", "users"
   add_foreign_key "guests", "party_sessions"
   add_foreign_key "guests", "users"
+  add_foreign_key "party_games", "games"
+  add_foreign_key "party_games", "party_sessions"
   add_foreign_key "party_sessions", "users"
+  add_foreign_key "votes", "guests"
+  add_foreign_key "votes", "party_games"
 end
