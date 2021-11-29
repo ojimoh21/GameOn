@@ -31,6 +31,8 @@ const fetchApi = function() {
       const game_id = data.params.data['id'];
       console.log(game_id);
 
+      // const collBtn = document.querySelector(".collapse-btn");
+
       fetch(`https://api.boardgameatlas.com/api/search?ids=${game_id}&client_id=OShMmavExz`)
         .then(response => response.json())
         .then((data) => {
