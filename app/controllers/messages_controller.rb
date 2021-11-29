@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
+      ChatroomChannel.broadcast_to(@chatroom, render_to_string(partial: "message", locals: { message: @message }))
       redirect_to party_session_chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"
