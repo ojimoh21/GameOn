@@ -9,6 +9,10 @@ class PartySessionsController < ApplicationController
     @party_session = PartySession.new(party_session_params)
     @party_session.user = current_user
     if @party_session.save
+      chatroom = Chatroom.new
+      chatroom.name = @party_session.title
+      chatroom.party_session = @party_session
+      chatroom.save
       guest = Guest.new
       guest.user = current_user
       guest.confirm_availability = true

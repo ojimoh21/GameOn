@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :games
   resources :party_sessions do
     resources :guests
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
   end
   resources :guests, only: :destroy
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

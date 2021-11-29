@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_122419) do
+ActiveRecord::Schema.define(version: 2021_11_29_141833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2021_11_25_122419) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.bigint "party_session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["party_session_id"], name: "index_chatrooms_on_party_session_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -56,6 +64,16 @@ ActiveRecord::Schema.define(version: 2021_11_25_122419) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["party_session_id"], name: "index_guests_on_party_session_id"
     t.index ["user_id"], name: "index_guests_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "party_sessions", force: :cascade do |t|
@@ -87,8 +105,11 @@ ActiveRecord::Schema.define(version: 2021_11_25_122419) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "party_sessions"
   add_foreign_key "games", "users"
   add_foreign_key "guests", "party_sessions"
   add_foreign_key "guests", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "party_sessions", "users"
 end
