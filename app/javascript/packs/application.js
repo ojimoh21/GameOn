@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import { toggleDateInputs } from '../components/party_date_picker';
+import { fetchApi } from '../packs/fetch';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -32,6 +33,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  fetchApi();
   toggleDateInputs();
 });
 
