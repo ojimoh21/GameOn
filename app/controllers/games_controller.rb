@@ -16,6 +16,8 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+    user_game_file = URI.open(:image_url)
+    user_game.photo.attach(io: user_game_file, filename: :image_url, content_type: 'image/jpg')
     @game.user = current_user
     if @game.save
       redirect_to game_path(@game)
@@ -48,6 +50,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:title, :description, :suggested_numplayers, :duration, :photo)
+    params.require(:game).permit(:title, :description, :suggested_numplayers, :duration, :photo, :image_url)
   end
 end

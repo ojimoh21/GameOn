@@ -4,5 +4,6 @@
     <%= f.input :duration, as: :integer %>
     <%= f.input :suggested_numplayers, as: :integer %>
     <%= f.input :photo, as: :file %>
+    <%= f.input :image_url, input_html: {value: ''} %>
     <%= f.submit "Save", class: "app-btn" %>
   <%end%>
