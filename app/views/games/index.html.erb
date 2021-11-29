@@ -1,6 +1,4 @@
-<%= javascript_pack_tag 'fetch', 'data-turbolinks-track': 'reload', defer: true %>
-
-<div class="container mt-3">
+<div class="container mt-3" data-controller="games-api">
   <h1 class="text-center">My Games</h1>
   <div class="title-button">
     <%= link_to new_game_path do %>
@@ -9,9 +7,9 @@
   </div>
 
   <%# <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" > %>
-  <div class="carousel mt-1" data-controller="games-api">
+  <div class="carousel mt-1">
     <h3>My Games</h3>
-    <div class="games-list" data-games-api-target="query">
+    <div class="games-list">
       <% @games.each do |game| %>
         <div class="game">
           <% if game.photo.attached? %>
@@ -21,12 +19,19 @@
           <% end %>
         </div>
       <% end %>
+      <% @games.sort_by { |game| game.created_at } %>
     </div>
   </div>
 
-  <div class="carousel mt-5" data-controller="games-api">
+  <div class="carousel mt-5">
+    <h3>Hot Games</h3>
+    <div class="games-list hot-games-carousel" data-games-api-target="query">
+    </div>
+  </div>
+
+  <div class="carousel mt-5">
     <h3>Suggested Games</h3>
-    <div class="games-list" data-games-api-target="query">
+    <div class="games-list">
       <% @hotgames.each do |game| %>
         <div class="game">
           <% if game.photo.attached? %>

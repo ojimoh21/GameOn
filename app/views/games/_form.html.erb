@@ -2,8 +2,8 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :duration, as: :integer %>
-    <%= f.input :suggested_numplayers, as: :integer %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :image_url, input_html: {value: ''} %>
+    <%= f.input :suggested_numplayers, :label => "Suggested Players", as: :integer %>
+    <%= f.hidden_field :photo, as: :file %>
+    <%= f.input :image_url, :label => "Image URL", input_html: {value: ''} %>
     <%= f.submit "Save", class: "app-btn" %>
   <%end%>

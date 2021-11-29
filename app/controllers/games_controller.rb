@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   before_action :find_game, only: %i[show edit update destroy]
 
   def index
-    @games = Game.where(user_id: current_user.id)
+    @games = Game.where(user_id: current_user.id).order(created_at: :desc)
     # @user = User.where(email: "alyona_bordukova@gmail.com")
     @hotgames = Game.where(user_id: User.find_by(email: "alyona_bordukova@gmail.com").id)
   end
