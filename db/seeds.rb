@@ -21,7 +21,7 @@ addresses = [
   "Hoxton, Hackney, London, Greater London, England, United Kingdom",
   "138 Kingsland Road, Newham, London, E13 9NU, United Kingdom",
   "Circus Street, Oxford, OX4 1JR, United Kingdom",
-  "Liverpool, Merseyside, England, United Kingdom",
+  "Hollywood, Florida, United States",
   "Tottenham Street, Camden, London, W1T 2AW, United Kingdom",
   "Wembley, Greater London, England, United Kingdom"
 ]
