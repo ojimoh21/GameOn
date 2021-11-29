@@ -1,0 +1,22 @@
+<div class="container mt-3">
+  <h2 class="mt-4" style="text-align: center">Games Tonight</h2>
+  <%= link_to "Add your games", new_party_session_party_game_path, class: "btn text-success"%>
+  <% unless @party_games.first.nil? %>
+    <%= link_to "Votes", party_session_votes_path(@party_games.first.party_session_id), class: "btn btn-primary"%>
+  <% end %>
+    <% @party_games.each do |game| %>
+    <div class="party-card mb-3">
+      <div class="d-block">
+        <div><%= game.game.title %></div>
+        <div><%= game.game.description %></div>
+        <div style="font-size: 10px">
+        <%= game.game.suggested_numplayers %>
+      </div>
+      </div>
+      <div><%= link_to "Vote", party_session_party_game_path(game.party_session_id, game.id), class: "btn btn-success" %></div>
+      <div>
+      <%= link_to "Remove", party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"}, class: "btn btn-danger" %>
+      </div>
+  </div>
+    <% end %>
+</div>

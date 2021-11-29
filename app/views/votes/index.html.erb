@@ -1,0 +1,5 @@
+<% @party_session.party_games.each do |game| %>
+  <% total = 0 %>
+  <% game.votes.each { |vote| total += vote.vote } %>
+  <%= total %>
+<% end %>
