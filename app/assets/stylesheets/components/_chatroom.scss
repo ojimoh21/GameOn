@@ -1,11 +1,14 @@
 .chatroom {
+  width: 90%;
+  border-radius: 10%;
   background: white;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 200px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  overflow: scroll;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -15,7 +18,6 @@
 
   .messages {
     height: 100%;
-    overflow: scroll;
     padding: 1rem;
   }
 
@@ -26,5 +28,9 @@
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  #message-content {
+    color: $yellow;
   }
 }

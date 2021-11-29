@@ -1,15 +1,15 @@
-<div class="container chatroom">
-  <h1 class="text-center mt-2"><%= @chatroom.name%></h1>
 
-  <div class="messages"
+<h1 class="text-center mt-2"><%= @chatroom.name%></h1>
+<div class="container chatroom mb-4">
+  <div class="m-4"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
   </div>
+</div>
   <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "message-input" %>
   <%= f.submit class: "app-party-btn", value: "Send"%>
   <% end %>
-</div>
