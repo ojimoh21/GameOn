@@ -4,6 +4,7 @@
   <% if current_user == @party_session.user %>
     <% if @party_session.end_date > DateTime.now %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
+      <%= link_to "Your Party Games", party_session_party_games_path(@party_session)%>
     <% end %>
       <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
   <% end %>
