@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-    guest_ids = params[:guest].permit(:user_id => [])[:user_id].reject!(&:blank?)
+    guest_ids = params[:guest].permit(user_id: [])[:user_id].reject!(&:blank?)
     guest_ids.each do |guest_id|
       user_id = User.find(guest_id)
       @guest = Guest.new
