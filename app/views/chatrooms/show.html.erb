@@ -9,7 +9,9 @@
   <% end %>
   </div>
 </div>
+<% if @chatroom.created_at >= DateTime.now  %>
   <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Message...", class: "message-input" %>
   <%= f.submit class: "app-party-btn", value: "Send"%>
   <% end %>
+<% end %>
