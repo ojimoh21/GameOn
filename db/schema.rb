@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_141833) do
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
+
   create_table "party_games", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.bigint "party_session_id", null: false
@@ -127,13 +128,10 @@ ActiveRecord::Schema.define(version: 2021_11_29_141833) do
   add_foreign_key "games", "users"
   add_foreign_key "guests", "party_sessions"
   add_foreign_key "guests", "users"
-<<<<<<< HEAD
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-=======
   add_foreign_key "party_games", "games"
   add_foreign_key "party_games", "party_sessions"
->>>>>>> master
   add_foreign_key "party_sessions", "users"
   add_foreign_key "votes", "guests"
   add_foreign_key "votes", "party_games"

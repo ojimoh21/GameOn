@@ -15,10 +15,11 @@ Rails.application.routes.draw do
     resources :party_games do
       resources :votes, only: :create
     end
+    resources :votes
   end
   resources :guests, only: :destroy
+  resources :party_games, only: :destroy
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
-  resources :votes
 end
