@@ -1,0 +1,14 @@
+<div class="container mt-3">
+  <div class="game-card">
+    <%= image_tag @game_image, class: "game-card-img" %>
+    <div class="game-info">
+      <h2><%= @hotgame.title %></h2>
+      <p><%= @hotgame.description %></p>
+    </div>
+    <div class="game-extras">
+      <p><i class="far fa-clock"></i><%= @hotgame.duration %> min</p>
+      <p><i class="fas fa-users"></i><%= @hotgame.suggested_numplayers %> players</p>
+    </div>
+  </div>
+  <%= link_to "Back", games_path, class: "btn ml-2 text-primary" %>
+</div>
