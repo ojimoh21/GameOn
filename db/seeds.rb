@@ -121,7 +121,7 @@ guest.save!
 puts "Creating Upcoming Party for Alyona "
 party = PartySession.new
 party.title = "Redemption Arena"
-party.description = "Time to make history, who is the greatest of the all?"
+party.description = "Time to make history, who is the greatest of them all?"
 party.start_date = DateTime.now + 5
 party.end_date = DateTime.now + 6
 party.address = addresses[5]

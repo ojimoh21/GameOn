@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :find_party, only: %i[new create]
 
   def index
-    @guests = Guest.where(party_session_id: params[:party_session_id]).where.not(user_id: current_user.id)
+    @guests = Guest.where(party_session_id: params[:party_session_id])
   end
 
   def new
@@ -43,6 +43,7 @@ class GuestsController < ApplicationController
   def toggle_availability
     @guest = Guest.find_by(party_session_id: params[:party_session_id], user_id: current_user.id)
     @guest.confirm_availability = !@guest.confirm_availability
+    @guest.confirm_arrival = false unless @guest.confirm_availability
     if @guest.save
       redirect_to party_session_path(@guest.party_session)
     else
