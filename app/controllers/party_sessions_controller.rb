@@ -1,5 +1,5 @@
 class PartySessionsController < ApplicationController
-  before_action :set_party_session, only: %i[show edit update destroy]
+  before_action :set_party_session, only: %i[show edit update destroy summary]
 
   def new
     @party_session = PartySession.new
@@ -70,6 +70,8 @@ class PartySessionsController < ApplicationController
       render :show
     end
   end
+
+  def summary; end
 
   private
 

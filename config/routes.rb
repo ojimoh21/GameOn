@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   patch "unconfirm_availability/:party_session_id", to: "guests#toggle_availability", as: :unconfirm_availability
   patch "confirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :confirm_arrival
   patch "unconfirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :unconfirm_arrival
+  get "party_sessions/:id/summary", to: "party_sessions#summary", as: :party_sessions_summary
   resources :games
   resources :party_sessions do
     resources :guests
