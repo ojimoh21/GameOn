@@ -74,7 +74,8 @@ class PartySessionsController < ApplicationController
   private
 
   def party_session_params
-    params.require(:party_session).permit(:title, :description, :start_date, :end_date, :start_time, :end_time, :address)
+    params.require(:party_session).permit(:title, :description, :start_date, :end_date, :start_time, :end_time,
+                                          :address)
   end
 
   def set_party_session
