@@ -1,7 +1,11 @@
 <div class="container mt-3">
   <h2 class="mt-4" style="text-align: center">My Guests</h2>
   <% if @guests.first.party_session.end_date > DateTime.now %>
-    <%= link_to "Invite your Guests", new_party_session_guest_path, class: "btn text-success"%>
+    <div class="text-right mb-2 mr-3">
+      <%= link_to new_party_session_guest_path, class: "btn-guest-success" do%>
+        <i class="fas fa-user-plus"></i>
+      <% end %>
+    </div>
   <% end %>
   <% @guests.each do |guest| %>
     <div class="party-card mb-3">
@@ -11,7 +15,7 @@
       <% else %>
         <i class="fas fa-chess-knight navbar-empty-avatar-large"></i>
       <% end %>
-      <div class="d-block ml-2">
+      <div class="ml-2 wrap-text-overflow">
         <%= guest.user.first_name %>
         <%= guest.user.last_name %>
         <div style="font-size: 10px">

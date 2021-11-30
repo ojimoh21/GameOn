@@ -23,12 +23,12 @@
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       <% if @party_session.end_date >= DateTime.now() %>
         <% if current_user == @party_session.user %>
-          <div class="text-right">
-            <%= link_to "Cancel", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to cancel this event?"}, class: "text-red pr-1 mt-1" %>
+          <div class="text-right mt-3">
+            <%= link_to "Cancel", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to cancel this event?"}, class: "text-red mt-2 party-second-button" %>
           </div>
         <% else %>
           <% if @guest.confirm_availability %>
-            <div class="bg-success p-2 rounded my-2 text-center">You accepted the invite. Have a blast!</div>
+            <div class="bg-party-green p-2 rounded my-2 text-center">You accepted the invite. Have a blast! 🚀</div>
               <% if @party_session.start_date < DateTime.now %>
                   <%if @guest.confirm_arrival %>
                     <div class="text-right pt-2">
@@ -36,7 +36,7 @@
                     </div>
                   <% else %>
                     <div class="d-flex justify-content-between">
-                      <%= link_to "I'm here! 🥳", confirm_arrival_path(@party_session), method: :patch, class: "party-second-button text-success" %>
+                      <%= link_to "I'm here! 🥳", confirm_arrival_path(@party_session), method: :patch, class: "party-second-button text-green" %>
                       <%= link_to "I changed my mind", unconfirm_availability_path(@party_session), method: :patch, data: {confirm: "Are you sure you no longer want to go?"}, class: "party-second-button text-red" %>
                     </div>
                   <% end %>

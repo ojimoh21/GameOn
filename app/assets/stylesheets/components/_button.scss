@@ -85,10 +85,15 @@
   padding: 0.5rem;
 }
 
-.party-second-button.text-success {
+.party-second-button.text-green {
   background-color: $yellow;
+  color: $light-blue;
 }
 
 .party-second-button.text-red {
   background-color: $yellow;
+}
+
+.btn-guest-success {
+  color: $light-blue;
 }
