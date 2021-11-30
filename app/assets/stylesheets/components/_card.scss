@@ -43,15 +43,21 @@ i {
 
 .game-card-img {
   width: 311px;
-  height: 218px;
+  height: auto;
+  max-height: 300px;
   margin: auto;
-  border-right: 12px solid $dark-brown;
-  border-left: 12px solid $dark-brown;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-top: 12px solid rgba(242, 95, 92, 0.6);
+  border-bottom: 12px solid rgba(242, 95, 92, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+  background: white;
 }
 
 .game-info {
   padding: 12px;
+  margin-top: 16px;
+  border: 2px solid white;
+  background-color: rgba(242,95,92,0.4);
   p {
     overflow: scroll;
     height: 200px;
@@ -62,6 +68,7 @@ i {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: $yellow;
   }
 
   .party-sessions-card {

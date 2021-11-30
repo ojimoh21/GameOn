@@ -6,6 +6,11 @@
 
 .game {
   display: inline-block;
+  transition: all .2s ease-in-out;
+}
+
+.game:hover {
+  transform: scale(1.05);
 }
 
 .games-img {
