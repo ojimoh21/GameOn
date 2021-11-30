@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="mt-4 text-center">
+  <%= @party_session.title %>
+  </h1>
+
+  <div class="summary-cards">
+    <%= link_to party_session_path(@party_session) do %>
+      <div class="party-card">
+        <h3>Party Details</h3>
+        <i class="fas fa-angle-double-right fa-3x"></i>
+      </div>
+    <% end %>
+    <%= link_to party_session_party_games_path(@party_session) do %>
+      <div class="party-card">
+        <h3>Games</h3>
+        <i class="fas fa-angle-double-right fa-3x"></i>
+      </div>
+    <% end %>
+    <%= link_to party_session_guests_path(@party_session) do %>
+    <div class="party-card">
+      <h3>Guest</h3>
+      <i class="fas fa-angle-double-right fa-3x"></i>
+    </div>
+    <% end %>
+    <%= link_to party_session_chatroom_path(@party_session, @party_session.chatroom) do %>
+    <div class="party-card">
+      <h3>Party Chat Sesh</h3>
+      <i class="fas fa-angle-double-right fa-3x"></i>
+    </div>
+  </div>
+  <% end %>
+</div>
