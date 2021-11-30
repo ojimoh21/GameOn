@@ -59,9 +59,36 @@
   color: $yellow;
 }
 
-.party-action-button {
-  font-size: 40px;
-  // border-radius: 50%;
-  // border: 2px solid white;
-  // padding: .25rem;
+.party-action-button i{
+  font-size: 35px;
+  padding: 0;
+  height: 60px;
+  text-align: center;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid #faf2d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.party-action-button.text-success i {
+  background-color: $light-blue;
+}
+
+.party-action-button.text-red i{
+  background-color: #7a312b;
+}
+
+.party-second-button  {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.party-second-button.text-success {
+  background-color: $yellow;
+}
+
+.party-second-button.text-red {
+  background-color: $yellow;
 }
