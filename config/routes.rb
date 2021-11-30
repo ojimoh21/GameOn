@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
   resources :party_sessions do
     resources :guests
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
     resources :party_games do
       resources :votes, only: :create
     end
@@ -20,4 +23,7 @@ Rails.application.routes.draw do
   end
   resources :guests, only: :destroy
   resources :party_games, only: :destroy
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
