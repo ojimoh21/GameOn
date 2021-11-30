@@ -19,7 +19,11 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    game_image = URI.open(params[:game][:image_url])
+    if params[:game][:image_url]
+      game_image = URI.open(params[:game][:image_url])
+    else
+      game_image = URI.open(params[:image_url])
+    end
     @game.photo.attach(io: game_image, filename: :image_url, content_type: 'image/jpg')
     @game.user = current_user
     if @game.save

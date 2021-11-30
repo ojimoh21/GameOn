@@ -10,5 +10,14 @@
       <p><i class="fas fa-users"></i><%= @hotgame.suggested_numplayers %> players</p>
     </div>
   </div>
-  <%= link_to "Back", games_path, class: "btn ml-2 text-primary" %>
+  <%= simple_form_for(@hotgame) do |f|%>
+    <%= f.hidden_field :title, value: @hotgame.title %>
+    <%= f.hidden_field :description, value: @hotgame.description %>
+    <%= f.hidden_field :duration, as: :integer, value: @hotgame.duration %>
+    <%= f.hidden_field :suggested_numplayers, :label => "Suggested Players", as: :integer, value: @hotgame.suggested_numplayers %>
+    <%= f.hidden_field :photo, as: :file %>
+    <%= hidden_field_tag :image_url, @game_image %>
+     <%= link_to "Back", games_path, class: "btn ml-2 text-primary" %>
+    <%= f.submit "Save", class: "btn ml-2 text-primary" %>
+  <%end%>
 </div>
