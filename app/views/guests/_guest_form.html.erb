@@ -1,6 +1,6 @@
 <%= simple_form_for [@party_session, @guest] do |form| %>
   <%= form.collection_check_boxes :user_id, @users, :id, :email do |b| %>
-  <div class="party-card mb-3">
+  <div class="party-card mb-3" onclick="this.querySelector('input[type=checkbox]').click()">
   <% if b.object.photo.attached? %>
     <%= cl_image_tag b.object.photo.key, class: "avatar-large" %>
   <% else %>
