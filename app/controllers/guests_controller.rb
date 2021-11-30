@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-    guest_ids = params[:guest].permit(:user_id => [])[:user_id].reject!(&:blank?)
+    guest_ids = params[:guest].permit(user_id: [])[:user_id].reject!(&:blank?)
     guest_ids.each do |guest_id|
       user_id = User.find(guest_id)
       @guest = Guest.new
@@ -43,6 +43,7 @@ class GuestsController < ApplicationController
   def toggle_availability
     @guest = Guest.find_by(party_session_id: params[:party_session_id], user_id: current_user.id)
     @guest.confirm_availability = !@guest.confirm_availability
+    @guest.confirm_arrival = false unless @guest.confirm_availability
     if @guest.save
       redirect_to party_session_path(@guest.party_session)
     else

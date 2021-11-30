@@ -6,10 +6,19 @@ Rails.application.routes.draw do
   patch "unconfirm_availability/:party_session_id", to: "guests#toggle_availability", as: :unconfirm_availability
   patch "confirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :confirm_arrival
   patch "unconfirm_arrival/:party_session_id", to: "guests#toggle_arrival", as: :unconfirm_arrival
+  get "party_sessions/:id/summary", to: "party_sessions#summary", as: :party_sessions_summary
   resources :games
+  resources :games do
+    member do
+      get :hot
+    end
+  end
   resources :party_sessions do
     resources :guests
     resources :teams
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
     resources :party_games do
       resources :votes, only: :create
       resources :teams, only: [:index, :create]
@@ -18,4 +27,7 @@ Rails.application.routes.draw do
   end
   resources :guests, only: :destroy
   resources :party_games, only: :destroy
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
