@@ -5,12 +5,13 @@
     <%= render 'search' %>
   </div>
   <br>
-  <button class="btn btn-primary collapse-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Add Your Own
-  </button>
-  <%# <button type="button" class="collapsible">Add Your Own</button> %>
-  <div class="collapse" id="collapseExample">
-    <%= render "form" %>
+  <div class="add-your-own">
+    <button class="btn-add-game" data-toggle="collapse" data-target="#collapse-form">
+      Add Your Own
+    </button>
+    <div class="collapse collapse-form" id="collapse-form">
+      <%= render "form" %>
+    </div>
   </div>
   <%= link_to "Back", :back, class: "btn m-2"%>
 </div>

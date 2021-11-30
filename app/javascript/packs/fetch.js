@@ -29,9 +29,8 @@ const fetchApi = function() {
       console.log("I've been selected");
       // console.log(data);
       const game_id = data.params.data['id'];
-      console.log(game_id);
 
-      // const collBtn = document.querySelector(".collapse-btn");
+      $('.collapse-form').collapse('show')
 
       fetch(`https://api.boardgameatlas.com/api/search?ids=${game_id}&client_id=OShMmavExz`)
         .then(response => response.json())
