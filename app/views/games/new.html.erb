@@ -5,6 +5,13 @@
     <%= render 'search' %>
   </div>
   <br>
-  <%= render "form" %>
+  <div class="add-your-own">
+    <button class="btn-add-game app-party-btn-small" data-toggle="collapse" data-target="#collapse-form">
+      Add Your Own
+    </button>
+    <div class="collapse collapse-form" id="collapse-form">
+      <%= render "form" %>
+    </div>
+  </div>
   <%= link_to "Back", :back, class: "btn m-2"%>
 </div>

@@ -20,26 +20,4 @@ export default class extends Controller {
       });
     });
   }
-
-  // update() {
-  //   const games = document.querySelector("#games");
-  //   console.log(this.queryTarget.value);
-  //   fetch(`https://api.boardgameatlas.com/api/search?name=${this.queryTarget.value}&client_id=OShMmavExz`)
-  //     .then(response => response.json())
-  //     .then((data) => {
-  //       console.log(data)
-  //       games.innerHTML = ''
-  //       data.games.forEach((game) => {
-  //         const gameTag = `<li class="list-inline-item">
-  //           <p>${game['name']}</p>
-  //         </li>`;
-  //         games.insertAdjacentHTML("beforeend", gameTag);
-  //       });
-  //     });
-  //   //  this.updateQueryParams()
-  // }
-
-  submit() {
-  }
-
 }
