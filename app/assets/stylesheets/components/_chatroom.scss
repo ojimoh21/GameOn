@@ -1,7 +1,7 @@
 .chatroom {
   width: 90%;
   border-radius: 10%;
-  background: white;
+  background: $light-blue;
   margin-top: 9px;
   height: calc(100vh - 200px);
   display: flex;
@@ -9,6 +9,8 @@
   justify-content: space-between;
   flex-grow: 1;
   overflow: scroll;
+  border: 2px solid $light-red;
+  opacity: 80%;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -16,10 +18,34 @@
     padding: 1rem;
   }
 
-  .messages {
-    height: 100%;
-    padding: 1rem;
+  .message {
+    padding: 0.5rem;
+    box-sizing: content-box;
+    width: 100%;
+    margin-bottom: 8px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .user-message {
+        background: $orange;
+        // opacity: 75%;
+        border-right: 6px solid $light-red;
+        text-align: right;
+        margin-right: -20px;
+     }
+
+     .o-user-message {
+        background: $yellow;
+        // opacity: 75%;
+        border-left: 6px solid $light-red;
+        text-align: left;
+        margin-left: -20px;
+     }
+
 
   #new_message {
     border-top: 1px solid $gray-200;
@@ -29,8 +55,12 @@
       margin-bottom: 0;
     }
   }
-
-  #message-content {
-    color: $yellow;
-  }
 }
+
+
+  // padding: 12px;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
