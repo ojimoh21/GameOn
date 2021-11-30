@@ -14,11 +14,11 @@
       <p><i class="fas fa-users"></i><%= @game.suggested_numplayers %> players</p>
     </div>
   </div>
-  <div class=>
-    <%= link_to "Back", games_path, class: "btn ml-2 text-primary" %>
+  <div class="show-page-buttons">
+    <%= link_to "Back", games_path, class: "btn show-page-button" %>
+    <%= link_to "Edit", edit_game_path(@game), class: "btn show-page-button", style: "color:#FBF2D2" %>
     <% if current_user == @game.user %>
-      <%= link_to "Delete", game_path(@game),  method: :delete, data: {confirm: "Are you sure you want to delete game?"}, class: "btn danger" %>
+      <%= link_to "Delete", game_path(@game),  method: :delete, data: {confirm: "Are you sure you want to delete game?"}, class: "btn show-page-button" %>
     <% end %>
-    <%= link_to "Edit", edit_game_path(@game), class: "btn mt-2", style: "color:#FBF2D2" %>
   </div>
 </div>

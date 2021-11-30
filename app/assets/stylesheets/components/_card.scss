@@ -42,7 +42,7 @@ i {
 }
 
 .game-card-img {
-  width: 311px;
+  width: 305px;
   height: auto;
   max-height: 300px;
   margin: auto;
@@ -58,6 +58,7 @@ i {
   margin-top: 16px;
   border: 2px solid white;
   background-color: rgba(242,95,92,0.4);
+  border-radius: 20px;
   p {
     overflow: scroll;
     height: 200px;
