@@ -1,11 +1,12 @@
 <div class="container">
   <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
   <div class="d-flex justify-content-between">
-  <% if @party_session.end_date > DateTime.now()%>
-    <% if current_user == @party_session.user %>
+  <% if current_user == @party_session.user %>
+    <% if @party_session.end_date > DateTime.now %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
-      <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+      <%= link_to "Your Party Games", party_session_party_games_path(@party_session)%>
     <% end %>
+      <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
   <% end %>
   </div>
   </div>
@@ -14,18 +15,37 @@
       <p><%= @party_session.description %></p>
       <h3>Address</h3>
       <p><%= @party_session.address%></p>
-      <div id="map" style="width: 90%; height: 175px; margin:auto;"
+      <div id="map" style="width: 100%; height: 175px; margin:auto;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       <h3>Date and Time</h3>
       <p>This party will commence on <%= @party_session.start_date.strftime("%a %e %b %Y at %H:%M")%></p>
-    </div>
-    <% if @party_session.end_date >= DateTime.now() %>
-      <% if current_user == @party_session.user %>
-        <%= link_to "Cancel Event", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete danger" %>
-      <% else %>
-        <%= link_to "Can't go ? Delete", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to delete booking?"}, class: "btn btn-flat btn-delete danger" %>
-      <% end %>
+      <% if @party_session.end_date >= DateTime.now() %>
+        <% if current_user == @party_session.user %>
+          <%= link_to "Cancel Event", party_session_path(@party_session), method: :delete, data: {confirm: "Are you sure you want to cancel this event?"}, class: "btn btn-flat btn-delete danger" %>
+        <% else %>
+          <% if @guest.confirm_availability %>
+            <span class="bg-success p-2 rounded">You accepted the invite!!</span>
+            <%= link_to "I changed my mind", unconfirm_availability_path(@party_session), method: :patch, data: {confirm: "Are you sure you no longer want to go?"}, class: "btn btn-flat btn-delete danger" %>
+            <div>
+              <%if @guest.confirm_arrival %>
+                <%= link_to "I'm not here!", unconfirm_arrival_path(@party_session), method: :patch, class: "btn btn-flat btn-delete danger" %>
+              <% else %>
+                <%= link_to "I'm here!", confirm_arrival_path(@party_session), method: :patch, class: "text-success" %>
+              <% end %>
+            </div>
+          <% else @guest.confirm_availability %>
+            <div class="d-flex justify-content-between">
+              <%= link_to confirm_availability_path(@party_session), method: :patch, class: "text-success party-action-button" do%>
+                <i class="fas fa-check"></i>
+              <% end %>
+              <%= link_to guest_path(@guest), method: :delete, data: {confirm: "Are you sure you don't want to go?"}, class: "party-action-button" do%>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
     <% end %>
+    </div>
 </div>

@@ -35,6 +35,18 @@
 .select2-container--default .select2-results > .select2-results__options {
   background-color: rgba(242,106,93,0.3) !important;
 }
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #999;
+  margin-left: 10px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 28px;
+  padding-left: 20px;
+}
+
 // .search-bar {
 //   width: 350px;
 // }

@@ -1,11 +1,17 @@
-<%= javascript_pack_tag 'fetch', 'data-turbolinks-track': 'reload', defer: true %>
 <div class="container">
-  <h1 class="text-center mt-2">Create New Game</h1>
+  <h1 class="text-center mt-2">Add Game</h1>
   <br>
   <div class="search-box">
     <%= render 'search' %>
   </div>
   <br>
-  <%= render "form" %>
+  <div class="add-your-own">
+    <button class="btn-add-game app-party-btn-small" data-toggle="collapse" data-target="#collapse-form">
+      Add Your Own
+    </button>
+    <div class="collapse collapse-form" id="collapse-form">
+      <%= render "form" %>
+    </div>
+  </div>
   <%= link_to "Back", :back, class: "btn m-2"%>
 </div>
