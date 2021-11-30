@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   resources :games
   resources :party_sessions do
     resources :guests
+    resources :teams
     resources :party_games do
       resources :votes, only: :create
+      resources :teams, only: [:index, :create]
     end
     resources :votes
   end

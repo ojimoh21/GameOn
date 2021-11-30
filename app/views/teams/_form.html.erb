@@ -1,0 +1,18 @@
+<%= simple_form_for [@party_game, @team] do |f| %>
+  <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+    <div class="mb-4">
+      <div class="w-full mb-4 md:mr-2 md:mb-0">
+        <label class="block mb-2 text-sm font-bold text-gray-700" for="teamName">
+          Name your team
+        </label>
+        <%= f.input :name, autofocus: true, class: 'w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline', label: false %>
+      </div>
+    </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, class: "w-full px-4 py-2 font-bold text-white rounded-full bg-green-500 hover:bg-green-700 focus:outline-none focus:shadow-outline" %>
+    </div>
+  </div>
+  </form>
+<% end %>

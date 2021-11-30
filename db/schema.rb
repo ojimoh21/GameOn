@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_114531) do
+ActiveRecord::Schema.define(version: 2021_11_30_172724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,23 @@ ActiveRecord::Schema.define(version: 2021_11_29_114531) do
     t.index ["user_id"], name: "index_party_sessions_on_user_id"
   end
 
+  create_table "team_members", force: :cascade do |t|
+    t.bigint "guest_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
+    t.index ["guest_id"], name: "index_team_members_on_guest_id"
+    t.index ["team_id"], name: "index_team_members_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_name"
+    t.bigint "party_game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["party_game_id"], name: "index_teams_on_party_game_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -112,6 +129,9 @@ ActiveRecord::Schema.define(version: 2021_11_29_114531) do
   add_foreign_key "party_games", "games"
   add_foreign_key "party_games", "party_sessions"
   add_foreign_key "party_sessions", "users"
+  add_foreign_key "team_members", "guests"
+  add_foreign_key "team_members", "teams"
+  add_foreign_key "teams", "party_games"
   add_foreign_key "votes", "guests"
   add_foreign_key "votes", "party_games"
 end

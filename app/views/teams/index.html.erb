@@ -1,0 +1,12 @@
+<div class="container mt-3">
+  <h2 class="mt-4" style="text-align: center">Games Tonight</h2>
+  <%= link_to "Create a new Team",  party_session_party_game_teams_path,method: :post, class: "btn text-success"%>
+    <% @teams.each do |team| %>
+    <div class="party-card mb-3">
+      <div class="d-block">
+        <div><%= team.team_name %></div>
+      </div>
+      </div>
+  </div>
+    <% end %>
+</div>

@@ -1,15 +1,15 @@
-class GuestsController < ApplicationController
-  before_action :find_guest, only: %i[destroy]
+class TeamMemberController < ApplicationController
+  before_action :find_team_member, only: %i[destroy]
   before_action :find_party, only: %i[new create]
 
   def index
-    @guests = Guest.where(party_session_id: params[:party_session_id])
+    @team_member= TeamMember.where(team_id: params[:team_id])
   end
 
   def new
     # @users = User.where.not(id: current_user.id).or(User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name))
-    @users = User.where(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id))
-    @guest = Guest.new
+    @guests = Guest.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:id))
+    @team_member = TeamMember.new
   end
 
   def create
