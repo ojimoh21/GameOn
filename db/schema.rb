@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_141833) do
     t.index ["user_id"], name: "index_guests_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_141833) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-=======
+  end
   create_table "party_games", force: :cascade do |t|
     t.bigint "game_id", null: false
     t.bigint "party_session_id", null: false
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_141833) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_party_games_on_game_id"
     t.index ["party_session_id"], name: "index_party_games_on_party_session_id"
->>>>>>> master
   end
 
   create_table "party_sessions", force: :cascade do |t|
