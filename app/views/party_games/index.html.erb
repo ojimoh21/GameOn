@@ -6,6 +6,11 @@
   <% end %>
     <% @party_games.each do |game| %>
     <div class="party-card mb-3">
+      <% if game.game.photo.attached? %>
+        <%= cl_image_tag game.game.photo.key, class: "game-card-img"%>
+      <% else %>
+        <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+      <% end %>
       <div class="d-block">
         <div><%= game.game.title %></div>
         <div><%= game.game.description %></div>
