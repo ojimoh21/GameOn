@@ -34,9 +34,9 @@
       <% @hotgames.each do |game| %>
         <div class="game">
           <% if game.photo.attached? %>
-            <a href="games/<%=game.id%>"><%= cl_image_tag game.photo.key,class:"games-img"%></a>
+            <a href="games/<%=game.id%>"><%= cl_image_tag game.photo.key,class:"games-img suggested"%></a>
           <% else %>
-            <a href="games/<%=game.id%>"><%= image_tag "chess-piece.jpeg", class:"games-img"  %></a>
+            <a href="games/<%=game.id%>"><%= image_tag "chess-piece.jpeg", class:"games-img suggested"  %></a>
           <% end %>
         </div>
       <% end %>
