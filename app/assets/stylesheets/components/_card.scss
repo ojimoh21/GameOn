@@ -35,71 +35,54 @@ i {
   padding-right: 8px;
 }
 
-.game-card {
-  width: 90%;
-  margin: auto;
-  color: black;
-}
 
-.game-card-img {
-  width: 305px;
-  height: auto;
-  max-height: 300px;
-  margin: auto;
-  border-top: 12px solid rgba(242, 95, 92, 0.6);
-  border-bottom: 12px solid rgba(242, 95, 92, 0.6);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
-  background: white;
-}
 
-.game-info {
-  padding: 12px;
-  margin-top: 16px;
-  border: 2px solid white;
-  background-color: rgba(242,95,92,0.4);
-  border-radius: 20px;
+
+
+.game-extras {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20px;
   p {
-    overflow: scroll;
-    height: 200px;
+    color: white !important;
   }
 }
 
-  .game-extras {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: $yellow;
-  }
-
-  .party-sessions-card {
-    width: 90%;
-    background: #40a18f;
-    box-shadow: 4px 4px 4px 0px #00000040;
-    padding: 20px;
-    border: 2px solid #faf2d1;
-    border-radius: 10px;
-    color: white;
-    margin: auto;
-      h4 {
-        margin-bottom: 0.25rem;
-        font-size: 20px;
-        font-weight: 700;
-        color: #faf2d1;
-      }
-      .text-red {
-        color: red;
-      }
-      .bg-party-green {
-        background-color: $light-blue;
-      }
-  }
-
-  .summary-cards {
-    width: 95%;
-    margin: auto;
-    margin-top: 24px;
-    .party-card {
-      margin-bottom: 28px;
+.party-sessions-card {
+  width: 90%;
+  background: #40a18f;
+  box-shadow: 4px 4px 4px 0px #00000040;
+  padding: 20px;
+  border: 2px solid #faf2d1;
+  border-radius: 10px;
+  color: white;
+  margin: auto;
+    h4 {
+      margin-bottom: 0.25rem;
+      font-size: 20px;
+      font-weight: 700;
+      color: #faf2d1;
     }
+    .text-red {
+      color: red;
+    }
+    .bg-party-green {
+      background-color: $light-blue;
+    }
+}
+
+.summary-cards {
+  width: 95%;
+  margin: auto;
+  margin-top: 24px;
+  .party-card {
+    margin-bottom: 28px;
   }
+}
+
+.game-show-icon {
+  width: 20px;
+  height: 20px;
+  color: $yellow;
+}

@@ -1,24 +1,33 @@
-<div class="container mt-3">
-  <div class="game-card">
-  <% if @game.photo.attached? %>
-    <%= cl_image_tag @game.photo.key, class: "game-card-img" %>
-  <% else %>
-    <%= image_tag "chess-piece.jpeg", class: "game-card-img" %>
-  <% end %>
-    <div class="game-info">
-      <h2><%= @game.title %></h2>
-      <p><%= @game.description %></p>
-    </div>
-    <div class="game-extras">
-      <p><i class="far fa-clock"></i><%= @game.duration %> min</p>
-      <p><i class="fas fa-users"></i><%= @game.suggested_numplayers %> players</p>
-    </div>
-  </div>
-  <div class="show-page-buttons">
-    <%= link_to "Back", games_path, class: "btn show-page-button" %>
-    <%= link_to "Edit", edit_game_path(@game), class: "btn show-page-button", style: "color:#FBF2D2" %>
-    <% if current_user == @game.user %>
-      <%= link_to "Delete", game_path(@game),  method: :delete, data: {confirm: "Are you sure you want to delete game?"}, class: "btn show-page-button" %>
+<%# <div class="game-show-image-gradient">
+</div> %>
+<div class="game-display">
+  <div class="game-show-image">
+    <% if @game.photo.attached? %>
+      <%= cl_image_tag @game.photo.key, class: "game-card-img" %>
+    <% else %>
+      <%= image_tag "chess-piece.jpeg", class: "game-card-img" %>
     <% end %>
+  </div>
+
+<%# <div class="container mt-3"> %>
+  <div class="game-card">
+    <div class="game-info-text">
+      <h2><%= @game.title %></h2>
+      <p id="game-description"><%= @game.description %></p>
+    </div>
+
+    <div class="game-show-footer fixed-bottom">
+      <div class="game-extras mx-4">
+        <p><i class="far fa-clock"></i><%= @game.duration %> min</p>
+        <p><i class="fas fa-users"></i><%= @game.suggested_numplayers %> players</p>
+      </div>
+      <div class="show-page-buttons mt-3">
+        <a href="/games"><i class="fas fa-chevron-left" class="game-show-icon"></i></a>
+        <% if current_user == @game.user %>
+          <a href="<%=@game.id%>/edit"><i class="fas fa-pencil-alt"></i></a>
+          <a href="<%=@game.id%>" data-confirm="Are you sure?" data-method="delete"><i class="far fa-trash-alt"></i></a>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

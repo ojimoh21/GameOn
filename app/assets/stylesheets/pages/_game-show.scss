@@ -1,0 +1,68 @@
+.game-display {
+  height: calc(100vh - 58px);
+}
+
+.game-card-img {
+  position: sticky;
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+  max-height: 35vh;
+  margin: auto;
+  z-index: -1;
+  // border-top: 12px solid rgba(242, 95, 92, 0.6);
+  // border-bottom: 12px solid rgba(242, 95, 92, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: white;
+  filter: brightness(0.5);
+}
+
+.game-card {
+  width: 100%;
+  margin: auto;
+  color: black;
+}
+
+.game-info-text {
+  margin-top: -20px;
+  background-color: $light-blue;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  p {
+    color: $yellow;
+    overflow: scroll;
+    height: 37vh;
+  }
+  h2 {
+    color: white;
+  }
+}
+
+.show-page-buttons {
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+  padding: 0px 40px;
+  margin: 15px;
+  a {
+    color: $yellow;
+  }
+  a:hover {
+    color: white;
+    transform: scale(1.05);
+  }
+}
+
+.show-page-button {
+  padding: 4px 8px;
+  background-color: rgba($color: #FBF2D2, $alpha: 0.5);
+  border-radius: 4px;
+}
+
+.game-show-footer {
+  background-color: $light-blue;
+  z-index: 5;
+  position: relative;
+  padding-bottom: 10px;
+
+}

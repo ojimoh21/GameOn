@@ -34,17 +34,3 @@
   height: 250px;
   width: 175px;
 }
-
-.show-page-buttons {
-  display: flex;
-  direction: row;
-  justify-content: space-evenly;
-  padding: 0px 40px;
-  margin: 15px;
-}
-
-.show-page-button {
-  padding: 4px 8px;
-  background-color: rgba($color: #FBF2D2, $alpha: 0.5);
-  border-radius: 4px;
-}
