@@ -14,4 +14,6 @@
   <%= f.input :content, label: false, placeholder: "Message...", class: "message-input" %>
   <%= f.submit class: "app-party-btn", value: "Send"%>
   <% end %>
+<% else %>
+  <h1 class="text-center chat">Game Party has ended</h1>
 <% end %>

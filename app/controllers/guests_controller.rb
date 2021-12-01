@@ -9,9 +9,10 @@ class GuestsController < ApplicationController
   def new
     @users = User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name)
     @guest = Guest.new
-     if params[:query].present?
+    if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @users = User.where(sql_query, query: "%#{params[:query]}%").where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id))
+      @users = User.where(sql_query,
+                          query: "%#{params[:query]}%").where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id))
     else
       @users = User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name)
     end
