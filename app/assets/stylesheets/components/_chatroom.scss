@@ -29,8 +29,6 @@
     color: black;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 
   #new_message {
@@ -56,6 +54,7 @@
         border-right: 6px solid $light-red;
         text-align: right;
         margin-right: -20px;
+        justify-content: end;
      }
 }
 
