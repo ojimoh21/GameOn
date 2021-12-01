@@ -1,22 +1,26 @@
+<%= form_tag new_party_session_party_game_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a board-game"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <%= simple_form_for [@party_session, @party_game] do |form| %>
   <%= form.collection_check_boxes :game_id, @games, :id, :title do |b| %>
-  <div class="party-card mb-3" onclick="this.querySelector('input[type=checkbox]').click()">
-  <div>
-    <% if b.object.photo.attached? %>
-      <%= cl_image_tag b.object.photo.key, class: "game-card-img"%>
-    <% else %>
-      <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
-    <% end %>
-    <div><%= b.object.title %> </div>
-    <div><%= b.object.description %></div>
-    <div style="font-size: 12px"><%= b.object.suggested_numplayers %></div>
-  </div>
-  <%= b.check_box %>
-  </div>
+    <div class="game-card mb-3" data-controller="highlight-game" data-action="click->highlight-game#highlight">
+      <% if b.object.photo.attached? %>
+        <%= cl_image_tag b.object.photo.key, class: "game-card-img", data: { highlight_game_target: "game" } %>
+      <% else %>
+        <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img", data: { highlight_game_target: "game" } %>
+      <% end %>
+      <%= b.check_box data: {highlight_game_target: "checkbox"}, style:"display:none;"%>
+    </div>
   <%# b.label(class: "my-#{ b.object.class.name.parameterize }", 'data-value': b.value) { b.check_box + b.text } %>
   <% end %>
   <div class="d-flex justify-content-center mb-3">
-  <%= form.submit "Add Game", class: "btn btn-success mr-3" %>
+  <%= form.submit "Play this Game", class: "btn btn-success mr-3" %>
   <%= link_to "Back", party_session_party_games_path(@party_session), class: "btn btn-secondary" %>
   </div>
 <% end %>

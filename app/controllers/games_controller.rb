@@ -60,7 +60,7 @@ class GamesController < ApplicationController
     # save the result in an instance variable
     @hotgame = Game.new(
       title: hot_game['name'],
-      description: hot_game['description'].gsub(/<\/?[^>]+(>|$)/, ""),
+      description: hot_game['description'].gsub(%r{</?[^>]+(>|$)}, ""),
       suggested_numplayers: ((hot_game["min_players"] + hot_game["max_players"]) / 2).round,
       duration: ((hot_game["min_playtime"] + hot_game["max_playtime"]) / 2).round
     )
