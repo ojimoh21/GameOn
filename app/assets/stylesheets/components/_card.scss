@@ -1,7 +1,7 @@
 .party-card{
   margin: auto;
   background: $pink;
-  width: 90%;
+  width: 100%;
   border-left: 6px solid $dark-blue;
   padding: 12px;
   display: flex;
@@ -15,6 +15,22 @@
     }
 }
 
+.party-card-summary{
+  margin: auto;
+  background: $pink;
+  width: 90%;
+  border-left: 6px solid $dark-blue;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    .wrap-text-overflow {
+      padding-right: 10px;
+      overflow-wrap: anywhere;
+    }
+}
 .game-card-horizontal {
   background: $pink;
   border-left: 6px solid $dark-blue;
@@ -24,7 +40,7 @@
 .dashboard-card-past{
   margin: auto;
   background: $yellow;
-  width: 90%;
+  width: 100%;
   border-left: 6px solid $light-red;
   padding: 12px;
   display: flex;

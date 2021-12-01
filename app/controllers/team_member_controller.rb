@@ -3,7 +3,7 @@ class TeamMemberController < ApplicationController
   before_action :find_party, only: %i[new create]
 
   def index
-    @team_member= TeamMember.where(team_id: params[:team_id])
+    @team_member = TeamMember.where(team_id: params[:team_id])
   end
 
   def new
@@ -13,7 +13,7 @@ class TeamMemberController < ApplicationController
   end
 
   def create
-    guest_ids = params[:guest].permit(:user_id => [])[:user_id].reject!(&:blank?)
+    guest_ids = params[:guest].permit(user_id: [])[:user_id].reject!(&:blank?)
     guest_ids.each do |guest_id|
       user_id = User.find(guest_id)
       @guest = Guest.new

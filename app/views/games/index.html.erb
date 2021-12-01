@@ -7,7 +7,7 @@
   </div>
 
   <%# <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" > %>
-  <div class="carousel mt-1 my-games">
+  <div class="mt-1 my-games">
     <h3>My Games</h3>
     <div class="games-list">
       <% @games.each do |game| %>
@@ -22,13 +22,13 @@
     </div>
   </div>
 
-  <div class="carousel mt-5 hot-games">
+  <div class="mt-5 hot-games">
     <h3>Hot Games</h3>
     <div class="games-list hot-games-carousel" data-games-api-target="query">
     </div>
   </div>
 
-  <div class="carousel mt-5 suggested-games">
+  <div class="mt-5 suggested-games">
     <h3>Suggested Games</h3>
     <div class="games-list">
       <% @hotgames.each do |game| %>
