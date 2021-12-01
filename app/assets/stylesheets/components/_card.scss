@@ -109,3 +109,7 @@ i {
   .dashboard-card-past > div > p {
     margin-bottom: 0;
   }
+
+  .selected {
+    border: 2px solid $light-blue;
+  }
