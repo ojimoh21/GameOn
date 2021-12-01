@@ -5,9 +5,13 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-    <% @chatroom.messages.each do |message| %>
+     <% unless @chatroom.messages.empty? %>
+      <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
+    <% else %>
+      <h1>Be the first to chat! Send that message!</h1>
+    <% end %>
   </div>
 </div>
 <% if @chatroom.party_session.end_date >= DateTime.now  %>
