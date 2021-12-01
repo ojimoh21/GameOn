@@ -106,6 +106,7 @@ guest.user = user
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Previous Party for Alyona "
@@ -123,6 +124,7 @@ guest.user = user
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Upcoming Party for Alyona "
@@ -140,6 +142,7 @@ guest.user = user
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 # demo character
@@ -182,6 +185,7 @@ guest.user = user
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Ongoing Party for Martin "
@@ -199,6 +203,7 @@ guest.user = user
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Upcoming Party for Martin "
@@ -215,6 +220,7 @@ guest.party_session = party
 guest.user = user
 guest.save!
 chatroom = Chatroom.new
+chatroom.name = party.title
 chatroom.party_session = party
 chatroom.save!
 
