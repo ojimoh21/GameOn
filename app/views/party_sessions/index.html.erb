@@ -10,7 +10,8 @@
       <div class="party-card mb-3">
         <div>
           <p class="p-header"><%= party.title %></p>
-          <p>Hosted by: <%= party.user.first_name %></p>
+          <p><strong>Hosted by: </strong><%= party.user.first_name %></p>
+          <p><strong>Ends:</strong> <%= party.end_date.strftime("%A %e %b %Y, %l:%M%p") %></p>
         </div>
         <% if party.user.photo.attached? %>
           <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
@@ -30,7 +31,8 @@
         <div class="party-card mb-3">
           <div>
             <p class="p-header"><%= party.title %></p>
-            <p>Hosted by: <%= party.user.first_name %></p>
+            <p><strong>Hosted by: </strong><%= party.user.first_name %></p>
+            <p><strong>Starts:</strong> <%= party.start_date.strftime("%A %e %b %Y, %l:%M%p") %></p>
           </div>
           <% if party.user.photo.attached? %>
               <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
@@ -49,7 +51,8 @@
       <div class="dashboard-card-past mb-3">
         <div>
           <p class="p-header"><%= party.title %></p>
-          <p>Hosted by: <%= party.user.first_name %></p>
+          <p><strong>Hosted by: </strong><%= party.user.first_name %></p>
+          <p><strong>Ended:</strong> <%= party.end_date.strftime("%A %e %b %Y, %l:%M%p") %></p>
         </div>
         <% if party.user.photo.attached? %>
             <%= cl_image_tag party.user.photo.key, class: "avatar-large"%>
