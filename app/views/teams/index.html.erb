@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <h2 class="mt-4" style="text-align: center">Games Tonight</h2>
+  <% if @teams.empty? %>
+    <%= link_to "Team up!",  party_session_party_game_teams_path,method: :post, class: "btn text-success"%>
+  <% else %>
+    <div style="width: 90%" class="mt-3 text-right mx-auto">
+      <%= link_to party_session_party_game_teams_path,method: :post do%>
+        <i class="fas fa-sync-alt text-dark"></i>
+      <% end %>
+    </div>
+  <% end %>
+  <% @teams.each do |team| %>
+      <h4 class="ml-3">Team: <%= team.team_name %></h4>
+      <% team.team_members.each do |member| %>
+        <div class="party-card mb-3">
+          <div class="d-block">
+            <div>
+              <% if member.guest.user.photo.attached? %>
+                <%= cl_image_tag member.guest.user.photo.key, class: "avatar"%>
+              <% else %>
+                <i class="fas fa-chess-knight navbar-empty-avatar"></i>
+              <% end %>
+              <%= "#{member.guest.user.first_name} #{member.guest.user.last_name}" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  <% end %>
+</div>

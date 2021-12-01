@@ -30,6 +30,9 @@ user_counter = 0
 
 puts "Seeding started"
 Chatroom.destroy_all
+Guest.destroy_all
+Team.destroy_all
+PartyGame.destroy_all
 PartySession.destroy_all
 Game.destroy_all
 User.destroy_all
@@ -103,6 +106,8 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
@@ -121,6 +126,8 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
@@ -139,6 +146,8 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
@@ -182,6 +191,8 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
@@ -200,7 +211,35 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
+
+# Add Alyona as a guest
+guest = Guest.new
+guest.party_session = party
+guest.user = User.find_by(email: "alyona_bordukova@gmail.com")
+guest.confirm_arrival = true
+guest.confirm_availability = true
+guest.save!
+
+puts "Create guests for party - #{party.title}"
+guest_count = 0
+3.times do
+  guest = Guest.new
+  guest.party_session = party
+  guest.user = User.all[guest_count]
+  guest.confirm_arrival = true
+  guest.confirm_availability = true
+  guest.save!
+  guest_count += 1
+end
+puts "Create a game for party - #{party.title}"
+game = PartyGame.new
+game.game = user.games.first
+game.party_session = party
+game.save!
+
 chatroom = Chatroom.new
 chatroom.party_session = party
 chatroom.name = party.title
@@ -218,6 +257,8 @@ party.save!
 guest = Guest.new
 guest.party_session = party
 guest.user = user
+guest.confirm_arrival = true
+guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.name = party.title

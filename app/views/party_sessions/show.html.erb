@@ -16,10 +16,10 @@
     <div class="my-4 party-sessions-card">
       <h4>Description</h4>
       <p><%= @party_session.description %></p>
-      <h4>Address</h4>
-      <p><%= @party_session.address%></p>
       <h4>Date and Time</h4>
       <p>Starts: <%= @party_session.start_date.strftime("%a %e %b, %Y at %l:%M%p")%> <br>Ends: <%= @party_session.end_date.strftime("%a %e %b, %Y at %l:%M%p")%></p>
+      <h4>Address</h4>
+      <p><%= @party_session.address%></p>
       <div id="map" style="width: 100%; height: 175px; margin:auto; border-radius: 10px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
