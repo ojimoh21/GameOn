@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   end
   resources :party_sessions do
     resources :guests
+    resources :teams
     resources :chatrooms, only: :show do
       resources :messages, only: :create
     end
     resources :party_games do
       resources :votes, only: :create
+      resources :teams, only: [:index, :create]
     end
     resources :votes
   end

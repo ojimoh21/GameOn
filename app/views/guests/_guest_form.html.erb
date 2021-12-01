@@ -1,3 +1,11 @@
+<%= form_tag new_party_session_guest_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your guests !"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <%= simple_form_for [@party_session, @guest] do |form| %>
   <%= form.collection_check_boxes :user_id, @users, :id, :email do |b| %>
     <div class="party-card mb-3" onclick="this.querySelector('input[type=checkbox]').click()">

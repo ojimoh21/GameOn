@@ -5,18 +5,21 @@
     <% if @party_session.end_date > DateTime.now %>
       <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
       <%= link_to "Your Party Games", party_session_party_games_path(@party_session)%>
-    <% end %>
       <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+    <% end %>
+  <% else %>
+      <%= link_to "Vote Fav Games", party_session_party_games_path(@party_session)%>
+      <%= link_to "Add Party Guest", party_session_guests_path(@party_session) %>
   <% end %>
   </div>
   </div>
     <div class="my-4 party-sessions-card">
       <h4>Description</h4>
       <p><%= @party_session.description %></p>
-      <h4>Address</h4>
-      <p><%= @party_session.address%></p>
       <h4>Date and Time</h4>
       <p>Starts: <%= @party_session.start_date.strftime("%a %e %b, %Y at %l:%M%p")%> <br>Ends: <%= @party_session.end_date.strftime("%a %e %b, %Y at %l:%M%p")%></p>
+      <h4>Address</h4>
+      <p><%= @party_session.address%></p>
       <div id="map" style="width: 100%; height: 175px; margin:auto; border-radius: 10px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"

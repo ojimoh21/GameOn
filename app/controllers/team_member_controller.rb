@@ -1,25 +1,19 @@
-class GuestsController < ApplicationController
-  before_action :find_guest, only: %i[destroy]
+class TeamMemberController < ApplicationController
+  before_action :find_team_member, only: %i[destroy]
   before_action :find_party, only: %i[new create]
 
   def index
-    @guests = Guest.where(party_session_id: params[:party_session_id])
+    @team_member= TeamMember.where(team_id: params[:team_id])
   end
 
   def new
-    @users = User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name)
-    @guest = Guest.new
-    if params[:query].present?
-      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
-      @users = User.where(sql_query,
-                          query: "%#{params[:query]}%").where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id))
-    else
-      @users = User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name)
-    end
+    # @users = User.where.not(id: current_user.id).or(User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name))
+    @guests = Guest.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:id))
+    @team_member = TeamMember.new
   end
 
   def create
-    guest_ids = params[:guest].permit(user_id: [])[:user_id].reject!(&:blank?)
+    guest_ids = params[:guest].permit(:user_id => [])[:user_id].reject!(&:blank?)
     guest_ids.each do |guest_id|
       user_id = User.find(guest_id)
       @guest = Guest.new
@@ -49,7 +43,6 @@ class GuestsController < ApplicationController
   def toggle_availability
     @guest = Guest.find_by(party_session_id: params[:party_session_id], user_id: current_user.id)
     @guest.confirm_availability = !@guest.confirm_availability
-    @guest.confirm_arrival = false unless @guest.confirm_availability
     if @guest.save
       redirect_to party_session_path(@guest.party_session)
     else
