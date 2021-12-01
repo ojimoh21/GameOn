@@ -3,9 +3,9 @@
 <div class="game-display">
   <div class="game-show-image">
     <% if @game.photo.attached? %>
-      <%= cl_image_tag @game.photo.key, class: "game-card-img" %>
+      <%= cl_image_tag @game.photo.key, class: "game-card-img dark" %>
     <% else %>
-      <%= image_tag "chess-piece.jpeg", class: "game-card-img" %>
+      <%= image_tag "chess-piece.jpeg", class: "game-card-img dark" %>
     <% end %>
   </div>
 
