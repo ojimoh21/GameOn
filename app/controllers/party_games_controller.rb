@@ -17,7 +17,11 @@ class PartyGamesController < ApplicationController
   end
 
   def new
-    @games = Game.where.not(id: PartyGame.where(party_session_id: params[:party_session_id].to_i).pluck(:game_id)).where(user_id: current_user.id)
+    if params[:query].present?
+      @games = Game.where("title ILIKE ?", "%#{params[:query]}%").where(user_id: current_user.id)
+    else
+      @games = Game.where.not(id: PartyGame.where(party_session_id: params[:party_session_id].to_i).pluck(:game_id)).where(user_id: current_user.id)
+    end
     @party_game = PartyGame.new
   end
 

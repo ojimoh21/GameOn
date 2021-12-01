@@ -184,7 +184,7 @@ chatroom = Chatroom.new
 chatroom.party_session = party
 chatroom.save!
 
-puts "Creating Ongoing Party for Jae-dong "
+puts "Creating Ongoing Party for Martin "
 party = PartySession.new
 party.title = "Family Glee"
 party.description = "Hey family, let's have a get together today"
@@ -201,7 +201,7 @@ chatroom = Chatroom.new
 chatroom.party_session = party
 chatroom.save!
 
-puts "Creating Upcoming Party for Jae-dong "
+puts "Creating Upcoming Party for Martin "
 party = PartySession.new
 party.title = "UNO momento"
 party.description = "Ready to see the student become the master? I'm ready for my title!!"
