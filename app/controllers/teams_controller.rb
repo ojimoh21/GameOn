@@ -2,7 +2,8 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   def index
-    @teams = Team.all.order("created_at DESC")
+    @party_game = PartyGame.find(params[:party_game_id])
+    @teams = Team.where(party_game: @party_game)
   end
 
   def new
@@ -15,28 +16,28 @@ class TeamsController < ApplicationController
   def create
     @party_session = PartySession.find(params[:party_session_id])
     @party_game = PartyGame.find(params[:party_game_id])
-    # party_games_in_event = PartyGame.where(party_session_id: params[:party_session_id])
-    # party_game_selection = party_games_in_event.find_by(game_id: params[:game_id])
     @suggested_numplayers = Game.find_by(id: @party_game.game_id).suggested_numplayers
-    confirmed_guests = Guest.where(id: Guest.where(party_session_id: 8), confirm_arrival: true)
+    confirmed_guests = Guest.where(party_session_id: params[:party_session_id], confirm_arrival: true)
+    confirmed_guests_shuffled = confirmed_guests.shuffle
 
-    mix_conf = confirmed_guests.shuffle
+    # clear previously created teams for game
+    Team.destroy_by(party_game: @party_game)
+
     # Create TEAMS
-    creating_teams = mix_conf.in_groups(@suggested_numplayers, false)
-    creating_teams.each_with_index do |team, index|
-      @team = Team.new(team_name: index, party_game: @party_game)
-    end
+    teams = confirmed_guests_shuffled.in_groups(@suggested_numplayers, false)
 
-    # CREATE TEAM MEMBERS
-    confirmed_guests.each do |guest|
-      @team_member = TeamMember.create(guest_id: guest.id)
-    end
+    teams.each_with_index do |team, index|
+      # Create teams
+      @team = Team.new(team_name: index + 1, party_game: @party_game)
+      @team.save || (render :index)
 
-
-
-      if @team.save
-        # @team.team_member.where(guest_id: Guest.where(id: Guest.where(party_session_id: params[:party_session_id]))
+      # Create team members
+      team.each do |member|
+        @team_member = TeamMember.create(guest: member, team: @team)
+        @team_member.save || (render :index)
       end
+    end
+    redirect_to party_session_party_game_teams_path(@party_session.id, @party_game.id)
   end
 
   private

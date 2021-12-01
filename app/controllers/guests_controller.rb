@@ -7,8 +7,7 @@ class GuestsController < ApplicationController
   end
 
   def new
-    # @users = User.where.not(id: current_user.id).or(User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name))
-    @users = User.where(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id))
+    @users = User.where.not(id: Guest.where(party_session_id: params[:party_session_id].to_i).pluck(:user_id)).order(:last_name)
     @guest = Guest.new
   end
 
