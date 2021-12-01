@@ -35,16 +35,16 @@ const toggleDateInputs = function () {
         enableTime: true,
       });
     })
+    endDateInput.addEventListener("change", (e) => {
+      flatpickr(startDateInput, {
+        disableMobile: "true",
+        minDate: "today",
+        maxDate: e.target.value,
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+      });
+    })
   };
 
-  endDateInput.addEventListener("change", (e) => {
-    flatpickr(startDateInput, {
-      disableMobile: "true",
-      minDate: "today",
-      maxDate: e.target.value,
-      dateFormat: "Y-m-d H:i",
-      enableTime: true,
-    });
-  })
 };
 export { toggleDateInputs }
