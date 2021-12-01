@@ -1,5 +1,8 @@
 <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
+<h2>Choose the Games!</h2>
 <%= render 'votes/votes_form' %>
 <% else %>
-<p>You've already voted!</p>
+<div class="container">
+  <h2>You've already voted!</h2>
+</div>
 <% end %>

@@ -1,5 +1,44 @@
-<%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
-  <%= f.input :vote, as: :radio_buttons, collection: 0..1 %>
-  <br/>
-  <%= f.submit %>
-<% end %>
+    <% if @party_game.game.photo.attached? %>
+      <%= cl_image_tag @party_game.game.photo.key,class:"game-vote-img"%>
+    <% else %>
+      <%= image_tag "chess-piece.jpeg", class:"game-vote-img"  %>
+    <% end %>
+<div class="d-flex justify-content-around position-relative" id="vote-btns">
+  <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
+    <%= f.input :vote,  as: :hidden, input_html: { value: 0} %>
+    <%= button_tag(class: "vote-btn-single vote-circle-no") do  %>
+      <i class="fas fa-times vote-no"></i>
+    <% end %>
+  <% end %>
+  <div class="TEST">
+    <%= button_tag class: "vote-btn-single vote-circle-details", data: { toggle: "modal", target: "#exampleModal"} do  %>
+        <i class="fas fa-info"></i>
+    <% end %>
+
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <h1>TEST FOR FUN</h1>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
+    <%= f.input :vote,  as: :hidden, input_html: { value: 1} %>
+    <%= button_tag(class: "vote-btn-single vote-circle-yes" ) do %>
+      <i class="fas fa-heart vote-yes"></i>
+    <% end %>
+  <% end %>
+</div>
