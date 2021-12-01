@@ -9,8 +9,9 @@
 }
 
 .games-img {
-  border-top: 5px solid #F2605C;
-  border-bottom: 5px solid #F2605C;
+  // border-top: 5px solid #F2605C;
+  // border-bottom: 5px solid #F2605C;
+  border: 2px solid $light-blue;
   border-radius: 10px;
   margin: 4px;
   background-color: white;
