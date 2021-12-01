@@ -15,6 +15,12 @@
     }
 }
 
+.game-card-horizontal {
+  background: $pink;
+  border-left: 6px solid $dark-blue;
+  display: flex;
+}
+
 .dashboard-card-past{
   margin: auto;
   background: $yellow;
@@ -94,4 +100,12 @@ i {
     .party-card {
       margin-bottom: 28px;
     }
+  }
+
+  .party-card > div > p {
+    margin-bottom: 0;
+  }
+
+  .dashboard-card-past > div > p {
+    margin-bottom: 0;
   }

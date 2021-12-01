@@ -30,7 +30,8 @@ body {
 }
 
 .p-header{
-  font-size: 24px;
+  font-family: "VT323", sans-serif ;
+  font-size: 28px;
   color: black;
 }
 .p-header:hover {
@@ -64,6 +65,9 @@ h1 {
   color: $light-red !important;
 }
 
+h1, h2, h3 {
+  font-family: "VT323", 'sans-serif';
+}
 .party-title {
   color: $dark-blue;
 }

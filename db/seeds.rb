@@ -111,6 +111,7 @@ guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Previous Party for Alyona "
@@ -130,6 +131,7 @@ guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 puts "Creating Upcoming Party for Alyona "
@@ -149,6 +151,7 @@ guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
 # demo character
@@ -193,9 +196,10 @@ guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
-puts "Creating Ongoing Party for Jae-dong "
+puts "Creating Ongoing Party for Martin "
 party = PartySession.new
 party.title = "Family Glee"
 party.description = "Hey family, let's have a get together today"
@@ -238,9 +242,10 @@ game.save!
 
 chatroom = Chatroom.new
 chatroom.party_session = party
+chatroom.name = party.title
 chatroom.save!
 
-puts "Creating Upcoming Party for Jae-dong "
+puts "Creating Upcoming Party for Martin "
 party = PartySession.new
 party.title = "UNO momento"
 party.description = "Ready to see the student become the master? I'm ready for my title!!"
@@ -256,6 +261,7 @@ guest.confirm_arrival = true
 guest.confirm_availability = true
 guest.save!
 chatroom = Chatroom.new
+chatroom.name = party.title
 chatroom.party_session = party
 chatroom.save!
 
