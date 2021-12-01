@@ -110,6 +110,45 @@ i {
     margin-bottom: 0;
   }
 
+
+.game-vote-img {
+  background-color: white;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  object-position: 60% 6%;
+  border: 2px solid $light-blue;
+  border-radius: 10px 10px 0 0  ;
+}
+
+#vote-btns {
+  top: -43px;
+}
+
+.vote-btn-single {
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  background: $yellow;
+  border: 1px solid $yellow;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 36px;
+}
+
+.vote-yes {
+  position: relative;
+  top: 2px;
+  left: 3px;
+  color: $light-blue
+}
+
+.vote-no {
+  position: relative;
+  top: 2px;
+  left: 3px;
+  color: $light-red
+}
   .selected {
     border: 4px solid $dark-blue;
   }

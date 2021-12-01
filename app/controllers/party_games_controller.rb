@@ -7,6 +7,7 @@ class PartyGamesController < ApplicationController
   end
 
   def show
+    @party_games = PartyGame.where(party_session_id: params[:party_session_id])
     @party_game = PartyGame.find_by(id: params[:id], party_session_id: params[:party_session_id])
     @party_session = @party_game.party_session
     @votes = 0
