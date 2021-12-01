@@ -1,21 +1,29 @@
 <% if current_user == message.user %>
-  <div class="message user-message" id="message-<%= message.id %>">
-      <div class="mr-3">
+  <div class="message user-message" id="message-<%= message.id %>" data-sender-id="<%=current_user.id%>">
+      <div class="mx-2">
         <small>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-          <strong><%= message.user.first_name %></strong>
+          <div><strong><%= message.user.first_name %></strong></div>
+          <i class="pr-0"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
         <p><%= message.content %></p>
       </div>
-      <%= cl_image_tag message.user.photo.key, class: "avatar-large"%>
+      <% if message.user.photo.attached? %>
+        <%= cl_image_tag message.user.photo.key, class: "avatar"%>
+      <% else %>
+        <i class="fas fa-chess-knight navbar-empty-avatar"></i>
+      <% end %>
   </div>
 <% else %>
   <div class="message o-user-message" id="message-<%= message.id %>">
-    <%= cl_image_tag message.user.photo.key, class: "avatar-large"%>
-    <div class="ml-3">
+    <% if message.user.photo.attached? %>
+      <%= cl_image_tag message.user.photo.key, class: "avatar"%>
+    <% else %>
+      <i class="fas fa-chess-knight navbar-empty-avatar"></i>
+    <% end %>
+    <div class="mx-2">
       <small>
-        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        <strong><%= message.user.first_name %></strong>
+        <div><strong><%= message.user.first_name %></strong></div>
+        <i class="pr-0"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
       </small>
       <p><%= message.content %></p>
     </div>
