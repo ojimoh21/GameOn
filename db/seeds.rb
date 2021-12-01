@@ -29,6 +29,7 @@ addresses = [
 user_counter = 0
 
 puts "Seeding started"
+Chatroom.destroy_all
 PartySession.destroy_all
 Game.destroy_all
 User.destroy_all
@@ -103,6 +104,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.party_session = party
+chatroom.name = party.title
+chatroom.save!
 
 puts "Creating Previous Party for Alyona "
 party = PartySession.new
@@ -117,6 +122,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.party_session = party
+chatroom.name = party.title
+chatroom.save!
 
 puts "Creating Upcoming Party for Alyona "
 party = PartySession.new
@@ -131,6 +140,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.party_session = party
+chatroom.name = party.title
+chatroom.save!
 
 # demo character
 user = User.new
@@ -170,6 +183,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.party_session = party
+chatroom.name = party.title
+chatroom.save!
 
 puts "Creating Ongoing Party for Jae-dong "
 party = PartySession.new
@@ -184,6 +201,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.party_session = party
+chatroom.name = party.title
+chatroom.save!
 
 puts "Creating Upcoming Party for Jae-dong "
 party = PartySession.new
@@ -198,6 +219,10 @@ guest = Guest.new
 guest.party_session = party
 guest.user = user
 guest.save!
+chatroom = Chatroom.new
+chatroom.name = party.title
+chatroom.party_session = party
+chatroom.save!
 
 puts "Users created"
 puts "Seeding done"

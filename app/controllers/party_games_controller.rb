@@ -22,7 +22,7 @@ class PartyGamesController < ApplicationController
   end
 
   def create
-    party_games_ids = params[:party_game].permit(:game_id => [])[:game_id].reject!(&:blank?)
+    party_games_ids = params[:party_game].permit(game_id: [])[:game_id].reject!(&:blank?)
     party_games_ids.each do |party_game_id|
       game_id = Game.find(party_game_id)
       @party_game = PartyGame.new

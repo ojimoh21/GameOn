@@ -1,5 +1,5 @@
 class PartySessionsController < ApplicationController
-  before_action :set_party_session, only: %i[show edit update destroy]
+  before_action :set_party_session, only: %i[show edit update destroy summary]
 
   def new
     @party_session = PartySession.new
@@ -71,10 +71,13 @@ class PartySessionsController < ApplicationController
     end
   end
 
+  def summary; end
+
   private
 
   def party_session_params
-    params.require(:party_session).permit(:title, :description, :start_date, :end_date, :start_time, :end_time, :address)
+    params.require(:party_session).permit(:title, :description, :start_date, :end_date, :start_time, :end_time,
+                                          :address)
   end
 
   def set_party_session

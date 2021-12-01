@@ -92,3 +92,12 @@ i {
         background-color: $light-blue;
       }
   }
+
+  .summary-cards {
+    width: 95%;
+    margin: auto;
+    margin-top: 24px;
+    .party-card {
+      margin-bottom: 28px;
+    }
+  }
