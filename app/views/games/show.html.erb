@@ -15,7 +15,7 @@
       <p><i class="fas fa-users"></i><%= @game.suggested_numplayers %> players</p>
     </div>
   </div>
-  <%= link_to "Back", games_path, class: "btn ml-2 text-primary" %>
+  <%= link_to "Back", games_path, class: "btn ml-2 sessions-past" %>
   <% if current_user == @game.user %>
     <%= link_to "Delete Game", game_path(@game),  method: :delete, data: {confirm: "Are you sure you want to delete game?"}, class: "btn danger" %>
   <% end %>

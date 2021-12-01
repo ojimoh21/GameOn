@@ -1,6 +1,6 @@
 .chatroom {
   width: 90%;
-  border-radius: 10%;
+  border-radius: 10px;
   background: $light-blue;
   margin-top: 9px;
   height: calc(100vh - 220px);
@@ -18,6 +18,9 @@
     padding: 1rem;
   }
 
+  input #message_content.form-group.string.optional {
+    color: pink !important;
+  }
   .message {
     padding: 0.5rem;
     box-sizing: content-box;
@@ -30,23 +33,6 @@
     align-items: center;
   }
 
-  .user-message {
-        background: $orange;
-        // opacity: 75%;
-        border-right: 6px solid $light-red;
-        text-align: right;
-        margin-right: -20px;
-     }
-
-     .o-user-message {
-        background: $yellow;
-        // opacity: 75%;
-        border-left: 6px solid $light-red;
-        text-align: left;
-        margin-left: -20px;
-     }
-
-
   #new_message {
     border-top: 1px solid $gray-200;
     padding: 1rem;
@@ -56,7 +42,25 @@
     }
   }
 
-  input #message_content.form-group.string.optional {
-    color: pink !important;
-  }
+  .o-user-message {
+        background: $yellow;
+        // opacity: 75%;
+        border-left: 6px solid $light-red;
+        text-align: left;
+        margin-left: -20px;
+     }
+
+  .user-message {
+        background: $orange;
+        // opacity: 75%;
+        border-right: 6px solid $light-red;
+        text-align: right;
+        margin-right: -20px;
+     }
 }
+
+.chat {
+    background-color: $yellow;
+    border: 1px solid $light-red;
+
+  }

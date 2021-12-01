@@ -1,44 +1,55 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-  <% if user_signed_in? %>
-    <% if current_user.photo.attached? %>
-      <%= link_to "/", class:"link-to" do %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar"%>
-      <% end %>
-    <% else %>
-      <%= link_to "/", class:"link-to" do%>
-        <i class="fas fa-chess-knight navbar-empty-avatar"></i>
-      <% end %>
-    <% end %>
-  <% else %>
-      <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-  <% end %>
-  <div>
-  <% if user_signed_in? %>
-    <a href="/party_sessions/new" class="btn create">Throw a Party?</a>
-  <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<div style="padding-bottom: 70px;">
+  <nav class="navbar navbar-light">
+    <div class="navbar-color">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <div class="dropdown-menudropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Dashboard", "/party_sessions", class: "dropdown-item navi" %>
-            <%= link_to "My Games", "/games", class: "dropdown-item navi" %>
-            <%= link_to "My Account", "/users/edit", class: "dropdown-item navi" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navi" %>
-          </div>
-        </li>
+        <% if current_user.photo.attached? %>
+          <%= link_to "/", class:"link-to" do %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+          <% end %>
+        <% else %>
+          <%= link_to "/", class:"link-to" do%>
+            <i class="fas fa-chess-knight navbar-empty-avatar"></i>
+          <% end %>
+        <% end %>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+          <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", width: "40px", height:"40px"%>
+        <% end %>
       <% end %>
-    </ul>
-  </div>
+      <div>
+        <% if user_signed_in? %>
+          <a href="/party_sessions/new" class="btn create mr-2">Throw a Party?</a>
+          <span class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </span>
+        <% else %>
+          <a href="/users/sign_in" class="btn create mr-2">Login</a>
+        <% end %>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapsed-items">
+        <ul class="navbar-nav pt-5 text-center">
+          <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "Dashboard", "/party_sessions", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "My Games", "/games", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "My Account", "/users/edit", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>

@@ -6,6 +6,9 @@
 
 .game {
   display: inline-block;
+   .suggested {
+     border: 1px solid $light-red;
+   }
 }
 
 .games-img {
