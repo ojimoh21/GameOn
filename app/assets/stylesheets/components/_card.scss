@@ -15,6 +15,12 @@
     }
 }
 
+.game-card-horizontal {
+  background: $pink;
+  border-left: 6px solid $dark-blue;
+  display: flex;
+}
+
 .dashboard-card-past{
   margin: auto;
   background: $yellow;

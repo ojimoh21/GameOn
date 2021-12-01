@@ -5,23 +5,19 @@
     <%= link_to "Votes", party_session_votes_path(@party_games.first.party_session_id), class: "btn btn-primary"%>
   <% end %>
     <% @party_games.each do |game| %>
-    <div class="party-card mb-3">
-      <% if game.game.photo.attached? %>
-        <%= cl_image_tag game.game.photo.key, class: "game-card-img"%>
-      <% else %>
-        <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
-      <% end %>
-      <div class="d-block">
-        <div><%= game.game.title %></div>
-        <div><%= game.game.description %></div>
-        <div style="font-size: 10px">
-        <%= game.game.suggested_numplayers %>
+      <div class="game-card-horizontal mb-3">
+        <% if game.game.photo.attached? %>
+          <%= cl_image_tag game.game.photo.key, height: 100, width: 200, crop: :fit%>
+        <% else %>
+          <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+        <% end %>
+        <div>
+          <%= game.game.title %>
+          <div>
+            <%= link_to "Vote", party_session_party_game_path(game.party_session_id, game.id), class: "btn btn-success" %>
+            <%= link_to "Remove", party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"}, class: "btn btn-danger" %>
+          </div>
+        </div>
       </div>
-      </div>
-      <div><%= link_to "Vote", party_session_party_game_path(game.party_session_id, game.id), class: "btn btn-success" %></div>
-      <div>
-      <%= link_to "Remove", party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"}, class: "btn btn-danger" %>
-      </div>
-  </div>
     <% end %>
 </div>
