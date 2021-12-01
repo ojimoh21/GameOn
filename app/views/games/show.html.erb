@@ -1,5 +1,3 @@
-<%# <div class="game-show-image-gradient">
-</div> %>
 <div class="game-display">
   <div class="game-show-image">
     <% if @game.photo.attached? %>
@@ -8,8 +6,6 @@
       <%= image_tag "chess-piece.jpeg", class: "game-card-img dark" %>
     <% end %>
   </div>
-
-<%# <div class="container mt-3"> %>
   <div class="game-card">
     <div class="game-info-text">
       <h2><%= @game.title %></h2>
