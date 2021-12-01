@@ -1,13 +1,13 @@
 <%= simple_form_for [@party_session, @party_game] do |form| %>
   <%= form.collection_check_boxes :game_id, @games, :id, :title do |b| %>
-  <div class="game-card mb-3" onclick="this.querySelector('input[type=checkbox]').click(document.querySelector('.game-card').classList.toggle('selected'))">
+    <div class="game-card mb-3" data-controller="highlight-game" data-action="click->highlight-game#highlight">
       <% if b.object.photo.attached? %>
-        <%= cl_image_tag b.object.photo.key, class: "game-card-img"%>
+        <%= cl_image_tag b.object.photo.key, class: "game-card-img", data: { highlight_game_target: "game" } %>
       <% else %>
-        <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+        <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img", data: { highlight_game_target: "game" } %>
       <% end %>
-    <div style="display:none;"><%= b.check_box %></div>
-  </div>
+      <%= b.check_box data: {highlight_game_target: "checkbox"}, style:"display:none;"%>
+    </div>
   <%# b.label(class: "my-#{ b.object.class.name.parameterize }", 'data-value': b.value) { b.check_box + b.text } %>
   <% end %>
   <div class="d-flex justify-content-center mb-3">
