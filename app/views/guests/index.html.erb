@@ -24,7 +24,7 @@
       </div>
       </div>
       <div>
-        <% if guest.party_session.end_date > DateTime.now && (guest.user != current_user)%>
+        <% if guest.party_session.end_date > DateTime.now && (guest.party_session.user != guest.user)%>
           <%= link_to "Kick", guest_path(guest), method: :delete, data: {confirm: "Are you sure you want to remove this guest?"}, class: "btn btn-danger" %>
         <% end %>
       </div>
