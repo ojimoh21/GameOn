@@ -251,6 +251,10 @@ i {
   margin: auto;
   color: black;
   }
+  #modal-description {
+    overflow: scroll;
+    height: 60vh;
+  }
 }
 
 .selected-guest {
