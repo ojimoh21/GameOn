@@ -2,7 +2,11 @@
   <h1 class="mt-4 text-center">
   <%= @party_session.title %>
   </h1>
-
+  <div class="text-right mr-3">
+    <%= link_to party_sessions_path do %>
+      <i class="fas fa-chevron-left thumb-icon-games"></i>
+    <% end %>
+  </div>
   <div class="summary-cards">
     <%= link_to party_session_path(@party_session) do %>
       <div class="party-card">
@@ -18,7 +22,7 @@
     <% end %>
     <%= link_to party_session_guests_path(@party_session) do %>
     <div class="party-card">
-      <h3>Guest</h3>
+      <h3>Guests</h3>
       <i class="fas fa-angle-double-right fa-2x"></i>
     </div>
     <% end %>

@@ -1,10 +1,12 @@
-<%= form_tag new_party_session_party_game_path, method: :get do %>
+<%= form_tag new_party_session_party_game_path, class: "d-flex mb-3", method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a board-game"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= button_tag type: 'submit', class: "bg-search-none" do %>
+    <i class="fas fa-search thumb-icon-games"></i>
+  <% end %>
 <% end %>
 
 <%= simple_form_for [@party_session, @party_game] do |form| %>
