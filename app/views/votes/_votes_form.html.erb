@@ -27,7 +27,7 @@
             </button>
           </div>
           <div class="modal-body">
-             <p><%= @party_game.game.description %></p>
+             <p id="modal-description"><%= @party_game.game.description %></p>
              <div class="game-extras-green mx-4 ">
               <p class="game-extra-text"><i class="far fa-clock"></i><%= @party_game.game.duration %> mins</p>
               <p class="game-extra-text"><i class="fas fa-users"></i><%= @party_game.game.suggested_numplayers %> players</p>
