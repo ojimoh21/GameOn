@@ -4,6 +4,7 @@ class PartyGamesController < ApplicationController
 
   def index
     @party_games = PartyGame.where(party_session_id: params[:party_session_id])
+    @party_session = PartySession.find(params[:party_session_id])
   end
 
   def show
