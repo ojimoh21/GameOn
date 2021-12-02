@@ -63,3 +63,11 @@
     border: 1px solid $light-red;
 
   }
+
+#message_content {
+  color: white;
+}
+
+#message_content::placeholder {
+  color: white;
+}

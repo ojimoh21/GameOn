@@ -1,0 +1,26 @@
+.container-new {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 36px;
+  margin-right: auto;
+  margin-left: auto;
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;;
+}
+
+.header-new {
+  display: flex;
+  flex-direction: row;
+  // align-items: baseline;
+}
+
+.add-yours-bar {
+  display: flex;
+}
+
+.new-game-puzzle {
+  // margin-left: -2px;
+}

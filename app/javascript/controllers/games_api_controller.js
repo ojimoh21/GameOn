@@ -14,7 +14,7 @@ export default class extends Controller {
       .then((data) => {
         data.games.forEach((g) => {
           const gameId = g['id'];
-          const gameTag = `<a class="mt-4 game" href="/games/${gameId}/hot"><img src="${g['image_url']}" alt="" class="games-img"></a>`;
+          const gameTag = `<a class="game" href="/games/${gameId}/hot"><img src="${g['image_url']}" alt="" class="games-img"></a>`;
           game.insertAdjacentHTML("beforeend", gameTag);
         });
       });

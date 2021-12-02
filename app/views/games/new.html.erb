@@ -1,17 +1,23 @@
-<div class="container">
-  <h1 class="text-center mt-2">Add Game</h1>
-  <br>
-  <div class="search-box">
+<div class="container-new">
+  <div class="header-new">
+    <a href="/games"><i class="fas fa-chevron-left mt-4" class="game-show-icon"></i></a>
+    <h1 class="text-center mt-4 mb-2" style="
+    margin-left: 70px;">New Game</h1>
+  </div>
+  <h3>Add a new game to your collection by searching for a game or creating your own!</h3>
+  <div class="search-box mt-4">
     <%= render 'search' %>
   </div>
   <br>
   <div class="add-your-own">
-    <button class="btn-add-game app-party-btn-small" data-toggle="collapse" data-target="#collapse-form">
-      Add Your Own
-    </button>
+    <div class="add-yours-bar">
+      <i class="fas fa-puzzle-piece new-game-puzzle"></i>
+      <button class="btn-add-game app-party-btn-xsmall" data-toggle="collapse" data-target="#collapse-form">
+        Make Your Own
+      </button>
+    </div>
     <div class="collapse collapse-form" id="collapse-form">
       <%= render "form" %>
     </div>
   </div>
-  <%= link_to "Back", :back, class: "btn sessions-past"%>
 </div>
