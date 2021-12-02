@@ -1,9 +1,9 @@
   <%= simple_form_for(@game) do |f|%>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :duration, as: :integer %>
-    <%= f.input :suggested_numplayers, :label => "Suggested Players", as: :integer %>
+    <%= f.input :title, required: false  %>
+    <%= f.input :description, required: false  %>
+    <%= f.input :duration, as: :integer, required: false  %>
+    <%= f.input :suggested_numplayers, :label => "Suggested Players", as: :integer, required: false  %>
     <%= f.hidden_field :photo, as: :file %>
-    <%= f.input :image_url, :label => "Image URL", input_html: {value: ''} %>
+    <%= f.input :image_url, :label => "Image URL", input_html: {value: ''}, required: false  %>
     <%= f.submit "Save", class: "app-btn" %>
   <%end%>

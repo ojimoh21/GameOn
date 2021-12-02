@@ -1,9 +1,9 @@
   <%= simple_form_for(@party_session) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description, :input_html => { :rows => 2 } %>
-    <%= f.input :start_date, as: :string, type: :text %>
+    <%= f.input :title, required: false %>
+    <%= f.input :description, required: false,  :input_html => { :rows => 2 } %>
+    <%= f.input :start_date,required: false ,  as: :string, type: :text %>
     <%= f.input :end_date, as: :string, type: :text %>
-    <%= f.input :address,
+    <%= f.input :address, required: false ,
                 input_html: { data: { geocoder_target: "address" }, class: "d-none" },
                 wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     <%= f.button :submit, 'SUBMIT', class: "app-party-btn" %>
