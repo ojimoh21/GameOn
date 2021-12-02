@@ -32,14 +32,16 @@
     }
 }
 .game-card-horizontal {
-  background: $pink;
-  border-left: 6px solid $dark-blue;
-  justify-content: space-between;
-  display: flex;
+    background: #faf2d1ad;
+    border-left: 6px solid #347367;
+    justify-content: space-between;
+    display: flex;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.363);
+}
   h4 {
     font-family: "VT323", sans-serif ;
   }
-}
+
 
 .thumb-icon-games {
   background-color: $light-blue;
@@ -221,7 +223,8 @@ i {
   left: 3px;
 }
 .selected {
-  border: 4px solid $dark-blue;
+   border: 5px solid #53dfc5;
+   box-shadow: 0 0 15px rgb(229, 138, 110) !important;
 }
 
 #game-vote-details-modal {
@@ -255,8 +258,9 @@ i {
 
 .selected-guest {
   background-color: $light-blue;
+  border: 2px solid rgb(229, 138, 110) !important;
   i {
-    color: $yellow;
+    display: none;
   }
   div {
     color: $yellow;
