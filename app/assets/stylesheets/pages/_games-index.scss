@@ -9,6 +9,9 @@
   animation-fill-mode: forwards;
   animation-delay: 0.8s;
   visibility: hidden;
+  h3 {
+    margin-left: 15px;
+  }
 }
 
 .hot-games {
@@ -16,6 +19,9 @@
   animation-fill-mode: forwards;
   animation-delay: 1.7s;
   visibility: hidden;
+  h3 {
+    margin-left: 15px;
+  }
 }
 
 .suggested-games {
@@ -23,6 +29,9 @@
   animation-fill-mode: forwards;
   animation-delay: 2.4s;
   visibility: hidden;
+  h3 {
+    margin-left: 15px;
+  }
 }
 
 @keyframes fadeIn {
