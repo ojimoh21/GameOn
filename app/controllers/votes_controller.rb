@@ -11,7 +11,7 @@ class VotesController < ApplicationController
     @vote.party_game = @party_game
     if @vote.save!
       puts "Saved!"
-      redirect_to party_session_votes_path(@party_session)
+      redirect_to party_session_party_games_path
     else
       puts "It didn't save!"
     end
