@@ -5,7 +5,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-    <% unless @chatroom.messages.empty? %>
+     <% unless @chatroom.messages.empty? %>
       <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
