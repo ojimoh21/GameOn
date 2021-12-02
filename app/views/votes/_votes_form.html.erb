@@ -4,10 +4,12 @@
       <%= image_tag "chess-piece.jpeg", class:"game-vote-img"  %>
     <% end %>
 <div class="d-flex justify-content-around position-relative" id="vote-btns">
-  <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
-    <%= f.input :vote,  as: :hidden, input_html: { value: 0} %>
-    <%= button_tag(class: "vote-btn-single vote-circle-no") do  %>
-      <i class="fas fa-times vote-no"></i>
+  <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
+    <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
+      <%= f.input :vote,  as: :hidden, input_html: { value: 0} %>
+      <%= button_tag(class: "vote-btn-single vote-circle-no") do  %>
+        <i class="fas fa-times vote-no"></i>
+      <% end %>
     <% end %>
   <% end %>
   <div class="TEST">
@@ -25,11 +27,15 @@
             </button>
           </div>
           <div class="modal-body">
+<<<<<<< HEAD
              <p><%= @party_game.game.description %></p>
              <div class="game-extras mx-4">
               <p class="game-extra-text"><i class="far fa-clock"></i><%= @party_game.game.duration %> mins</p>
               <p class="game-extra-text"><i class="fas fa-users"></i><%= @party_game.game.suggested_numplayers %> players</p>
             </div>
+=======
+            <h1>TEST FOR FUN</h1>
+>>>>>>> master
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-info"></i></button>
@@ -38,10 +44,12 @@
       </div>
     </div>
   </div>
-  <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
-    <%= f.input :vote,  as: :hidden, input_html: { value: 1} %>
-    <%= button_tag(class: "vote-btn-single vote-circle-yes" ) do %>
-      <i class="fas fa-heart vote-yes"></i>
+  <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
+    <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
+      <%= f.input :vote,  as: :hidden, input_html: { value: 1} %>
+      <%= button_tag(class: "vote-btn-single vote-circle-yes" ) do %>
+        <i class="fas fa-heart vote-yes"></i>
+      <% end %>
     <% end %>
   <% end %>
 </div>

@@ -1,15 +1,17 @@
-<%= form_tag new_party_session_party_game_path, method: :get do %>
+<%= form_tag new_party_session_party_game_path, class: "d-flex mb-3", method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a board-game"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= button_tag type: 'submit', class: "bg-search-none" do %>
+    <i class="fas fa-search thumb-icon-games"></i>
+  <% end %>
 <% end %>
 
 <%= simple_form_for [@party_session, @party_game] do |form| %>
   <%= form.collection_check_boxes :game_id, @games, :id, :title do |b| %>
-    <div class="game-card mb-3" data-controller="highlight-game" data-action="click->highlight-game#highlight">
+    <div class="vote-game mb-3" data-controller="highlight-game" data-action="click->highlight-game#highlight">
       <% if b.object.photo.attached? %>
         <%= cl_image_tag b.object.photo.key, class: "game-card-img", data: { highlight_game_target: "game" } %>
       <% else %>

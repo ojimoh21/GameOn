@@ -164,6 +164,15 @@ user_file = URI.open((user_url + demo_character_filename).to_s)
 user.photo.attach(io: user_file, filename: demo_character_filename.to_s, content_type: 'image/jpg')
 user.save!
 
+# Add Martin as guest to Alyona's upcoming party
+puts "Add Martin as a guest for party - #{party.title}"
+
+guest = Guest.new
+guest.party_session = party
+guest.user = user
+guest.confirm_availability = true
+guest.save!
+
 # 5 games added to demo user
 games[0..4].each do |game|
   user_game = Game.new
@@ -216,6 +225,7 @@ guest.confirm_availability = true
 guest.save!
 
 # Add Alyona as a guest
+puts "Add Alyona as a guest for party - #{party.title}"
 guest = Guest.new
 guest.party_session = party
 guest.user = User.find_by(email: "alyona_bordukova@gmail.com")
