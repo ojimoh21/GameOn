@@ -7,7 +7,7 @@
 .my-games {
   animation: 1s fadeIn;
   animation-fill-mode: forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.5s;
   visibility: hidden;
   h3 {
     margin-left: 15px;
@@ -17,7 +17,7 @@
 .hot-games {
   animation: 1s fadeIn;
   animation-fill-mode: forwards;
-  animation-delay: 1.7s;
+  animation-delay: 1s;
   visibility: hidden;
   h3 {
     margin-left: 15px;
@@ -27,7 +27,7 @@
 .suggested-games {
   animation: 1.2s fadeIn;
   animation-fill-mode: forwards;
-  animation-delay: 2.4s;
+  animation-delay: 1.5s;
   visibility: hidden;
   h3 {
     margin-left: 15px;
@@ -53,6 +53,11 @@
     opacity: 0;
     visibility: hidden;
   }
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 // body {

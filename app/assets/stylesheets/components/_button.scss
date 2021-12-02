@@ -24,6 +24,21 @@
   font-weight: bold;
 }
 
+.app-party-btn-xsmall{
+  background: rgba(244,211,94,0.6);
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: auto;
+  color: black;
+  font-size: 16px;
+  /* font-weight: bold; */
+  width: 250px;
+  margin-left: -1px;
+  height: 34px;
+  text-align: left;
+  border: 1px solid #999;
+}
+
 .edit-btn {
   background: #ffffff25;
   border: 6px solid $yellow;
@@ -96,4 +111,9 @@
 
 .btn-guest-success {
   color: $light-blue;
+}
+
+.save-form {
+  margin-left: 100px;
+  margin-bottom: 10px;
 }
