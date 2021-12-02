@@ -10,10 +10,10 @@
 <% end %>
 <%= simple_form_for [@party_session, @guest] do |form| %>
   <%= form.collection_check_boxes :user_id, @users, :id, :email do |b| %>
-    <div class="party-card mb-3" onclick="this.querySelector('input[type=checkbox]').click()">
+    <div class="party-card mb-3" data-controller="highlight-guest" data-action="click->highlight-guest#highlight" data-highlight-guest-target="guest">
       <div class="d-flex align-items-center">
         <% if b.object.photo.attached? %>
-          <%= cl_image_tag b.object.photo.key, class: "avatar-large" %>
+          <%= cl_image_tag b.object.photo.key, class: "avatar-large"%>
         <% else %>
           <i class="fas fa-chess-knight navbar-empty-avatar-large"></i>
         <% end %>
@@ -22,7 +22,10 @@
           <div style="font-size: 12px"><%= b.object.email %></div>
         </div>
       </div>
-      <%= b.check_box %>
+      <%= b.check_box data: {highlight_guest_target: "checkbox"}, style:"display:none;" %>
+      <div>
+        <i class="fas fa-plus-circle"></i>
+        </div>
     </div>
   <%# b.label(class: "my-#{ b.object.class.name.parameterize }", 'data-value': b.value) { b.check_box + b.text } %>
   <% end %>

@@ -252,3 +252,13 @@ i {
   color: black;
   }
 }
+
+.selected-guest {
+  background-color: $light-blue;
+  i {
+    color: $yellow;
+  }
+  div {
+    color: $yellow;
+  }
+}
