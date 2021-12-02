@@ -36,15 +36,30 @@
   border-left: 6px solid $dark-blue;
   justify-content: space-between;
   display: flex;
-  h5 {
+  h4 {
     font-family: "VT323", sans-serif ;
   }
+}
+
+.thumb-icon-games {
+  background-color: $light-blue;
+  color: $yellow;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.bg-search-none {
+  background: none;
+  border: none;
 }
 
 .party-game-info {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  .dark-blue {
+    font-size: 20px;
+  }
 }
 
 .dashboard-card-past{

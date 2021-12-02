@@ -1,19 +1,25 @@
 <div class="container">
   <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
-  <div class="d-flex justify-content-between">
-  <% if current_user == @party_session.user %>
-    <% if @party_session.end_date > DateTime.now %>
-      <%= link_to "Edit Party", edit_party_session_path(@party_session) %>
-      <%= link_to "Your Party Games", party_session_party_games_path(@party_session)%>
-      <%= link_to "Your Guests!", party_session_guests_path(@party_session) %>
+  <div class="d-flex justify-content-between mt-3 mx-3">
+    <div>
+      <% if @party_session.end_date > DateTime.now %>
+        <%= link_to edit_party_session_path(@party_session) do%>
+          <i class="fas fa-pencil-alt px-2 dark-blue"></i>
+        <% end %>
+        <%= link_to party_session_party_games_path(@party_session) do%>
+          <i class="fas fa-puzzle-piece ml-2 px-2 dark-blue"></i>
+        <% end %>
+        <%= link_to party_session_guests_path(@party_session) do%>
+          <i class="fas fa-users px-2 dark-blue"></i>
+        <% end %>
+        <% end %>
+    </div>
+    <%= link_to party_sessions_summary_path(@party_session) do %>
+      <i class="fas fa-chevron-left thumb-icon-games"></i>
     <% end %>
-  <% else %>
-      <%= link_to "Vote Fav Games", party_session_party_games_path(@party_session)%>
-      <%= link_to "Add Party Guest", party_session_guests_path(@party_session) %>
-  <% end %>
   </div>
   </div>
-    <div class="my-4 party-sessions-card">
+    <div class="my-3 party-sessions-card">
       <h4>Description</h4>
       <p><%= @party_session.description %></p>
       <h4>Hosted By</h4>
