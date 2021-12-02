@@ -24,9 +24,9 @@
   font-weight: bold;
 }
 
-.app-party-btn-xsmall{
-  background: rgba(244,211,94,0.6);
-  border-radius: 8px;
+.app-party-btn-xsmall {
+  background: transparent;
+  /* border-radius: 8px; */
   padding: 8px 16px;
   margin: auto;
   color: black;
@@ -36,7 +36,8 @@
   margin-left: -1px;
   height: 34px;
   text-align: left;
-  border: 1px solid #999;
+  border: 1px solid transparent;
+  border-bottom: 2px solid black;
 }
 
 .edit-btn {
