@@ -150,11 +150,7 @@ i {
 .game-vote-img {
   background-color: white;
   width: 100%;
-<<<<<<< HEAD
-  height: 650px;
-=======
   height: 80vh;
->>>>>>> master
   object-fit: cover;
   object-position: 60% 6%;
   border: 2px solid $light-blue;
@@ -164,7 +160,13 @@ i {
 #vote-btns {
   top: -43px;
 }
-
+.TEST{
+  .fa-info {
+    position: relative;
+    left: 4px;
+    color: $light-brown;
+  }
+}
 .vote-btn-single {
   width: 60px;
   height: 60px;
@@ -195,15 +197,32 @@ i {
   top: 15px;
 }
 
-.fa-info {
-  position: relative;
-  left:4px;
-  color: $light-brown;
+
+.save-btn {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  background: $yellow;
+  border: 1px solid $yellow;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
 }
 
-  .selected {
-    border: 4px solid $dark-blue;
-  }
+
+.save-btn:hover {
+  opacity: 60%;
+}
+
+.save-icon {
+  position: relative;
+  left: 3px;
+}
+.selected {
+  border: 4px solid $dark-blue;
+}
 
 #game-vote-details-modal {
   .modal-dialog {
@@ -218,14 +237,16 @@ i {
     border: 2px solid $light-blue;
     background-color: $yellow;
   }
-
+  .game-extras-green {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+  }
   p {
     color: $light-blue;
   }
 
-  .game-extra-text{
-    color: $light-blue;
-  }
   .vote-game {
   width: 80%;
   margin: auto;

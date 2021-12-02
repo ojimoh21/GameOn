@@ -1,14 +1,15 @@
 <div class="container mt-3 mb-3" data-controller="games-api">
-  <h1 class="text-center">My Games</h1>
-  <div class="title-button">
-    <%= link_to new_game_path do %>
-      <div class="btn app-party-btn-small"><i class="fas fa-puzzle-piece ml-2"></i> <span>Add</span></div>
-    <% end %>
-  </div>
+  <h1 class="text-center">Games Library</h1>
 
-  <%# <input type="text" placeholder="Search Games" style="width:80%" class="p-3 mt-4" > %>
-  <div class="mt-1 my-games">
-    <h3>My Games</h3>
+  <div class="mt-5 my-games">
+    <div class="title-box">
+      <h3>Collection</h3>
+      <div class="title-button">
+        <%= link_to new_game_path do %>
+          <div class="btn app-party-btn-small"><i class="fas fa-puzzle-piece ml-2"></i> <span>New</span></div>
+        <% end %>
+      </div>
+    </div>
     <div class="games-list">
       <% @games.each do |game| %>
         <div class="game">
@@ -29,7 +30,7 @@
   </div>
 
   <div class="mt-5 suggested-games">
-    <h3>Suggested Games</h3>
+    <h3>Recommended</h3>
     <div class="games-list">
       <% @hotgames.each do |game| %>
         <div class="game">
