@@ -29,6 +29,9 @@
   animation-fill-mode: forwards;
   animation-delay: 1.5s;
   visibility: hidden;
+}
+
+.suggested {
   border: 2px solid $light-red;
   h3 {
     margin-left: 15px;

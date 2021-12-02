@@ -5,7 +5,7 @@
       <%= link_to new_party_session_guest_path, class: "btn-guest-success" do%>
         <i class="fas fa-user-plus"></i>
       <% end %>
-      <%= link_to :back do %>
+      <%= link_to party_sessions_summary_path(@party_session) do %>
         <i class="fas fa-chevron-left thumb-icon-games"></i>
       <% end %>
     </div>
