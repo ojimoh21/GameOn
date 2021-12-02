@@ -13,26 +13,29 @@
     <% end %>
   <% end %>
   <div class="TEST">
-    <%= button_tag class: "vote-btn-single vote-circle-details", data: { toggle: "modal", target: "#exampleModal"} do  %>
+    <%= button_tag class: "vote-btn-single vote-circle-details", data: { toggle: "modal", target: "#game-vote-details-modal"} do  %>
         <i class="fas fa-info"></i>
     <% end %>
 
-    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="game-vote-details-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h2 class="modal-title"><%= @party_game.game.title %></h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <h1>TEST FOR FUN</h1>
+             <p><%= @party_game.game.description %></p>
+             <div class="game-extras-green mx-4 ">
+              <p class="game-extra-text"><i class="far fa-clock"></i><%= @party_game.game.duration %> mins</p>
+              <p class="game-extra-text"><i class="fas fa-users"></i><%= @party_game.game.suggested_numplayers %> players</p>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          <%# <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</i></button>
+          </div> %>
         </div>
       </div>
     </div>

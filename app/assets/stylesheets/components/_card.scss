@@ -160,7 +160,13 @@ i {
 #vote-btns {
   top: -43px;
 }
-
+.TEST{
+  .fa-info {
+    position: relative;
+    left: 4px;
+    color: $light-brown;
+  }
+}
 .vote-btn-single {
   width: 60px;
   height: 60px;
@@ -186,6 +192,12 @@ i {
   color: $light-red
 }
 
+.vote-circle-details {
+  position: relative;
+  top: 15px;
+}
+
+
 .save-btn {
   width: 35px;
   height: 35px;
@@ -199,6 +211,7 @@ i {
   position: absolute;
 }
 
+
 .save-btn:hover {
   opacity: 60%;
 }
@@ -206,12 +219,33 @@ i {
 .save-icon {
   position: relative;
   left: 3px;
-
 }
-  .selected {
-    border: 4px solid $dark-blue;
-  }
+.selected {
+  border: 4px solid $dark-blue;
+}
 
+#game-vote-details-modal {
+  .modal-dialog {
+    margin:0;
+  }
+  .modal-content {
+    position: relative;
+    top: 102px;
+    border-radius: 25px;
+    width: 100%;
+    height: 660px;
+    border: 2px solid $light-blue;
+    background-color: $yellow;
+  }
+  .game-extras-green {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+  }
+  p {
+    color: $light-blue;
+  }
   .vote-game {
   width: 80%;
   margin: auto;
