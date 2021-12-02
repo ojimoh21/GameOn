@@ -1,23 +1,45 @@
 <div class="container mt-3 mb-2">
-  <h2 class="mt-4" style="text-align: center">Games Tonight</h2>
-  <%= link_to "Add your games", new_party_session_party_game_path, class: "btn text-success"%>
-  <% unless @party_games.first.nil? %>
-    <%= link_to "Votes", party_session_votes_path(@party_games.first.party_session_id), class: "btn btn-primary"%>
-  <% end %>
+  <h2 class="mt-4 mb-4" style="text-align: center">Games Tonight</h2>
+  <div class="d-flex justify-content-between mx-2">
+    <% if current_user == @party_session.user %>
+      <%= link_to new_party_session_party_game_path, class:"d-block text-right mb-3" do %>
+        <div class="btn app-party-btn-small"><i class="fas fa-puzzle-piece ml-2"></i> <span>Add</span></div>
+      <% end %>
+    <% end %>
+    <%= link_to :back do %>
+      <i class="fas fa-chevron-left thumb-icon-games"></i>
+    <% end %>
+  </div>
     <% @party_games.each do |game| %>
       <div class="game-card-horizontal mb-3">
-        <% if game.game.photo.attached? %>
-          <%= cl_image_tag game.game.photo.key, height: 100, width: 200, crop: :fit%>
-        <% else %>
-          <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
-        <% end %>
-        <div>
-          <%= game.game.title %>
-          <div>
-            <%= link_to "Vote", party_session_party_game_path(game.party_session_id, game.id), class: "btn btn-success" %>
-            <div><%= link_to "TEAMS", party_session_party_game_teams_path(game.party_session_id, game.id), class: "btn btn-success" %></div>
-            <%= link_to "Remove", party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"}, class: "btn btn-danger" %>
+        <div class="d-flex">
+          <% if game.game.photo.attached? %>
+            <%= cl_image_tag game.game.photo.key, height: 100, width: 200, crop: :fit%>
+          <% else %>
+            <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+          <% end %>
+          <div class="p-2 ml-3 party-game-info">
+            <h4>
+              <%= game.game.title %>
+            </h4>
+            <div>
+              <%= link_to party_session_party_game_path(game.party_session_id, game.id) do%>
+                <i class="dark-blue fas fa-info"></i>
+              <% end %>
+              <%= link_to party_session_party_game_teams_path(game.party_session_id, game.id) do%>
+                <i class="dark-blue fas fa-users"></i>
+              <% end %>
+              <% if current_user == game.party_session.user %>
+                <%= link_to party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"} do%>
+                  <i class="dark-blue fas fa-trash-alt text-red"></i>
+                <% end %>
+              <% end %>
+            </div>
           </div>
+        </div>
+        <div class="align-self-center mr-4" style="white-space: nowrap;">
+          <span style="font-size: 20px; font-weight: 600;"><%= game.votes.sum(:vote) %></span>
+          <i class="fas fa-thumbs-up thumb-icon-games"></i>
         </div>
       </div>
     <% end %>

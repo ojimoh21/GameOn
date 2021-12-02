@@ -4,6 +4,7 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.where(party_session_id: params[:party_session_id])
+    @party_session = PartySession.find(params[:party_session_id])
   end
 
   def new

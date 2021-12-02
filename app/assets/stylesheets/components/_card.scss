@@ -34,13 +34,38 @@
 .game-card-horizontal {
   background: $pink;
   border-left: 6px solid $dark-blue;
+  justify-content: space-between;
   display: flex;
+  h4 {
+    font-family: "VT323", sans-serif ;
+  }
+}
+
+.thumb-icon-games {
+  background-color: $light-blue;
+  color: $yellow;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.bg-search-none {
+  background: none;
+  border: none;
+}
+
+.party-game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .dark-blue {
+    font-size: 20px;
+  }
 }
 
 .dashboard-card-past{
   margin: auto;
-  background: $yellow;
-  width: 100%;
+  background: #fbf2d2bf;
+  // width: 90%;
   border-left: 6px solid $light-red;
   padding: 12px;
   display: flex;
@@ -125,7 +150,7 @@ i {
 .game-vote-img {
   background-color: white;
   width: 100%;
-  height: 700px;
+  height: 80vh;
   object-fit: cover;
   object-position: 60% 6%;
   border: 2px solid $light-blue;
@@ -161,10 +186,6 @@ i {
   color: $light-red
 }
 
-.selected {
-  border: 4px solid $dark-blue;
-}
-
 .save-btn {
   width: 35px;
   height: 35px;
@@ -185,4 +206,13 @@ i {
 .save-icon {
   position: relative;
   left: 3px;
+  .selected {
+    border: 4px solid $dark-blue;
+  }
+
+  .vote-game {
+  width: 80%;
+  margin: auto;
+  color: black;
+  }
 }
