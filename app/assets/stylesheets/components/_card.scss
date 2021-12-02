@@ -125,7 +125,7 @@ i {
 .game-vote-img {
   background-color: white;
   width: 100%;
-  height: 700px;
+  height: 650px;
   object-fit: cover;
   object-position: 60% 6%;
   border: 2px solid $light-blue;
@@ -160,6 +160,41 @@ i {
   left: 3px;
   color: $light-red
 }
+
+.vote-circle-details {
+  position: relative;
+  top: 15px;
+}
+
+.fa-info {
+  position: relative;
+  left:4px;
+  color: $light-brown;
+}
+
   .selected {
     border: 4px solid $dark-blue;
   }
+
+#game-vote-details-modal {
+  .modal-dialog {
+    margin:0;
+  }
+  .modal-content {
+    position: relative;
+    top: 102px;
+    border-radius: 25px;
+    width: 100%;
+    height: 660px;
+    border: 2px solid $light-blue;
+    background-color: $yellow;
+  }
+
+  p {
+    color: $light-blue;
+  }
+
+  .game-extra-text{
+    color: $light-blue;
+  }
+}
