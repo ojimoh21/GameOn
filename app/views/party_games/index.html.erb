@@ -24,15 +24,14 @@
             </h4>
             <div>
               <%= link_to party_session_party_game_path(game.party_session_id, game.id) do%>
-                <i class="dark-blue fas fa-info mr-2"></i>
+                <i class="fas fa-dice dark-blue mr-2"></i>
               <% end %>
               <%= link_to party_session_party_game_teams_path(game.party_session_id, game.id) do%>
                 <i class="dark-blue fas fa-users mr-2"></i>
               <% end %>
               <% if current_user == game.party_session.user %>
-                <%= link_to party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"} do%>
-                  <i class="dark-blue fas fa-trash-alt text-red"></i>
-                <% end %>
+                  <i class="dark-blue fas fa-trash-alt text-red" class= "btn btn-danger" data-toggle="modal" data-target="#exampleModal"></i>
+                <%= render "modals/modal", message: "Are you sure you want to remove this game?", link: party_game_path(game), title: "Remove game", action: "Remove"%>
               <% end %>
             </div>
           </div>
