@@ -1,13 +1,13 @@
 <div class="container mt-3 mb-2">
   <h2 class="mt-4 mb-4 light-red" style="text-align: center">Games Tonight</h2>
   <div class="d-flex justify-content-between mx-2">
+    <%= link_to party_sessions_summary_path(@party_session) do %>
+      <i class="fas fa-chevron-left thumb-icon-games-back"></i>
+    <% end %>
     <% if current_user == @party_session.user %>
       <%= link_to new_party_session_party_game_path, class:"d-block text-right mb-3" do %>
         <div class="btn app-party-btn-small"><i class="fas fa-puzzle-piece ml-2"></i> <span>Add</span></div>
       <% end %>
-    <% end %>
-    <%= link_to party_sessions_summary_path(@party_session) do %>
-      <i class="fas fa-chevron-left thumb-icon-games"></i>
     <% end %>
   </div>
     <% @party_games.each do |game| %>

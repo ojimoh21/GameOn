@@ -2,11 +2,11 @@
   <h2 class="mt-4 light-red" style="text-align: center">My Guests</h2>
   <% if @guests.first.party_session.end_date > DateTime.now && (current_user == @party_session.user) %>
     <div class="d-flex justify-content-between mb-2 mx-3">
+      <%= link_to party_sessions_summary_path(@party_session) do %>
+        <i class="fas fa-chevron-left thumb-icon-games-back"></i>
+      <% end %>
       <%= link_to new_party_session_guest_path, class: "btn-guest-success" do%>
         <i class="fas fa-user-plus"></i>
-      <% end %>
-      <%= link_to party_sessions_summary_path(@party_session) do %>
-        <i class="fas fa-chevron-left thumb-icon-games"></i>
       <% end %>
     </div>
   <% end %>

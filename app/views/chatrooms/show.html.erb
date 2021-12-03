@@ -1,9 +1,9 @@
+  <%= link_to party_sessions_summary_path(@chatroom.party_session) do %>
+    <i class="fas fa-chevron-left thumb-icon-games-back chat-back"></i>
+  <% end %>
 
 <h1 class="text-center mt-2"><%= @chatroom.name%></h1>
 <div class="text-right container pr-4">
-  <%= link_to party_sessions_summary_path(@chatroom.party_session) do %>
-    <i class="fas fa-chevron-left thumb-icon-games"></i>
-  <% end %>
 </div>
 <div class="container chatroom mb-4">
   <div class="m-4"

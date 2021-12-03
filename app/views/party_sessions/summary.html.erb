@@ -1,11 +1,11 @@
 <div class="container">
-  <h1 class="mt-4 text-center">
+  <%= link_to party_sessions_path do %>
+    <i class="fas fa-chevron-left thumb-icon-games-back summary-back"></i>
+  <% end %>
+  <h1 class="mt-2 text-center">
   <%= @party_session.title %>
   </h1>
   <div class="text-right mr-3">
-    <%= link_to party_sessions_path do %>
-      <i class="fas fa-chevron-left thumb-icon-games"></i>
-    <% end %>
   </div>
   <div class="summary-cards">
     <%= link_to party_session_path(@party_session) do %>
