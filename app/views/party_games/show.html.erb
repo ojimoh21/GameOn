@@ -1,6 +1,12 @@
 <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
-  <h2 class="text-center mt-3 light-red">Choose the Games!</h2>
+  <h2 class="text-center mt-3 light-red">Vote for your Games!</h2>
   <% else %>
+  <h2 class="text-center mt-3 light-red">You've already voted</h2>
   <div class="mt-3"></div>
 <% end %>
+<div class="text-right">
+  <%= link_to party_session_party_games_path do %>
+    <i class="fas fa-chevron-left thumb-icon-games mb-3 mr-2"></i>
+  <% end %>
+</div>
 <%= render 'votes/votes_form' %>

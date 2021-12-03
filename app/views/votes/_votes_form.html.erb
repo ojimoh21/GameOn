@@ -1,8 +1,10 @@
-    <% if @party_game.game.photo.attached? %>
-      <%= cl_image_tag @party_game.game.photo.key,class:"game-vote-img"%>
-    <% else %>
-      <%= image_tag "chess-piece.jpeg", class:"game-vote-img"  %>
-    <% end %>
+<div class="game-vote-img-container">
+  <% if @party_game.game.photo.attached? %>
+    <%= cl_image_tag @party_game.game.photo.key,class:"game-vote-img"%>
+  <% else %>
+    <%= image_tag "chess-piece.jpeg", class:"game-vote-img"  %>
+  <% end %>
+</div>
 <div class="d-flex justify-content-around position-relative" id="vote-btns">
   <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
     <%= simple_form_for [@party_session, @party_game, @vote] do |f| %>
