@@ -1,5 +1,5 @@
 <% unless @party_game.votes.where(guest: @party_game.guests.where(user: current_user)).any?%>
-  <h2>Choose the Games!</h2>
+  <h2 class="text-center mt-3 light-red">Choose the Games!</h2>
   <% else %>
   <div class="mt-3"></div>
 <% end %>

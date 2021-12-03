@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <h2 class="mt-4" style="text-align: center">My Guests</h2>
+  <h2 class="mt-4 light-red" style="text-align: center">My Guests</h2>
   <% if @guests.first.party_session.end_date > DateTime.now && (current_user == @party_session.user) %>
     <div class="d-flex justify-content-between mb-2 mx-3">
       <%= link_to new_party_session_guest_path, class: "btn-guest-success" do%>

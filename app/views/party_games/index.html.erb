@@ -1,5 +1,5 @@
 <div class="container mt-3 mb-2">
-  <h2 class="mt-4 mb-4" style="text-align: center">Games Tonight</h2>
+  <h2 class="mt-4 mb-4 light-red" style="text-align: center">Games Tonight</h2>
   <div class="d-flex justify-content-between mx-2">
     <% if current_user == @party_session.user %>
       <%= link_to new_party_session_party_game_path, class:"d-block text-right mb-3" do %>
@@ -24,10 +24,10 @@
             </h4>
             <div>
               <%= link_to party_session_party_game_path(game.party_session_id, game.id) do%>
-                <i class="dark-blue fas fa-info"></i>
+                <i class="dark-blue fas fa-info mr-2"></i>
               <% end %>
               <%= link_to party_session_party_game_teams_path(game.party_session_id, game.id) do%>
-                <i class="dark-blue fas fa-users"></i>
+                <i class="dark-blue fas fa-users mr-2"></i>
               <% end %>
               <% if current_user == game.party_session.user %>
                 <%= link_to party_game_path(game), method: :delete, data: {confirm: "Are you sure you want to remove this game?"} do%>
