@@ -27,9 +27,10 @@ class GamesController < ApplicationController
     @game.photo.attach(io: game_image, filename: :image_url, content_type: 'image/jpg')
     @game.user = current_user
     if @game.save
+      flash[:notice] = "Game has been saved to your collection!"
       redirect_to game_path(@game)
     else
-      puts "Couldn't save"
+      flash[:alert] = "Game could not be saved, try again!"
       render :new
     end
   end
