@@ -13,7 +13,7 @@
         <p><i class="fas fa-users"></i><%= @hotgame.suggested_numplayers %> players</p>
       </div>
       <div class="show-page-buttons mt-3">
-        <a href="/games"><i class="fas fa-chevron-left thumb-icon-games" class="game-show-icon"></i></a>
+        <a href="/games"><i class="fas fa-chevron-left thumb-icon-games-back yellow" class="game-show-icon"></i></a>
         <%= simple_form_for(@hotgame) do |f|%>
           <%= f.hidden_field :title, value: @hotgame.title %>
           <%= f.hidden_field :description, value: @hotgame.description %>

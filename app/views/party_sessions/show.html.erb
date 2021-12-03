@@ -1,6 +1,9 @@
 <div class="container">
   <h2 class="mt-3 text-center party-title"><%= @party_session.title %></h2>
   <div class="d-flex justify-content-between mt-3 mx-3">
+    <%= link_to party_sessions_summary_path(@party_session) do %>
+      <i class="fas fa-chevron-left thumb-icon-games-back"></i>
+    <% end %>
     <div>
       <% if @party_session.end_date > DateTime.now %>
         <%= link_to edit_party_session_path(@party_session) do%>
@@ -14,9 +17,6 @@
         <% end %>
         <% end %>
     </div>
-    <%= link_to party_sessions_summary_path(@party_session) do %>
-      <i class="fas fa-chevron-left thumb-icon-games"></i>
-    <% end %>
   </div>
   </div>
     <div class="my-3 party-sessions-card">

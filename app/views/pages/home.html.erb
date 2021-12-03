@@ -1,6 +1,6 @@
 <div class="container mt-5 text-center">
-  <%= image_tag asset_path("login_logo.png"), style: "height: 250px;width:auto;", class:"login-image" %>
-  <h4 class="m-2 mt-5 text-center">Let the fun begin!</h4>
+  <%= image_tag asset_path("login_logo.png"), style: "height: 300px;width:auto;", class:"login-image" %>
+  <h4 class="text-center tagline">let the fun begin</h4>
   <% if user_signed_in? %>
     <a href="/party_sessions" class="btn login-btn  mt-5" style="font-family: 'VT323', sans-serif">START</a>
   <% else %>

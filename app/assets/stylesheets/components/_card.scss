@@ -50,6 +50,34 @@
   border-radius: 50%;
 }
 
+.thumb-icon-games-back {
+  color: black;
+  height: 35px;
+  width: 35px;
+}
+
+.yellow {
+  color: $yellow !important;
+}
+
+.chat-back {
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+
+.summary-back {
+  position: relative;
+  top: 15px;
+  left: 8px;
+}
+
+.fa-chevron-left:before {
+  content: "\f053";
+  right: 3px;
+  position: relative;
+}
+
 .bg-search-none {
   background: none;
   border: none;
