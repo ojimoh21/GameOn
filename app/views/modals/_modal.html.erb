@@ -1,0 +1,19 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark" style="background-color: #faf2d1;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= title %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= message %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to action, link, method: :delete, class: "btn btn-danger", style: "background-color: #f25e5c;"%>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #1f4c44">Nevermind</button>
+      </div>
+    </div>
+  </div>
+</div>

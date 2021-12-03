@@ -28,7 +28,10 @@
       </div>
       <div>
         <% if guest.party_session.end_date > DateTime.now && (guest.party_session.user != guest.user) && (current_user == guest.party_session.user)%>
-          <%= link_to "Kick", guest_path(guest), method: :delete, data: {confirm: "Are you sure you want to remove this guest?"}, class: "btn btn-danger" %>
+          <button type="button" class= "btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            Kick
+          </button>
+          <%= render "modals/modal", message: "Are you sure you want to remove this guest?", link: guest_path(guest), title: "Kick guest", action: "Kick!"%>
         <% end %>
       </div>
     </div>
