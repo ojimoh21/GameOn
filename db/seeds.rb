@@ -11,7 +11,7 @@ female_user_filenames = ["v1637676552/photo-1532708059644-5590ed51ce4c_zwcdtk.jp
                          "v1637676428/photo-1589156280159-27698a70f29e_cvwyuq.jpg",
                          "v1637676389/photo-1637637499413-e9bc4131a400_uz8ldy.jpg"]
 
-demo_character_filename = "v1637677822/xy8hmqmnpjm1bgnynmn7_d8wbio.jpg"
+demo_character_filename = "v1638520404/avatar_zh6dog.jpg"
 
 games_url = 'https://api.boardgameatlas.com/api/search?list_id=5yCPKRYJoF&client_id=OShMmavExz'
 games_serialized = URI.open(games_url).read
@@ -44,7 +44,7 @@ puts "Creating 13 users"
   user = User.new
   user.first_name = Faker::Name.male_first_name
   user.last_name = Faker::Name.last_name
-  user.email = Faker::Internet.email
+  user.email = "#{user.first_name}_#{user.last_name}@gmail.com"
   user.password = "123456"
   user_file = URI.open((user_url + male_user_filenames[user_counter]).to_s)
   user.photo.attach(io: user_file, filename: (male_user_filenames[user_counter]).to_s, content_type: 'image/jpg')
@@ -59,7 +59,7 @@ user_counter = 0
   user = User.new
   user.first_name = Faker::Name.female_first_name
   user.last_name = Faker::Name.last_name
-  user.email = Faker::Internet.email
+  user.email = "#{user.first_name}_#{user.last_name}@gmail.com"
   user.password = "123456"
   user_file = URI.open((user_url + female_user_filenames[user_counter]).to_s)
   user.photo.attach(io: user_file, filename: (female_user_filenames[user_counter]).to_s, content_type: 'image/jpg')
@@ -156,16 +156,16 @@ chatroom.save!
 
 # demo character
 user = User.new
-user.first_name = "Martin"
-user.last_name = "Larsson"
-user.email = "rekkles@gmail.com"
+user.first_name = "Gulce"
+user.last_name = "Sakallioglu"
+user.email = "gulcesakallioglu@gmail.com"
 user.password = "123456"
 user_file = URI.open((user_url + demo_character_filename).to_s)
 user.photo.attach(io: user_file, filename: demo_character_filename.to_s, content_type: 'image/jpg')
 user.save!
 
-# Add Martin as guest to Alyona's upcoming party
-puts "Add Martin as a guest for party - #{party.title}"
+# Add Gulce as guest to Alyona's upcoming party
+puts "Add Gulce as a guest for party - #{party.title}"
 
 guest = Guest.new
 guest.party_session = party
@@ -208,7 +208,7 @@ chatroom.party_session = party
 chatroom.name = party.title
 chatroom.save!
 
-puts "Creating Ongoing Party for Martin "
+puts "Creating Ongoing Party for Gulce "
 party = PartySession.new
 party.title = "Family Glee"
 party.description = "Hey family, let's have a get together today"
@@ -255,7 +255,7 @@ chatroom.party_session = party
 chatroom.name = party.title
 chatroom.save!
 
-puts "Creating Upcoming Party for Martin "
+puts "Creating Upcoming Party for Gulce "
 party = PartySession.new
 party.title = "UNO momento"
 party.description = "Ready to see the student become the master? I'm ready for my title!!"
@@ -274,6 +274,37 @@ chatroom = Chatroom.new
 chatroom.name = party.title
 chatroom.party_session = party
 chatroom.save!
+
+puts "Creating Ola, Alex and Tomas accounts"
+# Ola
+user = User.new
+user.first_name = "Muinat"
+user.last_name = "Jimoh"
+user.email = "ojimoh210@gmail.com"
+user.password = "123456"
+user_file = URI.open((user_url + "v1638522364/ola_qkwvi3.jpg").to_s)
+user.photo.attach(io: user_file, filename: "v1638522364/ola_qkwvi3.jpg".to_s, content_type: 'image/jpg')
+user.save!
+
+# Tomas
+user = User.new
+user.first_name = "Tomas"
+user.last_name = "Truyols"
+user.email = "tomast25@hotmail.com"
+user.password = "123456"
+user_file = URI.open((user_url + "v1638522355/tomas_zpoz0z.jpg").to_s)
+user.photo.attach(io: user_file, filename: "v1638522355/tomas_zpoz0z.jpg".to_s, content_type: 'image/jpg')
+user.save!
+
+# Alex
+user = User.new
+user.first_name = "Alexandra"
+user.last_name = "Okoro"
+user.email = "alex.nnenna.okoro@gmail.com"
+user.password = "123456"
+user_file = URI.open((user_url + "v1638522347/alex_uzrjhy.jpg").to_s)
+user.photo.attach(io: user_file, filename: "v1638522347/alex_uzrjhy.jpg".to_s, content_type: 'image/jpg')
+user.save!
 
 puts "Users created"
 puts "Seeding done"
