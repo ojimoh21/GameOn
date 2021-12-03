@@ -70,7 +70,7 @@
 }
 
 .create {
-  border: 3px solid $dark-blue;
+  border: 3px solid $yellow;
   color: $yellow;
 }
 
@@ -116,4 +116,9 @@
 .save-form {
   margin-left: 100px;
   margin-bottom: 10px;
+}
+
+.login-btn {
+  position: relative;
+  top: 200px;
 }
