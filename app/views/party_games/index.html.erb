@@ -14,9 +14,9 @@
       <div class="game-card-horizontal mb-3">
         <div class="d-flex">
           <% if game.game.photo.attached? %>
-            <%= cl_image_tag game.game.photo.key, height: 100, width: 200, crop: :fit%>
+            <%= cl_image_tag game.game.photo.key, height: 100, width: 200, crop: :fit, class: "card-vote-img"%>
           <% else %>
-            <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img" %>
+            <%= image_tag asset_path("chess-piece.jpeg"), class: "game-card-img card-vote-img" %>
           <% end %>
           <div class="p-2 ml-3 party-game-info">
             <h4>
